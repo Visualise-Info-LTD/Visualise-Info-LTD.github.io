@@ -1,0 +1,55 @@
+<h1><img src="media/c0a4d6e222be955376c6409d6a1e637a.png" alt="A picture containing food, drawing Description automatically generated"></h1>
+<h2>TROUBLE SHOOTING</h2>
+<h3>When I logon, I get a loading spinner on my screen for along time</h3>
+<ul>
+<li>If you are logging in for the first time, or a version release has been applied to the Application, the browser can remember old information which prevents the user form logging on successfully. Press the browser refresh icon and the problem should be resolved.</li>
+<li>Else, if that doesn’t work, clear your browser’s Cache and try again.</li>
+</ul>
+<h3>I have reset my password in Maximo, now I can’t logon to the VI Portal</h3>
+<ul>
+<li>Goto the your user account settings, select 3rd party details, and update the password details.</li>
+</ul>
+<h3>I have reset my password in the 3D Viewer, now I can’t logon to the VI Portal</h3>
+<ul>
+<li>Goto the your user account settings, select 3rd party details, and update the password details.</li>
+</ul>
+<h3>I can’t filter my asset by the location in the 3D view</h3>
+<ul>
+<li>Is the Location Hierarchy in a Building-&gt;Floor-&gt;Room structure?</li>
+<li>If the Maximo Location Hierarchy is built around the asset hierarchy, then the level that relates to the room in which each asset is housed must be mapped to the Room in the VI Site Model.</li>
+</ul>
+<h3>The Asset Register takes a long time to load</h3>
+<ul>
+<li>How Many Assets are held in the Asset Register?</li>
+<li>By mapping the location hierarchy to the site model, the asset register filters the assets by the location the user is currently located within the 3D View., Else the entire Asset Register will be requested form Maximo. If the Assets Register is large, this can use significant bandwidth and take some time to process.</li>
+</ul>
+<h3>All my assets are classified as Unknow in the 3D View</h3>
+<ul>
+<li>How are the Assets classified in Maximo?</li>
+<li>using the Asset Types domain or via user definable attribute in the Maximo database?</li>
+<li>In the installation manifest, amend the asset types object to be the name of the attribute that stores the asset type.</li>
+</ul>
+<h3>I cant see my IoT data in Maximo Meters</h3>
+<ul>
+<li>If Asset Meters are deployed, ensure the deviceId is stored in the DEVICEID attribute. This is the device that broadcasts the data points (asset meters). For more assistance, contact VI Support.</li>
+</ul>
+<h3>I cant access a feature of the VI App when I right click</h3>
+<ul>
+<li>Check the memberships in the Application Manager. You will need ADMIN or SUPER rights to do this. Ensure the Module you are looking for is turned on against the users account.</li>
+</ul>
+<h3>I cant access the Infohub</h3>
+<ul>
+<li>Check the memberships in the Application Manager. You will need ADMIN or SUPER rights to do this. Ensure the Infohub Module is turned on against the users account.</li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><strong>For more help, assistance, VI Support can be contact at</strong> <a href="https://visualiseinfo.atlassian.net"><strong>VI Support</strong></a>
+<strong>Or please contact our sales team at</strong> <a href="mailto:sales@visualiseinfo.com"><strong>sales</strong></a></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>

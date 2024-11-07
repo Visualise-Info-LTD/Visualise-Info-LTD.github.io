@@ -1,0 +1,54 @@
+<h1><img src="media/c0a4d6e222be955376c6409d6a1e637a.png" alt="A picture containing food, drawing Description automatically generated"></h1>
+<h2>CONFIGURATION</h2>
+<h2>Application</h2>
+<ul>
+<li>The VI App operates alongside IBM’s Maximo / MAS products and is fully integrated.</li>
+<li>The VI App can be hosted on a separate cloud, WAN or LAN to the Maximo / MAS applications, but it is recommended that the VI App is installed on the same LAN as Maximo if possible.</li>
+<li>Most of the configuration is done via the installation Manifest file. This excludes the configuration of the IoTservice which is performed separately using a DeviceMap container.</li>
+<li>The installation process requires the capture of pre-requisite data. Namely
+<ol>
+<li>Client Name and Address &amp; PostCode</li>
+<li>Site(s) name, address, postcode, VI siteId</li>
+<li>Maximo OrgId &amp; siteId</li>
+<li>3D Viewer siteId</li>
+<li>assetType Attribute in Maximo</li>
+<li>Fully qualified URL of Maximo / MAS</li>
+<li>Fully qualified URL of the 3D Viewer</li>
+<li>The name of the database. This is defaulted to vilApp unless otherwise stated.</li>
+</ol>
+</li>
+<li>Execution of the docker installation scripts require permission to the VI Repo in GIT. VI Support will assist in this</li>
+<li>Once the application installation scripts have been executed and completed, user log-on services will be enabled to the VI portal.</li>
+<li>The first step is to execute the location map and asset type map in the Application Manager.</li>
+</ul>
+<h2>IoT</h2>
+<p>The IoT configuration</p>
+<ol>
+<li>Gateway ID</li>
+<li>Protocol</li>
+<li>MQTT username and password (VI provide this if using the VI MQTT Broker)</li>
+<li>Subscription ID</li>
+<li>MQTT Topic</li>
+</ol>
+<p>DeviceMap</p>
+<ol>
+<li>The deviceId (or deveui) of each IoT device</li>
+<li>The appKey (LoraWan)</li>
+<li>The joineui or appeui (LoraWan)</li>
+<li>The device Name</li>
+<li>The device Location (see location hierarchy)</li>
+<li>deviceType (see IoT DeviceTypes)</li>
+<li>The path to the devicetype codec (lorawan only)</li>
+</ol>
+<ul>
+<li>The IoT device types are maintained in the Application Manager where each datapoint is defined for the device type and which datapoints are static, dynamic and recordable.</li>
+<li>The IoT Machine Learning service will be running in background. When the device Map is populated, the IoTDeviceMapper will build the IoT device architecture, listen to the gateway on the defined topic and start to record data from the devices.</li>
+<li>Any error in the configuration will written to a log file for review by approved technicians.</li>
+<li>The VI InfoHub widgets will have access to the devices and all recordable data points.</li>
+<li>Are Maximo Meters used and deployed?</li>
+</ul>
+<ol>
+<li>See VI support on how to map devices and data points to the Maximo meters.</li>
+</ol>
+<p><strong>For more help, assistance, VI Support can be contact at</strong> <a href="https://visualiseinfo.atlassian.net"><strong>VI Support</strong></a></p>
+<p><strong>Or please contact our sales team at sales@visualiseinfo.com</strong></p>
