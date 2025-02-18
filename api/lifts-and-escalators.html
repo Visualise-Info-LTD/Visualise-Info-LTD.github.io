@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <div class="container py-2">
+    <div class="container p-0">
         <div id="nwr-alert"></div>
         <div id="nwr-msg" class="visually-hidden">
             <p class="fw-light text-wrap lh-sm">
@@ -110,7 +110,7 @@
                         else { statusMsg = `The status of this ${vts.type} is currently not known. Please check before you travel.`; status = "Data not available"; };
 
 
-                        html += "<div class='hstack px-2'>";
+                        html += "<div class='hstack px-1'>";
                             html += `<div class="p-1">
                                         <i class="fa-solid ${statusIcon} ${statusClass}"></i>
                                     </div>`;
