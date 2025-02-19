@@ -87,10 +87,11 @@
             const init = { method: "GET", headers: nwrHeader };
 
             // Make the request to Network Rail's API with the updated headers
-            fetch(
-                `https://api1.raildata.org.uk/1033-stations-experience-api---lifts-and-escalatorsv1_0/stations/${urlParams.get("station-id")}/lifts-and-escalators`,
-                init
-            )
+            const lifts_and_escalators = function() {
+                fetch(
+                    `https://api1.raildata.org.uk/1033-stations-experience-api---lifts-and-escalatorsv1_0/stations/${urlParams.get("station-id")}/lifts-and-escalators`,
+                    init
+                )
                 .then((response) => {
                     return response.json();
                 })
@@ -129,7 +130,9 @@
                     document.getElementById("nwr-alert").innerHTML = `<div class="alert alert-danger" role="alert">
                         ${error}`;
                 });
+            };
             
+            lifts_and_escalators();
 
         </script>
     </div>
