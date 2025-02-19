@@ -100,6 +100,10 @@
                             let callingPoint = departureRow.subsequentCallingPoints[0].callingPoint[cp];
                             finalStopScheduledTime = callingPoint.st;
                         }
+                        let coaches = '';
+                        if ( departureRow.formation != undefined ) {
+                            if ( departureRow.formation.coaches != undefined ) { coaches = `&bull; ${departureRow.formation.coaches.length} coaches`; }
+                        }
                         let start = new Date(`2000-01-01T${departureRow.std}Z`);
                         let end = new Date(`2000-01-01T${finalStopScheduledTime}Z`);
                         let duration = (end - start) / 60000;
@@ -120,7 +124,7 @@
                                     html += `<span class="fw-bold fs-5">${destination.locationName} (${destination.crs})</span>`;
                             html += `</div>`
                             html += `<div class="row justify-content-start">`;
-                                html += `<span class="small">${stops} stops &bull; ${duration} &bull; ${departureRow.operator}</span>`;
+                                html += `<span class="small">${stops} stops &bull; ${duration} &bull; ${departureRow.operator} ${coaches}</span>`;
                             html += `</div>`
                         html += `</div>`
                         html += `<hr>`;
