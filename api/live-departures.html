@@ -106,14 +106,14 @@
                         if ( duration > 60 ) { let hours = Math.floor(duration / 60); let minutes = duration % 60; duration = `${hours}h ${minutes}m`; }
                         else { duration = `${duration}m`; }
                         console.log('output:', departureRow.std, etd, platform, destination.locationName, destination.crs, stops, finalStopScheduledTime, departureRow.operator );
-                        html += `<div class='stack px-1'>`;
+                        html += `<div class='vstack px-1'>`;
                             html += `<div class="row justify-content-between w-100">`;
                                 html += `<div class="col-auto">`;
                                     html += `<span class="fw-bold">${departureRow.std} </span>`;
                                     html += `<span class="small ${status}">${etd}</span>`;
                                 html += `</div>`
                                 html += `<div class="col-auto text-end">`;
-                                    html += `<span>Platform <strong class="text-primary">${platform}</strong></span>`;
+                                    html += `Platform <span class="badge  text-bg-primary"> ${platform}</span>`;
                                 html += `</div>`
                             html += `</div>`
                             html += `<div class="row justify-content-start">`;
