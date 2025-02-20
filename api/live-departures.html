@@ -80,18 +80,22 @@
                         return response.json();
                     })
                     .then((json) => {
-                        // console.log("Success: ", json);
+                        //console.log("Success: ", json);
                         let html = "";
                         for ( let d in json.trainServices) 
                         {
-                            let currentTime = new Date();
-                            let departureRow = json.trainServices[d];
+                            const departureRow = json.trainServices[d];
+                            const destination = departureRow.destination[0];
                             let etd = departureRow.etd;
                             let status = etd === "On time" ? "text-success" : "text-warning";
-                            let destination = departureRow.destination[0];
                             let platform = departureRow.platform;
-                            let timeDifference = new Date(`2000-01-01T${departureRow.std}Z`).getMinutes() - currentTime.getMinutes();
                             let expired = null
+                            const currentTime = new Date();
+                            let timeTouse = etd === "On time" ? departureRow.std : departureRow.etd;
+                            const [hours, minutes] = timeTouse.split(':').map(Number);
+                            const scheduledTime = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), hours, minutes);
+                            let timeDifference = scheduledTime - currentTime;
+                            timeDifference = Math.floor(timeDifference / 60000);
                             if ( timeDifference < 0 ) { timeDifference = '0'; expired = `text-decoration-line-through`; }
                             if ( platform == undefined ) { platform = "-"; }
                             if (departureRow.isCancelled === true )
@@ -110,13 +114,14 @@
                             if ( departureRow.formation != undefined ) {
                                 if ( departureRow.formation.coaches != undefined ) { coaches = `&bull; ${departureRow.formation.coaches.length} coaches`; }
                             }
+                            
                             let start = new Date(`2000-01-01T${departureRow.std}Z`);
                             let end = new Date(`2000-01-01T${finalStopScheduledTime}Z`);
                             let duration = (end - start) / 60000;
                             if ( duration > 60 ) { let hours = Math.floor(duration / 60); let minutes = duration % 60; duration = `${hours}h ${minutes}m`; }
                             else { duration = `${duration}m`; }
-                            
-                            
+
+
                             html += `<div class='vstack px-1'>`;
                                 html += `<div class="row justify-content-between w-100">`;
                                     html += `<div class="col-auto">`;
