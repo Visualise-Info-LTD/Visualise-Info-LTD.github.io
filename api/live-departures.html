@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <div class="container p-0">
+    <div class="container py-2">
         <div id="nwr-alert"></div>
         <div id="nwr-msg" class="visually-hidden">
             <div id="nwr-response">
@@ -88,6 +88,7 @@
                             const destination = departureRow.destination[0];
                             let etd = departureRow.etd;
                             let status = etd === "On time" ? "text-success" : "text-warning";
+                            let cardBorder = etd === "On time" ? "border-light" : "border-warning";
                             let platform = departureRow.platform;
                             let expired = null, timeDifference = '';
                             const currentTime = new Date();
@@ -105,6 +106,7 @@
                             {
                                 status = "text-danger";
                                 etd = "Cancelled";
+                                cardBorder = "border-danger";
                             }
                             let stops = departureRow.subsequentCallingPoints[0].callingPoint.length;
                             let finalStopScheduledTime = null;
@@ -124,25 +126,26 @@
                             if ( duration > 60 ) { let hours = Math.floor(duration / 60); let minutes = duration % 60; duration = `${hours}h ${minutes}m`; }
                             else { duration = `${duration}m`; }
 
-
-                            html += `<div class='vstack px-1'>`;
-                                html += `<div class="row justify-content-between w-100">`;
-                                    html += `<div class="col-auto">`;
-                                        html += `<span class="fw-bold ${expired}">${departureRow.std} ${timeDifference} </span>`;
-                                        html += `<span class="small ${status}">${etd}</span>`;
+                            html += `<div class='card ${cardBorder} p-2'>`;
+                                html += `<div class='vstack px-1'>`;
+                                    html += `<div class="row justify-content-between w-100">`;
+                                        html += `<div class="col-auto">`;
+                                            html += `<span class="fw-bold ${expired}">${departureRow.std} ${timeDifference} </span>`;
+                                            html += `<span class="small ${status}">${etd}</span>`;
+                                        html += `</div>`
+                                        html += `<div class="col-auto text-end">`;
+                                            html += `Platform <span class="badge  text-bg-primary"> ${platform}</span>`;
+                                        html += `</div>`
                                     html += `</div>`
-                                    html += `<div class="col-auto text-end">`;
-                                        html += `Platform <span class="badge  text-bg-primary"> ${platform}</span>`;
+                                    html += `<div class="row justify-content-start">`;
+                                            html += `<span class="fw-bold fs-5 ${expired}">${destination.locationName} (${destination.crs})</span>`;
                                     html += `</div>`
-                                html += `</div>`
-                                html += `<div class="row justify-content-start">`;
-                                        html += `<span class="fw-bold fs-5 ${expired}">${destination.locationName} (${destination.crs})</span>`;
-                                html += `</div>`
-                                html += `<div class="row justify-content-start ">`;
-                                    html += `<span class="small text-black-50 ${expired}">${stops} stops &bull; ${duration} &bull; ${departureRow.operator} ${coaches}</span>`;
+                                    html += `<div class="row justify-content-start ">`;
+                                        html += `<span class="small text-black-50 ${expired}">${stops} stops &bull; ${duration} &bull; ${departureRow.operator} ${coaches}</span>`;
+                                    html += `</div>`
                                 html += `</div>`
                             html += `</div>`
-                            html += `<hr>`;
+                            html += `<br>`;
                         }
                         
                         document.getElementById("nwr-response").innerHTML = html;
