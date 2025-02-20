@@ -89,14 +89,17 @@
                             let etd = departureRow.etd;
                             let status = etd === "On time" ? "text-success" : "text-warning";
                             let platform = departureRow.platform;
-                            let expired = null
+                            let expired = null, timeDifference = '';
                             const currentTime = new Date();
-                            let timeTouse = etd === "On time" ? departureRow.std : departureRow.etd;
-                            const [hours, minutes] = timeTouse.split(':').map(Number);
-                            const scheduledTime = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), hours, minutes);
-                            let timeDifference = scheduledTime - currentTime;
-                            timeDifference = Math.floor(timeDifference / 60000);
-                            if ( timeDifference < 0 ) { timeDifference = '0'; expired = `text-decoration-line-through`; }
+                            if ( etd != "Delayed" && etd != "Cancelled" ) { 
+                                let latestDepatureTime = etd === "On time" ? departureRow.std : departureRow.etd;
+                                const [hours, minutes] = latestDepatureTime.split(':').map(Number);
+                                const scheduledTime = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), hours, minutes);
+                                timeDifference = scheduledTime - currentTime;
+                                timeDifference = Math.floor(timeDifference / 60000);
+                                if ( timeDifference < 0 ) { timeDifference = '0'; expired = `text-decoration-line-through`; }
+                               timeDifference = ` in ${timeDifference} mins`;
+                            }
                             if ( platform == undefined ) { platform = "-"; }
                             if (departureRow.isCancelled === true )
                             {
@@ -125,7 +128,7 @@
                             html += `<div class='vstack px-1'>`;
                                 html += `<div class="row justify-content-between w-100">`;
                                     html += `<div class="col-auto">`;
-                                        html += `<span class="fw-bold ${expired}">${departureRow.std} in ${timeDifference} mins </span>`;
+                                        html += `<span class="fw-bold ${expired}">${departureRow.std} ${timeDifference} </span>`;
                                         html += `<span class="small ${status}">${etd}</span>`;
                                     html += `</div>`
                                     html += `<div class="col-auto text-end">`;
