@@ -90,7 +90,7 @@
                             let status = etd === "On time" ? "text-success" : "text-warning";
                             let cardBorder = etd === "On time" ? "border-light" : "border-warning";
                             let platform = departureRow.platform;
-                            let expired = null, timeDifference = '';
+                            let expired = null, timeDifference = '', stops = 0, finalStopScheduledTime = null, coaches = '', cancelReason = null, duration = 0;
                             const currentTime = new Date();
                             if ( etd != "Delayed" && etd != "Cancelled" ) { 
                                 let latestDepatureTime = etd === "On time" ? departureRow.std : departureRow.etd;
@@ -99,30 +99,32 @@
                                 timeDifference = scheduledTime - currentTime;
                                 timeDifference = Math.floor(timeDifference / 60000);
                                 if ( timeDifference < 0 ) { timeDifference = '0'; expired = `text-decoration-line-through`; }
-                               timeDifference = ` in ${timeDifference} mins`;
+                                timeDifference = ` in ${timeDifference} mins`;
                             }
+                            console.log(departureRow)
                             if ( platform == undefined ) { platform = "-"; }
+                            if ( departureRow.formation != undefined ) {
+                                if ( departureRow.formation.coaches != undefined ) { coaches = `&bull; ${departureRow.formation.coaches.length} coaches`; }
+                            }
                             if (departureRow.isCancelled === true )
                             {
                                 status = "text-danger";
                                 etd = "Cancelled";
                                 cardBorder = "border-danger";
+                                cancelReason = departureRow.cancelReason;
                             }
-                            let stops = departureRow.subsequentCallingPoints[0].callingPoint.length;
-                            let finalStopScheduledTime = null;
-                            for ( let cp in departureRow.subsequentCallingPoints[0].callingPoint) 
-                            {
-                                let callingPoint = departureRow.subsequentCallingPoints[0].callingPoint[cp];
-                                finalStopScheduledTime = callingPoint.st;
+                            else {
+                                stops = departureRow.subsequentCallingPoints[0].callingPoint.length;
+                                for ( let cp in departureRow.subsequentCallingPoints[0].callingPoint) 
+                                {
+                                    let callingPoint = departureRow.subsequentCallingPoints[0].callingPoint[cp];
+                                    finalStopScheduledTime = callingPoint.st;
+                                }
+                                let start = new Date(`2000-01-01T${departureRow.std}Z`);
+                                let end = new Date(`2000-01-01T${finalStopScheduledTime}Z`);
+                                duration = (end - start) / 60000;
                             }
-                            let coaches = '';
-                            if ( departureRow.formation != undefined ) {
-                                if ( departureRow.formation.coaches != undefined ) { coaches = `&bull; ${departureRow.formation.coaches.length} coaches`; }
-                            }
-                            
-                            let start = new Date(`2000-01-01T${departureRow.std}Z`);
-                            let end = new Date(`2000-01-01T${finalStopScheduledTime}Z`);
-                            let duration = (end - start) / 60000;
+
                             if ( duration > 60 ) { let hours = Math.floor(duration / 60); let minutes = duration % 60; duration = `${hours}h ${minutes}m`; }
                             else { duration = `${duration}m`; }
 
@@ -139,10 +141,13 @@
                                     html += `</div>`
                                     html += `<div class="row justify-content-start">`;
                                             html += `<span class="fw-bold fs-5 ${expired}">${destination.locationName} (${destination.crs})</span>`;
+                                            if ( cancelReason != null ) { html += `<span class="small text-danger">${cancelReason}</span>`; }
                                     html += `</div>`
+                                    if ( cancelReason == null ) {
                                     html += `<div class="row justify-content-start ">`;
                                         html += `<span class="small text-black-50 ${expired}">${stops} stops &bull; ${duration} &bull; ${departureRow.operator} ${coaches}</span>`;
                                     html += `</div>`
+                                    }
                                 html += `</div>`
                             html += `</div>`
                             html += `<br>`;
