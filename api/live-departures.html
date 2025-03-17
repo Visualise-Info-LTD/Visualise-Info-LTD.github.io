@@ -101,7 +101,6 @@
                                 if ( timeDifference < 0 ) { timeDifference = '0'; expired = `text-decoration-line-through`; }
                                 timeDifference = ` in ${timeDifference} mins`;
                             }
-                            console.log(departureRow)
                             if ( platform == undefined ) { platform = "-"; }
                             if ( departureRow.formation != undefined ) {
                                 if ( departureRow.formation.coaches != undefined ) { coaches = `&bull; ${departureRow.formation.coaches.length} coaches`; }
