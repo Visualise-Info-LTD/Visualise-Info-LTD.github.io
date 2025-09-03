@@ -1,700 +1,1816 @@
-<html lang="en" data-bs-theme="dark">
-    <head>
-    <meta name="viewport" content="initial-scale=1.0">
-    <title>Visualise Info</title>
-    <meta name="description" content="Visualise Info">
-    <meta name="keywords" content="Visualise Info">
-    <meta charset="utf-8">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FFZFJ3ELL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
 
-      gtag('config', 'G-1FFZFJ3ELL');
-    </script>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Visualise Info</title>
+  <meta name="description"
+    content="Complex Data at a Glance. Bridging the digital gap between data and decision in Enterprise Asset Management (EAM) through 3D visualisation, IoT, and AI.">
+  <meta name="keywords"
+    content="Visualise Info, enterprise asset management, IBM Maximo, IoT data, 3D visualisation, digital twin, facilities management, asset monitoring, RCA, predictive maintenance, event storm management, Helios, IoTHub, InfoHub, LiDAR, photogrammetry, data integration, edge processing, AI readiness, root cause analysis, event storm handling, alert correlation, continuous tuning">
 
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <link rel="icon" href="favicon.png" type="image/x-icon">
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <script src="https://kit.fontawesome.com/f14340b491.js" crossorigin="anonymous"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
 
-    <!-- <link rel="stylesheet" href="https://wowjs.uk/css/libs/animate.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://wowjs.uk/dist/wow.min.js"></script> -->
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/resources/animate.css">
-    <link rel="stylesheet" href="assets/resources/bootstrap.min.css">
-    <script src="assets/resources/bootstrap.bundle.min.js"></script>
-    <script src="assets/resources/jquery-3.7.1.min.js"></script>
-    <script src="assets/resources/wow.min.js"></script>
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet" href="styles.css">
-    <script>
-      (function(h,o,t,j,a,r){
-          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:3904011,hjsv:6};
-          a=o.getElementsByTagName('head')[0];
-          r=o.createElement('script');r.async=1;
-          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-          a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
-    
-  </head>
-  <body>
-    <main class="wow fadeIn" data-wow-duration="1s">
-      
-      <nav class="navbar navbar-expand-md bg-vi-black fixed-top border-bottom" data-bs-theme="dark">
-        <div class="container py-2">
-          <a class="navbar-brand d-md-none" href="index.html">
-            <img class="d-block" src="logo.png" alt="" height="32">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end bg-vi-black" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-            <div class="offcanvas-header">
-              <a href="index.html"><img class="d-block mx-auto" src="logo.png" alt="" height="32"></a>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <div class="justify-content-start d-none d-sm-block">
-                <a href="index.html"><img class="d-block mx-auto" src="logo.png" alt="" height="32"></a>
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Contact Scripts -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "MSsDfsEz-GrsN7D88",
+      });
+    })();
+  </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        emailjs.sendForm('service_onegvkv', 'template_49v7n0y', this)
+          .then(() => {
+            //hide contact-form and show contactSuccess
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('contactSuccess').style.display = 'block';
+          }, (error) => {
+            //hide contact-form and show contactError
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('contactError').style.display = 'block';
+          });
+      });
+    }
+  </script>
+  <script>
+      (function (h, o, t, j, a, r) {
+        h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+        h._hjSettings = { hjid: 3904011, hjsv: 6 };
+        a = o.getElementsByTagName('head')[0];
+        r = o.createElement('script'); r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+  </script>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div
+      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img class='companyLogo' src="assets/img/logo.png" alt="">
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#platform">Platform</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#why-visualise-info">Why Visualise Info?</a></li>
+          <li><a href="#partner">Partner Program</a></li>
+          <li><a href="#about">Company</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#partners">Partner Program</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a href="resources.html#video-library">Video Library</a></li>
+              <li><a href="resources.html#white-papers">White Papers</a></li>
+              <li><a href="resources.html#case-studies">Case Studies</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a href="#about">About</a></li>
+            </ul>
+          </li> -->
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#contact">Contact Us</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+
+              <h1 class="display-1 fw-bold mb-3" style="font-size: 5rem;">
+                Complex Data
+                <br /> at a
+                <span class="accent-text">Glance</span>
+              </h1>
+
+              <blockquote class="blockquote fs-4 mb-3">
+                Bridging the digital gap between data and decision in Enterprise Asset Management (EAM) through 3D
+                visualisation, IoT, and AI.
+              </blockquote>
+
+              <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary me-0 me-sm-2 mx-1">Contact Us</a>
+                <!-- <a href="https://youtu.be/pnPIh2j5Q1o?si=76WUH7q68ED6Zk1r" class="btn btn-link mt-2 mt-sm-0 glightbox">
+                  <i class="bi bi-play-circle me-1"></i>
+                  Play Video
+                </a> -->
               </div>
-              <ul class="navbar-nav flex-grow-1 justify-content-end between">
-                <li class="nav-item active"><a class="nav-link nav-hover-blue text-body fw-bold" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link nav-hover-blue fw-semibold" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link nav-hover-blue fw-semibold" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link nav-hover-blue fw-semibold" href="book-a-demo.html">Book a Demo</a></li>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="hero-image" data-aos="zoom-in-up" data-aos-delay="300">
+              <img src="assets/img/hero-1.svg" alt="Hero Image" class="img-fluid">
+            </div>
+          </div>
+
+          <div class="col-lg-12 embed-responsive p-2 p-md-0" data-aos="zoom-in-up">
+            <div class="embed-responsive">
+              <video autoplay playsinline muted loop controls width="100%" class="rounded-5 shadow">
+                <source src="assets/video/hero.mp4" width="100%" height="742" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="col-lg-12" data-aos="fade-up"></div>
+          <div id="call-to-action" class="call-to-action p-0 py-5">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="row content justify-content-center align-items-center position-relative">
+                <div class="col-lg-10 mx-auto text-center">
+                  <h6 class="mx-auto text-white display-6 fs-3">Introducing Helios:</h6>
+                  <h1 class="text-white display-2 fw-semibold mb-4">The Platform Transforming Enterprise Asset
+                    Management</h1>
+                  <div class="row justify-content-center align-items-center flex-row my-5 visually-hidden">
+                    <div class="col-lg-3 p-1">
+                      <div class="card p-3">
+                        <span class="text-white p-2 fs-3 fw-semibold">EAM Systems <br /> & IoT Sensors</span>
+                      </div>
+                    </div>
+                    <div class="col-lg-1 p-1">
+                      <span class="text-white p-2 fs-1 fw-semibold">+</span>
+                    </div>
+                    <div class="col-lg-3 p-1">
+                      <div class="card p-3">
+                        <span class="text-white p-2 fs-3 fw-semibold">Helios <br /> Platform</span>
+                      </div>
+                    </div>
+                    <div class="col-lg-1 p-1">
+                      <span class="text-white p-2 fs-1 fw-semibold">=</span>
+                    </div>
+                    <div class="col-lg-4 p-1">
+                      <div class="card p-3">
+                        <span class="text-white p-2 fs-3 fw-semibold">Extended <br /> Capabilities</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="fs-4">
+                    Helios by Visualise Info is a first-of-its-kind software platform that unites Internet of Things
+                    (IoT) sensor data, Enterprise Asset Management (EAM) systems, and 3D digital twin technology into a
+                    single intuitive interface. The result is clear, context-rich insights delivered in real time,
+                    turning raw data into the right decisions at the right moment.
+                  </p>
+                  <span class="opacity-50 text-small">
+                    Helios works with IBM, SalesForce, SAP, IFS and more...
+                  </span>
+                </div>
+
+                <!-- Abstract Background Elements -->
+                <div class="shape shape-1">
+                  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M47.1,-57.1C59.9,-45.6,68.5,-28.9,71.4,-10.9C74.2,7.1,71.3,26.3,61.5,41.1C51.7,55.9,35,66.2,16.9,69.2C-1.3,72.2,-21,67.8,-36.9,57.9C-52.8,48,-64.9,32.6,-69.1,15.1C-73.3,-2.4,-69.5,-22,-59.4,-37.1C-49.3,-52.2,-32.8,-62.9,-15.7,-64.9C1.5,-67,34.3,-68.5,47.1,-57.1Z"
+                      transform="translate(100 100)"></path>
+                  </svg>
+                </div>
+
+                <div class="shape shape-2">
+                  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M41.3,-49.1C54.4,-39.3,66.6,-27.2,71.1,-12.1C75.6,3,72.4,20.9,63.3,34.4C54.2,47.9,39.2,56.9,23.2,62.3C7.1,67.7,-10,69.4,-24.8,64.1C-39.7,58.8,-52.3,46.5,-60.1,31.5C-67.9,16.4,-70.9,-1.4,-66.3,-16.6C-61.8,-31.8,-49.7,-44.3,-36.3,-54C-22.9,-63.7,-8.2,-70.6,3.6,-75.1C15.4,-79.6,28.2,-58.9,41.3,-49.1Z"
+                      transform="translate(100 100)"></path>
+                  </svg>
+                </div>
+
+                <!-- Dot Pattern Groups -->
+                <div class="dots dots-1">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <pattern id="dot-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                      <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+                    </pattern>
+                    <rect width="100" height="100" fill="url(#dot-pattern)"></rect>
+                  </svg>
+                </div>
+
+                <div class="dots dots-2">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <pattern id="dot-pattern-2" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                      <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+                    </pattern>
+                    <rect width="100" height="100" fill="url(#dot-pattern-2)"></rect>
+                  </svg>
+                </div>
+
+                <div class="shape shape-3">
+                  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M43.3,-57.1C57.4,-46.5,71.1,-32.6,75.3,-16.2C79.5,0.2,74.2,19.1,65.1,35.3C56,51.5,43.1,65,27.4,71.7C11.7,78.4,-6.8,78.3,-23.9,72.4C-41,66.5,-56.7,54.8,-65.4,39.2C-74.1,23.6,-75.8,4,-71.7,-13.2C-67.6,-30.4,-57.7,-45.2,-44.3,-56.1C-30.9,-67,-15.5,-74,0.7,-74.9C16.8,-75.8,33.7,-70.7,43.3,-57.1Z"
+                      transform="translate(100 100)"></path>
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+
+          </div><!-- /Call To Action Section -->
+
+        </div><!-- /Row -->
+
+      </div><!-- /Container -->
+
+    </section><!-- /Hero Section -->
+
+    <div style="overflow: hidden;">
+      <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
+        style="fill: #f3f9ff; width: 100%; height: 4em; transform: rotate(180deg) scaleX(-1);">
+        <path d="M1200 120L0 16.48V0h1200v120z" />
+      </svg>
+    </div>
+
+    <!-- Banner Section -->
+    <section class="call-to-action-2 section dark-background visually-hidden">
+      <div class="container">
+
+        <div class="row justify-content-center p-2 p-md-0" data-aos="fade-in" data-aos-delay="100">
+          <div class="col-12">
+            <h2 class="fs-2 fw-normal text-center">
+              At Visualise Info, we bridge the gap between complex enterprise systems and the people who use
+              them. Our
+              visual-first platform lets you navigate your physical environment, access data in context, and take
+              action, all through an intuitive 3D interface.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- solutions Section -->
+    <section id="solutions" class="solutions section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title mb-5" data-aos="fade-in" style="padding-bottom: 0;">
+        <h2>Key Advantages of Helios</h2>
+        <h5 class="fw-light">Designed from the ground up for visual asset management, Helios offers unique
+          capabilities that set
+          it apart from traditional solutions.</h5>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-3" data-aos="fade-up">
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/solutions-1.svg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center " data-aos="fade-up" data-aos-delay="200">
+            <div class="solutions-content ps-0 ps-lg-3">
+              <ul>
+                <li>
+                  <i class="bi bi-stars"></i>
+                  <div>
+                    <h4>First-of-its-kind Platform</h4>
+                    <p class="text-body-secondary">The only platform purpose-built to visualise both enterprise asset
+                      data and IoT data together in one place.</p>
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-box"></i>
+                  <div>
+                    <h4>IoT + 3D Integration</h4>
+                    <p class="text-body-secondary">Helios overlays live IoT sensor readings onto interactive 3D digital
+                      twins, enabling proactive monitoring and rapid root cause analysis (RCA).</p>
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-shield-check "></i>
+                  <div>
+                    <h4>Future-Proofed EAM</h4>
+                    <p class="text-body-secondary">Use real-time data and root cause analysis to anticipate issues
+                      before they escalate, reducing
+                      downtime and maintenance costs.</p>
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-person-bounding-box"></i>
+                  <div>
+                    <h4>Context-Aware Intelligence</h4>
+                    <p class="text-body-secondary">Helios dynamically adjusts the data displayed based on each user's
+                      location and role. Field engineers, inspectors, and executives each see exactly what they need, in
+                      context and in real time.</p>
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-layers"></i>
+                  <div>
+                    <h4>Event Storm Management</h4>
+                    <p class="text-body-secondary">Built-in tools cut through alert noise during “event storms” (sudden
+                      floods of sensor alerts), isolating the critical issues and surfacing only actionable insights for
+                      predictive maintenance at scale.</p>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
         </div>
-      </nav>
-      <br class="my-5">
-      <br>
-      <div class="card rounded-0 border-0 card-cover bg-hero bg-hero-main pt-5">
-        <div class="pt-5 py-3 pb-1 pt-5 text-center wow fadeIn">
-            <h5 class="container display-1 fw-bold pt-4 wow zoomIn">Complex Data at a&nbsp;<span class="animated-text-gradient">Glance</span></h5>
-            <div class="col-lg-6 mx-auto">
-              <p class="text-body-secondary fw-semibold fs-3 mb-4">The transformative, versatile platform engineered to maximize value from your Enterprise Asset Management software investment.</p>
+
+        <div class="row gy-3 mt-3" data-aos="fade-up">
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <!-- <div class="row content justify-content-center align-items-center position-relative">
+              <div class="col-lg-10 mx-auto text-center">
+                <h1 class="accent-text display-5 mb-4">Visualise Info is a cutting-edge asset visualisation <br /> and
+                  intelligence platform.</h1>
+                <p class="fs-5 mb-4">
+                  We augment Enterprise Asset Management (EAM) software with a modern, user-friendly 3D interface. It
+                  seamlessly
+                  integrates with EAM, ingesting IoT sensor data and asset information to create a “single pane of
+                  glass”
+                  view
+                  of operations. Users can navigate 3D digital twins of their facilities and assets, seeing real-time
+                  data
+                  (e.g. sensor readings, alerts, work orders) in context.
+                </p>
+              </div>
+
+            </div> -->
+
           </div>
-        </div>
-        <div class="container my-5 mt-5 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" id="videoContainer">
-          <div class="row align-items-center justify-content-center px-3">
-          <video autoplay playsinline muted loop controls class="position-relative border p-0 rounded-2">
-            <source src="assets/hero-lg-subtitles.mp4" width="1248" height="735" type="video/mp4">
-            Your browser does not support the embeded videos.
-          </video>
-        </div>
-        <div class="container text-center mt-5"> <a class="btn btn-cta btn-primary rounded-5 text-center" href="book-a-demo.html#book-now">Book a Demo</a></div>
         </div>
       </div>
-      <br>
-      <div class="vi-hero-red shadow-xl py-4 top-header border-bottom">
-      <div class="container py-5">
-        <div class="row align-items-center g-5 py-5">
-          <div class="col text-center">
-            <h1 class="mobileRemoveD5 display-5 fw-semibold text-body-emphasis lh-1">Visualise Info is a gateway to operations and maintenance efficiency, business intelligence, and user-friendly customizations.</h1>
+
+    </section>
+
+    <div style="overflow: hidden;">
+      <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
+        style="fill: #f3f9ff; width: 100%; height: 4em; transform: scaleX(-1);">
+        <path d="M1200 120L0 16.48V0h1200v120z" />
+      </svg>
+    </div><!-- /solutions Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section pt-5 visually-hidden invisible">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row content justify-content-center align-items-center position-relative">
+          <div class="col-lg-10 mx-auto text-center">
+            <h2 class="text-white display-5 mb-4">Visualise Info is a cutting-edge asset visualisation <br /> and
+              intelligence
+              platform.</h2>
+            <p class="fs-5 mb-4">
+              We augment Enterprise Asset Management (EAM) software with a modern, user-friendly 3D interface. It
+              seamlessly
+              integrates with EAM, ingesting IoT sensor data and asset information to create a “single pane of glass”
+              view
+              of operations. Users can navigate 3D digital twins of their facilities and assets, seeing real-time data
+              (e.g. sensor readings, alerts, work orders) in context.
+            </p>
+            <!-- <a href="#" class="btn btn-cta">Contact Us</a> -->
+          </div>
+
+          <!-- Abstract Background Elements -->
+          <div class="shape shape-1">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M47.1,-57.1C59.9,-45.6,68.5,-28.9,71.4,-10.9C74.2,7.1,71.3,26.3,61.5,41.1C51.7,55.9,35,66.2,16.9,69.2C-1.3,72.2,-21,67.8,-36.9,57.9C-52.8,48,-64.9,32.6,-69.1,15.1C-73.3,-2.4,-69.5,-22,-59.4,-37.1C-49.3,-52.2,-32.8,-62.9,-15.7,-64.9C1.5,-67,34.3,-68.5,47.1,-57.1Z"
+                transform="translate(100 100)"></path>
+            </svg>
+          </div>
+
+          <div class="shape shape-2">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M41.3,-49.1C54.4,-39.3,66.6,-27.2,71.1,-12.1C75.6,3,72.4,20.9,63.3,34.4C54.2,47.9,39.2,56.9,23.2,62.3C7.1,67.7,-10,69.4,-24.8,64.1C-39.7,58.8,-52.3,46.5,-60.1,31.5C-67.9,16.4,-70.9,-1.4,-66.3,-16.6C-61.8,-31.8,-49.7,-44.3,-36.3,-54C-22.9,-63.7,-8.2,-70.6,3.6,-75.1C15.4,-79.6,28.2,-58.9,41.3,-49.1Z"
+                transform="translate(100 100)"></path>
+            </svg>
+          </div>
+
+          <!-- Dot Pattern Groups -->
+          <div class="dots dots-1">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="dot-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+              </pattern>
+              <rect width="100" height="100" fill="url(#dot-pattern)"></rect>
+            </svg>
+          </div>
+
+          <div class="dots dots-2">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="dot-pattern-2" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+              </pattern>
+              <rect width="100" height="100" fill="url(#dot-pattern-2)"></rect>
+            </svg>
+          </div>
+
+          <div class="shape shape-3">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M43.3,-57.1C57.4,-46.5,71.1,-32.6,75.3,-16.2C79.5,0.2,74.2,19.1,65.1,35.3C56,51.5,43.1,65,27.4,71.7C11.7,78.4,-6.8,78.3,-23.9,72.4C-41,66.5,-56.7,54.8,-65.4,39.2C-74.1,23.6,-75.8,4,-71.7,-13.2C-67.6,-30.4,-57.7,-45.2,-44.3,-56.1C-30.9,-67,-15.5,-74,0.7,-74.9C16.8,-75.8,33.7,-70.7,43.3,-57.1Z"
+                transform="translate(100 100)"></path>
+            </svg>
           </div>
         </div>
+
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- Platform features Section -->
+    <section id="platform" class="features section">
+
+      <!-- <div class="container">
+        <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+          <h2>Visualise Info is a cutting-edge asset visualisation and intelligence platform<span
+              class="accent-text">.</span></h2>
+          <p class="text-body-secondary">
+            We augment Enterprise Asset Management (EAM) software with a modern, user-friendly 3D interface. It
+            seamlessly
+            integrates with EAM, ingesting IoT sensor data and asset information to create a “single pane of glass” view
+            of operations. Users can navigate 3D digital twins of their facilities and assets, seeing real-time data
+            (e.g. sensor readings, alerts, work orders) in context.
+          </p>
+        </div>
+      </div> -->
+      <!-- Section Title -->
+      <div class="container section-title mt-5" data-aos="fade-in">
+        <h2>One Platform<span class="accent-text">.</span> Three Powerful Products<span class="accent-text">.</span>
+        </h2>
+        <h5 class="fw-light">Discover the core modules that will transform your operations <br /> and let data
+          flow effortlessly from sensor to insight.</h5>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="d-flex justify-content-center visually-hidden invisible">
+
+          <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
+
+            <li class="nav-item">
+              <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+                <h4>Helios Viewer</h4>
+              </a>
+            </li><!-- End tab nav item -->
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+                <h4>IoTHub</h4>
+              </a><!-- End tab nav item -->
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+                <h4>InfoHub</h4>
+              </a>
+            </li><!-- End tab nav item -->
+
+          </ul>
+
+        </div>
+
+        <div class="tab-content p-2 p-md-0" data-aos="fade-up" data-aos-delay="200">
+          <div class="tab-pane active show" id="features-tab-1" data-aos="fade-up">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>3D Viewer</h3>
+                <p class="lead mb-4">
+                  Our immersive interface combines visualisation with information. This “single pane of glass” approach
+                  provides users with an interactive environment where data from multiple sources is integrated,
+                  geolocated and visualised at the point of need, all in one intuitive view.
+                </p>
+                <ul>
+                  <li>
+                    <h5 class="accent-text"><i class="bi bi-dash-lg"></i>Simplify Complex Systems Visually</h5>
+                    <p class="ms-4">Break down silos by visualising tasks, assets, and sensors through one unified,
+                      spatial interface that makes Enterprise Asset Management systems easier to understand and interact
+                      with.</p>
+                  </li>
+                  <li>
+                    <h5 class="accent-text"><i class="bi bi-dash-lg"></i>A User Interface for User Experience
+                    </h5>
+                    <p class="ms-4">Empower your workforce with a user interface that is highly intuitive and
+                      user-friendly. Make it easier for more of your workforce to be able to interact with data relevant
+                      to their role and reduce the training time required for staff.</p>
+                  </li>
+                  <li>
+                    <h5 class="accent-text"><i class="bi bi-dash-lg"></i>Built on LiDAR and Panoramic Imagery</h5>
+                    <p class="ms-4">Experience a recognisable digital twin of your facilities powered by spatial scans
+                      and integrated with real-time asset and IoT data within the environment itself.</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/platform-1.svg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane active show" id="features-tab-2" data-aos="fade-up">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-2 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>IoTHub</h3>
+                <p class="lead mb-4">
+                  The IoTHub collects, processes, and standardises data from a wide range of sources, focusing on IoT
+                  sensors including LoRaWAN, BMS, and other connected devices. It delivers real-time insights and
+                  continuous monitoring across your physical environment.
+                </p>
+                <ul>
+                  <li>
+                    <h5 class="accent-text"><i class="bi bi-dash-lg"></i>Easily configurable Data Flows with an
+                      Intuitive Interface</h5>
+                    <p class="ms-4">Easily configure how data is processed and managed using a flexible, visual data
+                      flows
+                      tailored
+                      for operational teams.</p>
+                  </li>
+                  <li>
+                    <h5 class="accent-text"><i class="bi bi-dash-lg"></i>Ingest, Standardise, and Process in Real-Time
+                    </h5>
+                    <p class="ms-4">Data is continuously collected, cleaned, and made instantly available for
+                      dashboards,
+                      alerts,
+                      or external AI powered analytics.</p>
+                  </li>
+                  <li>
+                    <h5 class="accent-text"><i class="bi bi-dash-lg"></i>Always-On Data Listening and Processing</h5>
+                    <p class="ms-4">Once configured, data streams run continuously in the background, ensuring
+                      round-the-clock
+                      responsiveness and consistent data readiness.</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-1 text-center">
+                <img src="assets/img/platform-2.svg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane active show" id="features-tab-3" data-aos="fade-up">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>InfoHub</h3>
+                <p class="lead mb-4">
+                  The InfoHub brings all your site data into one place through smart, customisable dashboards. Users
+                  can
+                  build their own views, monitor live conditions, and surface meaningful insights across assets,
+                  sensors, and systems.
+                </p>
+                <ul>
+                  <li>
+                    <h5 class="accent-text"><i class="bi bi-dash-lg"></i>Build personalised dashboards with ease</h5>
+                    <p class="ms-4">Select, drag, and resize widgets to create tailored views that match your role,
+                      site, or
+                      daily
+                      responsibilities.</p>
+                  </li>
+                  <li>
+                    <h5 class="accent-text"><i class="bi bi-dash-lg"></i>Monitor what matters at a glance
+                    </h5>
+                    <p class="ms-4">Combine viewer, asset, sensor, and external data into one clear, real-time interface
+                      for
+                      quick
+                      and meaningful insights.</p>
+                  </li>
+                  <li>
+                    <h5 class="accent-text"><i class="bi bi-dash-lg"></i>Designed for every type of user, not just
+                      specialists</h5>
+                    <p class="ms-4">The InfoHub presents complex data in a way that&apos;s easy to understand, helping
+                      everyone
+                      stay
+                      informed without switching between systems.</p>
+                  </li>
+                </ul>
+
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/platform-3.svg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+        </div>
+      </div>
+    </section><!-- /Products Section -->
+
+    <div data-aos="fade-up">
+      <div style="overflow: hidden;">
+        <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
+          style="fill: #f3f9ff; width: 100%; height: 4em; transform: rotate(180deg) scaleX(1);">
+          <path d="M1200 120L0 16.48V0h1200v120z" />
+        </svg>
+      </div>
+
+      <section id="products" class="features section p-4 light-background">
+        <div class="container ">
+          <div class="justify-content-center my-2">
+            <h2 class="bold fs-1">Built to Simplify, Designed to Scale<span class="accent-text">.</span></h2>
+            <h3 class="fs-3 accent-text">Change how enterprise users interact with complex systems.</h3>
+            <h5 class="fw-normal mt-4 fs-4">
+              From onboarding to day-to-day operations, our visual-first platform captures, processes, and delivers
+              every
+              piece of asset information as actionable intelligence. Reducing friction, improving clarity, and
+              empowering
+              faster decisions across a single facility or an entire global portfolio.
+            </h5>
+          </div>
+
+        </div>
+
+      </section><!-- /Products Section -->
+      <div style="overflow: hidden;">
+        <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
+          style="fill: #f3f9ff; width: 100%; height: 4em; transform: scaleX(1);">
+          <path d="M1200 120L0 16.48V0h1200v120z" />
+        </svg>
       </div>
     </div>
-    <div class="container pt-5">
-      <div class="row align-items-center g-5 py-5">
-        <div class="col-lg-12 col-md-6 text-center">
-          <h1 class="display-5 fw-semibold text-body-emphasis lh-1 mb-3">Our solution is an innovative extension of EAM Software,<br> like IBM Maximo®
-          </h1>
-          <p class="fs-3 text-body-secondary">What makes Visualise Info unique? </p>
-        </div>
 
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section pt-5 visually-hidden invisible">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row content justify-content-center align-items-center position-relative">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="display-4 mb-4">See the platform in action</h2>
+            <p class="mb-4">Discover how Visualise Info can simplify complex data, unify your asset and sensor
+              systems,
+              and give your team the clarity to act fast.</p>
+            <a href="#" class="btn btn-cta">Contact Us</a>
+          </div>
+
+          <!-- Abstract Background Elements -->
+          <div class="shape shape-1">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M47.1,-57.1C59.9,-45.6,68.5,-28.9,71.4,-10.9C74.2,7.1,71.3,26.3,61.5,41.1C51.7,55.9,35,66.2,16.9,69.2C-1.3,72.2,-21,67.8,-36.9,57.9C-52.8,48,-64.9,32.6,-69.1,15.1C-73.3,-2.4,-69.5,-22,-59.4,-37.1C-49.3,-52.2,-32.8,-62.9,-15.7,-64.9C1.5,-67,34.3,-68.5,47.1,-57.1Z"
+                transform="translate(100 100)"></path>
+            </svg>
+          </div>
+
+          <div class="shape shape-2">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M41.3,-49.1C54.4,-39.3,66.6,-27.2,71.1,-12.1C75.6,3,72.4,20.9,63.3,34.4C54.2,47.9,39.2,56.9,23.2,62.3C7.1,67.7,-10,69.4,-24.8,64.1C-39.7,58.8,-52.3,46.5,-60.1,31.5C-67.9,16.4,-70.9,-1.4,-66.3,-16.6C-61.8,-31.8,-49.7,-44.3,-36.3,-54C-22.9,-63.7,-8.2,-70.6,3.6,-75.1C15.4,-79.6,28.2,-58.9,41.3,-49.1Z"
+                transform="translate(100 100)"></path>
+            </svg>
+          </div>
+
+          <!-- Dot Pattern Groups -->
+          <div class="dots dots-1">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="dot-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+              </pattern>
+              <rect width="100" height="100" fill="url(#dot-pattern)"></rect>
+            </svg>
+          </div>
+
+          <div class="dots dots-2">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="dot-pattern-2" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+              </pattern>
+              <rect width="100" height="100" fill="url(#dot-pattern-2)"></rect>
+            </svg>
+          </div>
+
+          <div class="shape shape-3">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M43.3,-57.1C57.4,-46.5,71.1,-32.6,75.3,-16.2C79.5,0.2,74.2,19.1,65.1,35.3C56,51.5,43.1,65,27.4,71.7C11.7,78.4,-6.8,78.3,-23.9,72.4C-41,66.5,-56.7,54.8,-65.4,39.2C-74.1,23.6,-75.8,4,-71.7,-13.2C-67.6,-30.4,-57.7,-45.2,-44.3,-56.1C-30.9,-67,-15.5,-74,0.7,-74.9C16.8,-75.8,33.7,-70.7,43.3,-57.1Z"
+                transform="translate(100 100)"></path>
+            </svg>
+          </div>
+        </div>
 
       </div>
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="solutions section">
+
+      <!-- Section Title -->
+      <div class="container section-title mb-4" data-aos="fade-up" style="padding-bottom: 0;">
+        <h2>How it Works<span class="accent-text">.</span></h2>
+        <p class="fw-normal mt-4 fs-5">
+          Helios creates a clear, intuitive data journey, taking you from the initial sensor signal to a
+          actionable visual insight in three simple steps:
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container pb-5">
+
+        <div class="row align-items-center mb-5" data-aos="fade-up">
+
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/how-it-works-1.svg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="solutions-content ps-0 ps-lg-3">
+              <ul>
+                <li>
+                  <i class="shadow-none bi bi-1-circle"></i>
+                  <div>
+                    <h3>Ingest<span class="accent-text">.</span></h3>
+                    <p class="fs-5 text-body-secondary">Harvests live data from IoT networks and sensors in the field.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <i class="shadow-none bi bi-2-circle"></i>
+                  <div>
+                    <h3>Process<span class="accent-text">.</span></h3>
+                    <p class="fs-5 text-body-secondary">Collects, collates, normalises, and enriches the data in real
+                      time.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <i class="shadow-none bi bi-3-circle"></i>
+                  <div>
+                    <h3>Visualise<span class="accent-text">.</span></h3>
+                    <p class="fs-5 text-body-secondary">Delivers geo-referenced insights directly into the 3D View, so
+                      mobile teams and executives alike can act with confidence.</p>
+                  </div>
+                </li>
+                <li class="pt-1">
+                  <i class="shadow-none bi bi-trophy"></i>
+                  <div>
+                    <h3>The Result<span class="accent-text">.</span></h3>
+                    <p class="fs-5 text-body-secondary">A truly mobile, context-aware experience that bridges the gap
+                      between data and decision-making.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row gy-3 mt-3" data-aos="fade-up">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+              <!-- <div class="row content justify-content-center align-items-center position-relative">
+              <div class="col-lg-10 mx-auto text-center">
+                <h1 class="accent-text display-5 mb-4">Visualise Info is a cutting-edge asset visualisation <br /> and
+                  intelligence platform.</h1>
+                <p class="fs-5 mb-4">
+                  We augment Enterprise Asset Management (EAM) software with a modern, user-friendly 3D interface. It
+                  seamlessly
+                  integrates with EAM, ingesting IoT sensor data and asset information to create a “single pane of
+                  glass”
+                  view
+                  of operations. Users can navigate 3D digital twins of their facilities and assets, seeing real-time
+                  data
+                  (e.g. sensor readings, alerts, work orders) in context.
+                </p>
+              </div>
+
+            </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container section-title py-5" data-aos="fade-up">
+        <h2>Impact for Clients<span class="accent-text">.</span></h2>
+        <p class="fw-normal mt-4 fs-5">
+          Helios delivers tangible business outcomes for asset-intensive organisations:
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container pb-5">
+
+        <div class="row align-items-center p-2 p-md-0 mb-5" data-aos="fade-up">
+
+          <div class="col-lg-5 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/client-impact-1.svg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-lg-7 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up"
+            data-aos-delay="200">
+            <div class="solutions-content ps-0 ps-lg-3">
+              <ul>
+                <li>
+                  <div>
+                    <h3>Capital Efficiency<span class="accent-text">.</span></h3>
+                    <p class="fs-5 text-body-secondary">Extend asset lifespans, reduce downtime, and optimise
+                      maintenance spending through predictive insights.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h3>Predictive Maintenance<span class="accent-text">.</span></h3>
+                    <p class="fs-5 text-body-secondary">Turn IoT alerts into proactive actions, avoiding costly failures
+                      and disruptions.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h3>Portfolio Oversight<span class="accent-text">.</span></h3>
+                    <p class="fs-5 text-body-secondary">Consolidate multiple sites and assets into one unified view for
+                      smarter capital planning and oversight.</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h3>Operational Agility<span class="accent-text">.</span></h3>
+                    <p class="fs-5 text-body-secondary">Enable mobile workflows, smart scheduling, and role-based
+                      insights with context-aware data. This reduces training costs and speeds up decision-making across
+                      your organisation.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <div class="row gy-3 mt-3" data-aos="fade-up">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+              <!-- <div class="row content justify-content-center align-items-center position-relative">
+              <div class="col-lg-10 mx-auto text-center">
+                <h1 class="accent-text display-5 mb-4">Visualise Info is a cutting-edge asset visualisation <br /> and
+                  intelligence platform.</h1>
+                <p class="fs-5 mb-4">
+                  We augment Enterprise Asset Management (EAM) software with a modern, user-friendly 3D interface. It
+                  seamlessly
+                  integrates with EAM, ingesting IoT sensor data and asset information to create a “single pane of
+                  glass”
+                  view
+                  of operations. Users can navigate 3D digital twins of their facilities and assets, seeing real-time
+                  data
+                  (e.g. sensor readings, alerts, work orders) in context.
+                </p>
+              </div>
+
+            </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Industries Section -->
+    <div style="overflow: hidden;">
+      <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
+        style="fill: #f3f9ff; width: 100%; height: 4em; transform: rotate(180deg) scaleX(-1);">
+        <path d="M1200 120L0 16.48V0h1200v120z" />
+      </svg>
     </div>
 
-        <div class="container my-2 pb-5">    
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 align-items-stretch g-4 pb-5">
-            
-            <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">
-              <div class="card mh-10 card-hover-red card-cover h-100 overflow-hidden text-bg-dark bg-black rounded-4 shadow-lg blurred-card">
-                <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                  <h1 class="lh-1 display-1 hovering-h1"><i class="fak fa-fw fa-location-dot-view"></i></h1>
-                  
-                  <h4 class="fs-3 lh-1 fw-semibold mt-4">Geo-referenced 3D Scan of client&#39;s facilities</h4>
-                  <ul class="d-flex list-unstyled mt-auto">
-                    <div class="card-content text-body-secondary"> 
-                    <li class="me-auto">
-                      <p class="small">VI combines advanced virtual reality presented within a photorealistic digital replica of the client's facilities and enhanced with geo-referenced 3D scanning, enabling a comprehensive view of all assets, including locations, maintenance records, and real-time performance.</p>
-                    </li>
+    <section id="industries" class="services section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Industries We Serve<span class="accent-text">.</span></h2>
+        <h5 class="fw-normal">We support a wide range of industries where operational visibility and proactive
+          decision-making are critical.</h5>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4">
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card p-1">
+              <div class="accordion accordion-flush" id="accordionUtilitiesEnergy">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed rounded-2" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordionItem1" aria-expanded="false" aria-controls="accordionItem1">
+                      <div class="icon flex-shrink-0">
+                        <i class="bi bi-lightning-charge"></i>
+                      </div>
+                      <div>
+                        <h3 class="m-0">Utilities & Energy</h3>
+                        <p class="my-1">
+                          Visualise infrastructure in real-time to improve maintenance, safety, and compliance.
+                        </p>
+                        <!-- <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a> -->
+                      </div>
+                    </button>
+                  </h2>
+                  <div id="accordionItem1" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionUtilitiesEnergy">
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <ul class="list-unstyled">
+                            <li>
+                              <h6 class="accent-text">Remote site monitoring for hard-to-access assets:</h6>
+                              <p>Track and manage equipment in remote or hazardous locations through IoT-enabled digital
+                                twins.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Predictive maintenance for critical infrastructure:</h6>
+                              <p>Prevent failures in turbines, transformers, and substations with real-time sensor
+                                insights.
+                              </p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Grid and pipeline visibility:</h6>
+                              <p>Consolidate multiple assets and sites into a unified 3D view for better oversight and
+                                planning.</p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-6">
+                          <ul class="list-unstyled">
+                            <li>
+                              <h6 class="accent-text">Faster response to outages or anomalies:</h6>
+                              <p>Role-based, context-aware data enables field teams to act quickly and accurately during
+                                incidents.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Capital efficiency in asset management:</h6>
+                              <p>Extend the lifespans of expensive infrastructure while optimising maintenance spending.
+                              </p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Compliance and safety monitoring:</h6>
+                              <p>Continuously track conditions to support regulatory reporting and ensure workforce
+                                safety.
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                  </ul>
+                  </div>
                 </div>
               </div>
             </div>
+          </div><!-- End Utilities & Energy Card -->
 
-            <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">
-              <div class="card mh-10 card-hover-red card-cover h-100 overflow-hidden text-bg-dark rounded-4 bg-black shadow-lg blurred-card">
-                <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                  <h1 class="lh-1 display-1 fw-semibold hovering-h1"><i class="far fa-fw fw-semibold fa-rectangles-mixed"></i></h1>
-                  
-                  <h4 class="fs-3 lh-1 fw-semibold mt-4">Customizable User-friendly dashboards</h4>
-                  <ul class="d-flex list-unstyled mt-auto">
-                    <div class="card-content text-body-secondary"> 
-                    <li class="me-auto">
-                      <p>VI creates a seamless, intuitive 3D experience for the software users, allowing them to customize their dashboards to address their business objectives.</p>
-                    </li>
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card p-1">
+              <div class="accordion accordion-flush" id="accordionTransportationRail">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed rounded-2" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordionItem2" aria-expanded="false" aria-controls="accordionItem2">
+                      <div class="icon flex-shrink-0">
+                        <i class="bi bi-bus-front"></i>
+                      </div>
+                      <div>
+                        <h3 class="m-0">Transportation & Rail</h3>
+                        <p class="my-1">
+                          Understand station layouts, asset status, and IoT inputs to streamline operations and reduce
+                          disruption.</p>
+                        <!-- <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a> -->
+                      </div>
+                    </button>
+                  </h2>
+                  <div id="accordionItem2" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionTransportationRail">
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <ul class="list-unstyled">
+                            <li>
+                              <h6 class="accent-text">Vegetation monitoring:</h6>
+                              <p>Use IoT sensors and 3D visualisation to identify hazards (like encroaching vegetation)
+                                before they disrupt rail services.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Accessible journey planning:</h6>
+                              <p>Provide real-time travel information and planning tools that support inclusive,
+                                accessible
+                                experiences for all passengers.
+                              </p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Predictive maintenance:</h6>
+                              <p>Overlay live sensor data on trains and rail infrastructure to anticipate faults and
+                                reduce
+                                downtime.</p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-6">
+                          <ul class="list-unstyled">
+                            <li>
+                              <h6 class="accent-text">Remote monitoring of depots and lines:</h6>
+                              <p>Manage hard-to-reach or hazardous rail assets without on-site visits by using
+                                IoT-enabled
+                                digital twins.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Incident & disruption response:</h6>
+                              <p>Equip staff with role-based insights for faster, safer decision-making during service
+                                interruptions.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Regulatory compliance:</h6>
+                              <p>Continuously track and visualise operational conditions to meet strict rail safety
+                                standards.
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                  </ul>
+                  </div>
                 </div>
               </div>
             </div>
+          </div><!-- End Transportation & Rail Card -->
 
-            <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">
-              <div class="card mh-10 card-hover-red card-cover h-100 overflow-hidden text-bg-dark rounded-4 bg-black shadow-lg blurred-card">
-                <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                  <h1 class="lh-1 display-1 hovering-h1"><i class="far fa-fw fa-shuffle"></i></h1>
-                  
-                  <h4 class="fs-3 lh-1 fw-semibold mt-4">Versatile and flexible integrations</h4>
-                  <ul class="d-flex list-unstyled mt-auto">
-                    <div class="card-content text-body-secondary"> 
-                    <li class="me-auto">
-                      <p>VI integrates data from diverse sources and platforms—including IoT (Internet of Things), EAM (Enterprise Asset Management), BMS (Building Management System), and CAFM (Computer-aided Facility Management).</p>
-                    </li>
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card p-1">
+              <div class="accordion accordion-flush" id="accordionManufacturingHeavyAssets">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed rounded-2" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordionItemManufacturing" aria-expanded="false"
+                      aria-controls="accordionItemManufacturing">
+                      <div class="icon flex-shrink-0">
+                        <i class="bi bi-boxes"></i>
+                      </div>
+                      <div>
+                        <h3 class="m-0">Manufacturing & Heavy Assets</h3>
+                        <p class="my-1">
+                          Gain full visibility over your facility's layout, assets, and systems to improve uptime and
+                          reduce delays.
+                        </p>
+                        <!-- <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a> -->
+                      </div>
+                    </button>
+                  </h2>
+                  <div id="accordionItemManufacturing" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionManufacturingHeavyAssets">
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <ul class="list-unstyled">
+                            <li>
+                              <h6 class="accent-text">Full facility visibility:</h6>
+                              <p>Gain a unified 3D view of your entire facility's layout, assets, and systems to improve
+                                uptime and reduce production delays.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Predictive equipment maintenance:</h6>
+                              <p>Anticipate and prevent machine failures on the factory floor with IoT sensor alerts,
+                                reducing unplanned downtime.</p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-6">
+                          <ul class="list-unstyled">
+                            <li>
+                              <h6 class="accent-text">Operational efficiency:</h6>
+                              <p>Identify and address bottlenecks by visualising workflows in real time, leading to more
+                                efficient production processes.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Workplace safety & compliance:</h6>
+                              <p>Monitor critical safety parameters (temperature, pressure, air quality, etc.) to
+                                maintain a safe work environment and meet regulatory standards.</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                  </ul>
+                  </div>
                 </div>
               </div>
             </div>
+          </div><!-- End Manufacturing & Heavy Assets Card -->
 
-            <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">
-              <div class="card mh-10 card-hover-red card-cover h-100 overflow-hidden text-bg-dark bg-black rounded-4 shadow-lg blurred-card">
-                <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                  <h1 class="lh-1 display-1 fw-semibold hovering-h1"><i class="fa-regular fa-fw fa-diagram-venn"></i></h1>
-                  
-                  <h4 class="fs-3 lh-1 fw-semibold mt-4">Business logic for data-driven decisions</h4>
-                  <ul class="d-flex list-unstyled mt-auto">
-                    <div class="card-content text-body-secondary"> 
-                    <li class="me-auto">
-                      <p>VI applies business logic to complex data integrations, transforming them into actionable insights and enabling informed data-driven decision-making on operational and management levels.</p>
-                    </li>
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card p-1">
+              <div class="accordion accordion-flush" id="accordionHealthcare">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed rounded-2" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordionItemHealthcare" aria-expanded="false"
+                      aria-controls="accordionItemHealthcare">
+                      <div class="icon flex-shrink-0">
+                        <i class="bi bi-hospital"></i>
+                      </div>
+                      <div>
+                        <h3 class="m-0">Healthcare & Smart Operating Theatres</h3>
+                        <p class="my-1">
+                          Reduce operating theatre downtime, improve patient safety and drive sustainability
+                          efficiencies through real-time data driven theatre monitoring and management.
+                        </p>
+                        <!-- <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a> -->
+                      </div>
+                    </button>
+                  </h2>
+                  <div id="accordionItemHealthcare" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionHealthcare">
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <ul class="list-unstyled">
+                            <li>
+                              <h6 class="accent-text">Reduced operating theatre downtime:</h6>
+                              <p>Real-time monitoring ensures surgical theatres are always ready for patients and
+                                clinical teams, minimising idle time.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Improved patient safety:</h6>
+                              <p>Live data overlays highlight risks and support proactive decision-making in
+                                high-pressure healthcare environments.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Energy efficiency:</h6>
+                              <p>Optimise energy, lighting, and equipment usage with continuous monitoring, reducing
+                                waste and operating costs.</p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-6">
+                          <ul class="list-unstyled">
+                            <li>
+                              <h6 class="accent-text">Role-based insights for staff:</h6>
+                              <p>Deliver the right information at the right time to each user, so clinicians and
+                                managers can act quickly and accurately in their roles.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Predictive equipment maintenance:</h6>
+                              <p>Prevent failures of surgical tools and critical infrastructure before they cause
+                                disruptions to care.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">HVAC monitoring (HTM03 compliance):</h6>
+                              <p>Continuously track and control operating theatre air-handling systems in real time.
+                                Perform ventilation inspections remotely to ensure compliance with HTM03 standards and
+                                reduce theatre downtime.</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                  </ul>
+                  </div>
                 </div>
               </div>
             </div>
+          </div><!-- End Healthcare & Smart Operating Theatres Card -->
 
-            <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">
-              <div class="card mh-10 card-hover-red card-cover h-100 overflow-hidden text-bg-dark rounded-4 bg-black shadow-lg blurred-card">
-                <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                  <h1 class="lh-1 display-1 fw-semibold hovering-h1"><i class="fak fa-fw fw-semibold fa-source-truth"></i></h1>
-                  
-                  <h4 class="fs-3 lh-1 fw-semibold mt-4">One point of truth</h4>
-                  <ul class="d-flex list-unstyled mt-auto">
-                    <div class="card-content text-body-secondary"> 
-                    <li class="me-auto">
-                      <p>VI breaks existing data silos and unifies data across your organization, offering one point of truth, optimizing data networks and improving overall asset visibility and control.</p>
-                    </li>
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card p-1">
+              <div class="accordion accordion-flush" id="accordionMaritime">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed rounded-2" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordionItemMaritime" aria-expanded="false"
+                      aria-controls="accordionItemMaritime">
+                      <div class="icon flex-shrink-0">
+                        <i class="bi bi-compass"></i>
+                      </div>
+                      <div>
+                        <h3 class="m-0">Maritime</h3>
+                        <p class="my-1">
+                          Monitor vessel operations, dockside assets and port infrastructure, and geolocate
+                          documentation through a unified, spatial platform designed for complex environments.
+                        </p>
+                        <!-- <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a> -->
+                      </div>
+                    </button>
+                  </h2>
+                  <div id="accordionItemMaritime" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionMaritime">
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <ul class="list-unstyled">
+                            <li>
+                              <h6 class="accent-text">Real-time vessel monitoring:</h6>
+                              <p>Track vessel performance, conditions, and location through a unified digital twin for a
+                                complete real-time operational picture.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Port & dock asset management:</h6>
+                              <p>Visualise critical dockside equipment and port infrastructure in 3D for more efficient
+                                maintenance and oversight.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Instant documentation access:</h6>
+                              <p>Geolocate work orders, compliance records, and manuals directly in their spatial
+                                context, allowing crew to pull up relevant documents by clicking on the asset in the 3D
+                                model.</p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-6">
+                          <ul class="list-unstyled">
+                            <li>
+                              <h6 class="accent-text">Predictive maintenance:</h6>
+                              <p>Prevent costly downtime on ships and port machinery with IoT-driven condition
+                                monitoring and alerts.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Safety and compliance:</h6>
+                              <p>Continuously track operations against maritime regulations and safety standards to
+                                enhance operational compliance.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Unified operations platform:</h6>
+                              <p>Integrate vessel, port, and logistics data into one spatially-aware system for
+                                streamlined maritime operations management.</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                  </ul>
+                  </div>
                 </div>
               </div>
             </div>
+          </div><!-- End Maritime Card -->
 
-            <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">
-              <div class="card mh-10 card-hover-red card-cover h-100 overflow-hidden text-bg-dark bg-black rounded-4 shadow-lg blurred-card">
-                <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                  <h1 class="lh-1 display-1 fw-semibold hovering-h1"><i class="fa-regular fa-fw fa-leaf"></i></h1>
-                  
-                  <h4 class="fs-3 lh-1 fw-semibold mt-4">System sustainability</h4>
-                  <ul class="d-flex list-unstyled mt-auto">
-                    <div class="card-content text-body-secondary"> 
-                    <li class="me-auto">
-                      <p>VI enhances predictive maintenance and solutionssustainability by consolidating disparate data into a comprehensive analytics hub.</p>
-                    </li>
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card p-1">
+              <div class="accordion accordion-flush" id="accordionOilGas">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed rounded-2" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordionItemOilGas" aria-expanded="false" aria-controls="accordionItemOilGas">
+                      <div class="icon flex-shrink-0">
+                        <i class="bi bi-droplet-half"></i>
+                      </div>
+                      <div>
+                        <h3 class="m-0">Oil &amp; Gas</h3>
+                        <p class="my-1">
+                          Improve situational awareness across remote and high-risk sites with integrated asset data,
+                          IoT monitoring, and predictive insights.
+                        </p>
+                        <!-- <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a> -->
+                      </div>
+                    </button>
+                  </h2>
+                  <div id="accordionItemOilGas" class="accordion-collapse collapse" data-bs-parent="#accordionOilGas">
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <ul class="list-unstyled">
+                            <li>
+                              <h6 class="accent-text">Situational awareness for remote sites:</h6>
+                              <p>Unify IoT sensor readings and asset data into one real-time spatial platform, giving a
+                                complete overview of operations across remote and high-risk locations.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Fewer site visits:</h6>
+                              <p>Monitor pipelines, rigs, and processing facilities remotely with live data overlays and
+                                digital twins, greatly reducing the need for costly on-site inspections.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Improved worker safety:</h6>
+                              <p>Provide role-based, context-aware insights that minimise worker exposure in hazardous
+                                environments (e.g. offshore platforms, refineries).</p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-6">
+                          <ul class="list-unstyled">
+                            <li>
+                              <h6 class="accent-text">Predictive failure prevention:</h6>
+                              <p>Leverage IoT-driven analytics to predict equipment issues before they happen, cutting
+                                downtime and maintenance costs.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Faster onboarding &amp; training:</h6>
+                              <p>Use immersive 3D visualisations to accelerate workforce training and readiness, helping
+                                new employees become effective quickly while maintaining compliance.</p>
+                            </li>
+                            <li>
+                              <h6 class="accent-text">Stronger regulatory compliance:</h6>
+                              <p>Continuously monitor conditions to meet strict safety and environmental standards,
+                                strengthening compliance and accountability.</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                  </ul>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div><!-- End Oil & Gas Card -->
+
+
+        </div>
+
+      </div>
+
+    </section><!-- /Industries Section -->
+
+    <div style="overflow: hidden;">
+      <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
+        style="fill: #f3f9ff; width: 100%; height: 4em; transform: scaleX(-1);">
+        <path d="M1200 120L0 16.48V0h1200v120z" />
+      </svg>
+    </div>
+
+    <section id="why-visualise-info" class="why-vi section">
+      <div class="container">
+        <div class="row stats-row" data-aos="fade-up" data-aos-delay="250">
+          <div class="pt-3 ps-4">
+            <h2>Why Visualise <span class="accent-text">Info?</span></h2>
+            <p class="text-body-secondary fs-5">At Visualise Info, we bridge the gap between complex enterprise systems
+              and the people who use them. <br />
+              Our visual-first platform lets you navigate your physical environment, access data in context, and take
+              action through an intuitive 3D interface, transforming complex real-time data into clear,
+              actionable insights that scale from single sites to global enterprise portfolios.</p>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div class="stat-content">
+                <h4>Spatial Intelligence</h4>
+                <p class="mb-0 text-small">Connect assets, buildings, systems, and data in an intuitive visual
+                  interface.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-cpu"></i>
+              </div>
+              <div class="stat-content">
+                <h4>Real-Time IoT & AI Insights</h4>
+                <p class="mb-0">Harness sensor data ready for AI analytics to drive confident decisions.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-graph-up"></i>
+              </div>
+              <div class="stat-content">
+                <h4>Scalable Platform</h4>
+                <p class="mb-0">Empower teams from single sites to global enterprise portfolios.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reseller Section -->
+    <section id="partner" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 p-2 p-md-0 align-items-center justify-content-between">
+
+          <div class="col-xl-5" data-aos="fade-up" data-aos-delay="200">
+            <span class="about-meta">Reseller Program</span>
+            <h2 class="about-title">Partner With Visualise Info<span class="accent-text">.</span></h2>
+            <p class="about-description">
+              Enhance your enterprise asset management offerings with Helios, a platform built for clarity and control.
+              <br />
+              We partner with consultancies, integrators, and resellers to deliver visual-first solutions that integrate
+              with leading EAM systems and other enterprise tools.
+              <br /> As a Visualise Info partner, you can expand your services, offer more value to clients, and share
+              in our success.
+              <br />
+              <small class="fw-light opacity-75">
+                (Our technical team works hand-in-hand with partners to support deployment and tailor Helios to each
+                client's needs.)
+              </small>
+            </p>
+
+
+            <div class="row feature-list-wrapper">
+              <div class="col-md-12">
+                <ul class="feature-list">
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <small>Broaden your portfolio by delivering
+                      Helios-powered 3D
+                      digital twins, IoT integrations, and predictive asset management solutions.
+                    </small>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <small>Generate recurring revenue through software licensing,
+                      Helios integration projects, and managed services.
+                    </small>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <small>Differentiate your consultancy by embedding Helios into
+                      clients digital transformation roadmaps, providing cutting-edge visual tools that drive greater
+                      insight and value.
+                    </small>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <small>Offer an innovative solution no competitor can match,
+                      establishing your firm as a leader in IoT-enabled EAM solutions.
+                    </small>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <small>Continue to add value with training, change management,
+                      predictive modelling, and monitoring services centered around Helios.
+                    </small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <a class="btn btn-getstarted" href="index.html#contact">Get in touch to explore partnership
+              opportunities.</a>
+          </div>
+
+          <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="image-wrapper">
+              <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
+                <img src="assets/img/reseller-1.webp" alt="Business Meeting" class="img-fluid main-image rounded-4">
+                <img src="assets/img/reseller-2.webp" alt="Team Discussion" class="img-fluid small-image rounded-4">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Partners Section -->
+
+    <!-- about Section -->
+    <section id="about" class="solutions section mt-5">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up" style="padding-bottom: 0;">
+        <h2>About Visualise Info<span class="accent-text">.</span></h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row p-2 p-md-0 gy-3">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="solutions-content ps-0 ps-lg-3">
+              <h4>
+                We are a UK-based software company transforming how enterprise organisations interact with
+                data.
+              </h4>
+              <h5 class="fw-normal">
+                We specialise in visualising complex asset and sensor information in a way that&apos;s intuitive,
+                interactive, and spatially aware.
+              </h5>
+              <h3 class="mt-5">
+                Our Mission<span class="accent-text">.</span>
+              </h3>
+              <h5 class="fw-normal text-body-secondary">
+                Simplify data, break down silos, and empower decision-makers at every level.
+                With deep experience in EAM, IoT, and visualisation, our platform is built to make complex data clear,
+                connected, and actionable.
+                </h6>
+                <h3 class="mt-5">
+                  Our Clients<span class="accent-text">.</span>
+                </h3>
+                <div class="container text-center">
+                  <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col flex-grow-1">
+                      <img src="assets/img/clients/Hammerson.png" class="rounded-3" height="64" loading="lazy"
+                        style="mix-blend-mode: multiply;">
+                    </div>
+                    <div class="col flex-grow-1">
+                      <img src="assets/img/clients/JLL.png" class="rounded-3" height="64" loading="lazy"
+                        style="mix-blend-mode: multiply;">
+                    </div>
+                    <div class="col flex-grow-1">
+                      <img src="assets/img/clients/Matterport.png" class="rounded-3" height="64" loading="lazy"
+                        style="mix-blend-mode: multiply;">
+                    </div>
+                    <div class="col flex-grow-1">
+                      <img src="assets/img/clients/NetworkRail.png" class="rounded-3" height="64" loading="lazy"
+                        style="mix-blend-mode: multiply;">
+                    </div>
+                    <div class="col flex-grow-1">
+                      <img src="assets/img/clients/NHS.png" class="rounded-3" height="64" loading="lazy"
+                        style="mix-blend-mode: multiply;">
+                    </div>
+                    <div class="col">
+                      <img src="assets/img/clients/Placesforpeople.png" class="rounded-3" height="64" loading="lazy"
+                        style="mix-blend-mode: multiply;">
+                    </div>
+                    <div class="col">
+                      <img src="assets/img/clients/Savills.png" class="rounded-3" height="64" loading="lazy"
+                        style="mix-blend-mode: multiply;">
+                    </div>
+                    <div class="col">
+                      <img src="assets/img/clients/Wightlink.png" class="rounded-3" height="64" loading="lazy"
+                        style="mix-blend-mode: multiply;">
+                    </div>
+                    <div class="col">
+                      <img src="assets/img/clients/WorthingHomes.png" class="rounded-3" height="64" loading="lazy"
+                        style="mix-blend-mode: multiply;">
+                    </div>
+
+                  </div>
+                </div>
+
             </div>
 
           </div>
-        </div>
-        <br class="py-3 d-block d-sm-none">
-        <div class="vi-hero-blue bg-gradient shadow-xl py-5 top-header">
-          <div class="container   py-5">
-            <h1 class="display-2 text-center pb-2 fw-bold wow fadeIn mrgn-1"><i class="fa-light fa-arrows-to-eye"></i><br> Visualization is an innovative<br> problem-solving technology</h1>
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/about-1.svg" alt="" class="img-fluid">
           </div>
-        </div>
-        <div class="bg-hero bg-hero-blue border-bottom">
-          <div class="container  py-5 mb-5">
-            <p class="text-body-secondary mt-5 fs-3">The Visualise Info user interface is a powerful, value-added extension of your Maximo EAM system, ensuring complete control over your asset and enabling smart/ intelligent data management.</p>
-        
-            <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
-              <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">
-                <div class="card card-hover-blue card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg blurred-card">
-                  <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                    <h3 class="pb-5 mb-5 mt-4 fs-1 lh-1 fw-semibold"> Geo-intel</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                      <li class="me-auto fs-5 text-secondary text-highlight-blue">
-                        <p>The geolocation feature of the VI platform allows for precise (with an accuracy of 5mm) geo-referencing of assets and ensures the unique asset knowledge is encapsulated within the 3D scan.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-        
-              <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.75s">
-                <div class="card card-hover-blue card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bg-gradient blurred-card" >
-                  <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                    <h3 class="pb-5 mb-5 mt-4 fs-1 lh-1 fw-semibold"> Data democratization</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                      <li class="me-auto fs-5 text-secondary text-highlight-blue">
-                        <p>Scanned and geo-referenced assets are instantly accessible and perpetually secured as client-owned data, ensuring that invaluable site-specific and critical asset knowledge is retained, documented and made available across the organization.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-        
-              <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.75s">
-                <div class="card card-hover-blue card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bg-gradient blurred-card" >
-                  <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                    <h3 class="pb-5 mb-5 mt-4 fs-1 lh-1 fw-semibold"> Immersive 3D visualization models</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                      <li class="me-auto fs-5 text-secondary text-highlight-blue">
-                        <p>Precise 3D scans allow intuitive interaction with assets, tracking their real-world positioning and enabling easy navigation throughout the sites.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
 
-              <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.75s">
-                <div class="card card-hover-blue card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bg-gradient blurred-card" >
-                  <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                    <h3 class="pb-5 mb-5 mt-4 fs-1 lh-1 fw-semibold"> 1st-time fix rate improvement</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                      <li class="me-auto fs-5 text-secondary text-highlight-blue">
-                        <p>Photorealistic visualization of the environment generates comprehensive visual records of facilities and assets in their surroundings to ensure fast, high-quality responses and significantly improve maintenance responsesquality and operational efficiency.</p>
-                      </li>
-                    </ul>
-                  </div>
+          <div class="col-lg-12 mt-0 solutions-content" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="mt-5">
+              Our Partnerships<span class="accent-text">.</span>
+            </h3>
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  <img src="assets/img/partners/arrow.png" class="rounded-3" height="96" loading="lazy"
+                    style="mix-blend-mode: multiply;">
+                </div>
+                <div class="col">
+                  <img src="assets/img/partners/Deloitte.png" class="rounded-3" height="96" loading="lazy"
+                    style="mix-blend-mode: multiply;">
+                </div>
+                <div class="col">
+                  <img src="assets/img/partners/ibm-silver.png" class="rounded-3" height="96" loading="lazy"
+                    style="mix-blend-mode: multiply;">
+                </div>
+                <div class="col">
+                  <img src="assets/img/partners/MultiTech.png" class="rounded-3" height="96" loading="lazy"
+                    style="mix-blend-mode: multiply;">
+                </div>
+                <div class="col">
+                  <img src="assets/img/partners/NavVis.png" class="rounded-3" height="96" loading="lazy"
+                    style="mix-blend-mode: multiply;">
                 </div>
               </div>
-
             </div>
           </div>
         </div>
 
-        <div class="container py-5 my-5">
-          <div class="row row-cols-1 row-cols-md-2 g-5 py-5">
-            <div class="col d-flex flex-column align-items-start gap-2 wow fadeIn">
-              <h2 class="display-5 pb-2 fw-semibold">User-Centric Logic Hub</h2>
-              <img src="assets/img/01/1028403757.png" class="d-block mx-lg-auto img-fluid shadow rounded-4 mb-4 wow fadeIn"  width="700" height="500" loading="lazy">
-              <p class="text-body-secondary fs-4">The VI Logic Hub dismantles data silos, integrates diverse business systems and applies business logic and harmonizes information from multiple data sources to accelerate data-driven, strategic decision-making. 
+      </div>
+
+    </section>
+
+    <!-- resources Section VISUALLY HIDDEN-->
+    <section id="resources" class="resources section visually-hidden invisible">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up" style="padding-bottom: 0;">
+        <h2>Resources<span class="accent-text">.</span></h2>
+        <p class="lead">Explore our growing library of case studies, white papers, and videos <br />to
+          learn
+          how
+          Visualise Info transforms data into operational clarity.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-3" data-aos="fade-up">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center " data-aos="fade-up" data-aos-delay="200">
+            <div class="solutions-content ps-0 ps-lg-3">
+              <h4>
+                Topics include:
+              </h4>
+              <ul class="feature-list">
+                <li><span><i class="bi bi-dash-lg"></i></span> Bridging the Digital Literacy Gap</li>
+                <li><i class="bi bi-dash-lg"></i> Enterprise Asset Visualisation with Maximo</li>
+                <li><i class="bi bi-dash-lg"></i> Real-Time IoT Monitoring in Action</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/resources-1.svg" alt="" class="img-fluid">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <div style="overflow: hidden;">
+      <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
+        style="fill: #f3f9ff; width: 100%; height: 4em; transform: rotate(180deg);">
+        <path d="M1200 120L0 16.48V0h1200v120z" />
+      </svg>
+    </div>
+
+    <section id="contact" class="contact section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact<span class="accent-text">.</span></h2>
+        <p>Want to learn more or contact sales? We&apos;d love to hear from you.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-5">
+            <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+              <h3>Get In Touch</h3>
+              <p>Contact us for sales or any enquiries about our platform, partnerships, or support.
               </p>
-            </div>
-      
-            <div class="col wow fadeIn">
-              <div class="row row-cols-1 row-cols-sm-1 g-4">
-                <div class="col d-flex flex-column gap-2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
 
-                  <div class="d-flex flex-row">
-                    <div class="feature-icon-small align-items-center d-inline-flex justify-content-center vi-blue bg-gradient fs-4 rounded-3">
-                      <i class="fas fa-sync"></i> 
-                    </div>
-                    <h4 class="p-2 align-middle fw-semibold mb-0 text-body-emphasis">Smart IoT sync</h4>
-                  </div>
-                  <p class="text-secondary fs-5">Smart IoT Sync embodies next-generation connectivity and business intelligence, accelerating data-driven decisions through a comprehensive system encompassing sensors/devices, connectivity, and data processing output via an intuitive user interface.</p>
+              <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="bi bi-geo-alt"></i>
                 </div>
-      
-                <div class="col d-flex flex-column gap-2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-
-                  <div class="d-flex flex-row">
-                    <div class="feature-icon-small align-items-center d-inline-flex justify-content-center vi-blue bg-gradient fs-4 rounded-3">
-                      <i class="fas fa-head-side-gear"></i> 
-                    </div>
-                    <h4 class="p-2 align-middle fw-semibold mb-0 text-body-emphasis">Proactive maintenance strategy</h4>
-                  </div>
-                  <p class="text-secondary fs-5">VI enables predictive maintenance scheduling, boosts asset efficiency, and reduces unplanned downtimes.</p>
+                <div class="content">
+                  <h4>Our Location</h4>
+                  <a class="nav-link" href="https://www.google.com/maps/place/12+Creekside,+London+SE8+3DX"
+                    target="_blank">
+                    <p>Fuel Tank, 8-12 Creekside</p>
+                    <p>London, SE8 3DX</p>
+                  </a>
                 </div>
-      
-                <div class="col d-flex flex-column gap-2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+              </div>
 
-                  <div class="d-flex flex-row">
-                    <div class="feature-icon-small align-items-center d-inline-flex justify-content-center vi-blue bg-gradient fs-4 rounded-3">
-                      <i class="fas fa-rectangles-mixed"></i> 
-                    </div>
-                    <h4 class="p-2 align-middle fw-semibold mb-0 text-body-emphasis">Dynamic user-friendly dashboards</h4>
-                  </div>
-                  <p class="text-secondary fs-5">Visualise Info facilitates the ultimate personalization of dashboards.  Fully customizable widgets enable the creation of flexible and user-specific dashboards, allowing seamless toggle between 3D scans and system data tailored to a specific job role for enhanced operational agility.</p>
+              <div class="info-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi-envelope"></i>
                 </div>
-      
-                <div class="col d-flex flex-column gap-2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.9s">
-
-                  <div class="d-flex flex-row">
-                    <div class="feature-icon-small align-items-center d-inline-flex justify-content-center vi-blue bg-gradient fs-4 rounded-3">
-                      <i class="fas fa-stopwatch"></i> 
-                    </div>
-                    <h4 class="p-2 align-middle fw-semibold mb-0 text-body-emphasis">Real-time asset monitoring</h4>
-                  </div>
-                  <p class="text-secondary fs-5">The Logic Hub allows for real-time visualization and monitoring of all assets, even in dispersed and difficult locations, via the use of 3D scans and IoT integrations.</p>
+                <div class="content">
+                  <h4>Email Address</h4>
+                  <a class="nav-link" href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="vi-hero-red bg-gradient-10 shadow-xl py-5 top-header">
-          <div class="container   py-5">
-            <h1 class="display-2 text-center pb-2 mt-5 fw-bold wow fadeIn mrgn-1"><i class="fa-regular fa-mobile-signal"></i><br>Intuitive mobile accessibility</h1>
-          </div>
-        </div>
-        <div class="bg-hero bg-hero-red border-bottom">
-          <div class="container  py-5 wow fadeIn">
-            <p class="text-body-secondary mt-5 fs-3 mobileSmall">Grants full backend application capabilities and remote accessibility from any device, anywhere. It mirrors your system's familiar look and feel and, via visualization and automation, makes the VI a highly interactive, intuitive and easy-to-navigate platform, transforming your Maximo into a fully mobile solution. It eliminates the need for time-consuming training, reduces human error incidents and acts as a seamless conduit for operational excellence.</p>
-            <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
-              <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">
-                <div class="card card-hover-red card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg blurred-card">
-                  <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                    <h3 class="pb-5 mb-5 mt-4 fs-1 lh-1 fw-semibold"> Full Maximo backend capabilities</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                      <li class="me-auto fs-5 text-secondary text-highlight-red ">
-                        <p>Visualise Info facilitates the full Maximo backend application capability.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-        
-              <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.75s">
-                <div class="card card-hover-red card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bg-gradient blurred-card" >
-                  <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                    <h3 class="pb-5 mb-5 mt-4 fs-1 lh-1 fw-semibold"> Easy navigation</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                      <li class="me-auto fs-5 text-secondary text-highlight-red ">
-                        <p>Visualization and automation makes the Visualise Info platform a highly interactive, intuitive and easy-to-navigate.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-        
-              <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.75s">
-                <div class="card card-hover-red card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bg-gradient blurred-card" >
-                  <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                    <h3 class="pb-5 mb-5 mt-4 fs-1 lh-1 fw-semibold"> Familiar look and feel</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                      <li class="me-auto fs-5 text-secondary text-highlight-red ">
-                        <p>Visualise Info platform mirrors your system's familiar look and feel eliminates the need for time-consuming training, reduces human error incidents and acts as a seamless conduit for operational excellence.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+          <div class="col-lg-7">
+            <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
+              <h3>Contact Us</h3>
+              <p>Discover the tangible value Visualise Info's Platform can bring to
+                your
+                operations.
+              </p>
 
-              <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.75s">
-                <div class="card card-hover-red card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bg-gradient blurred-card" >
-                  <div class="d-flex flex-column h-100 card-padding text-white text-shadow-1">
-                    <h3 class="pb-5 mb-5 mt-4 fs-1 lh-1 fw-semibold"> Remote accessibility from any device, anywhere</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                      <li class="me-auto fs-5 text-secondary text-highlight-red ">
-                        <p>Visualise Info offers true flexibility and scalability of the system allowing for full access to your assets from dispersed locations - anywhere and on any device mitigating human error risk and improving maintenance efficiency.</p>
-                      </li>
-                    </ul>
+              <form id="contact-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="row gy-4">
+
+                  <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  </div>
+
+                  <div class="col-md-6 ">
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  </div>
+
+                  <div class="col-12">
+                    <input type="tel" class="form-control" name="contact" placeholder="Contact Number" required="">
+                  </div>
+
+                  <div class="col-12">
+                    <textarea class="form-control" name="message" rows="4" placeholder="Message" required=""></textarea>
+                  </div>
+
+                  <div class="col-12 text-center">
+                    <button id="contactSubmit" type="submit" class="btn">Submit</button>
                   </div>
                 </div>
+              </form>
+              <div class="col-12 text-center">
+                <div id="contactSuccess" class="sent-message alert alert-success mt-3" style="display: none;">Your
+                  message has been sent.
+                  Thank you!</div>
+                <div id="contactError" class="error-message alert alert-danger mt-3" style="display: none;">There was an
+                  error sending your
+                  message. Please try again later.</div>
               </div>
 
             </div>
           </div>
+
         </div>
 
-        <div class="container py-5 my-5">
-          <div class="row row-cols-1 row-cols-md-2 g-5 py-5">
-            <div class="col d-flex flex-column align-items-start gap-2 wow fadeIn">
-              <h2 class="display-5 pb-2 fw-semibold">VI Platform Benefits</h2>
-              <img src="assets/img/01/1887349105.png" class="d-block mx-lg-auto img-fluid shadow rounded-4 mb-4 wow fadeIn"  width="700" height="500" loading="lazy">
-              <p class="text-body-secondary fs-4">VI platform transforms complex asset data into actionable insights, helping businesses make informed decisions and improve operational efficiency. <br>Visualise Info simplifyies data integration by amalgamating disparate asset data into a unified analytics hub, boosting predictive maintenance, advocating for sustainable solutions, and maximizing your EAM investment.</p>
+      </div>
 
-            </div>
-      
-            <div class="col wow fadeIn">
-              <div class="row row-cols-1 row-cols-sm-1 g-4">
-                <div class="col d-flex flex-column gap-2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
-                  
-                  <div class="d-flex flex-row">
-                    <div class="feature-icon-small align-items-center d-inline-flex justify-content-center vi-red bg-gradient-10 fs-4 rounded-3">
-                      <i class="fak fw-semibold fa-source-truth"></i> 
-                    </div>
-                    <h4 class="p-2 align-middle fw-semibold mb-0 text-body-emphasis">Single point of truth</h4>
-                  </div>
-                  <p class="text-secondary fs-5">Visualise Info consolidates all asset information into a unified Ultimate User Interface platform, ensuring accuracy and reliability in asset management decisions.</p>
-                </div>
-      
-                <div class="col d-flex flex-column gap-2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+    </section><!-- /Contact Section -->
 
-                  <div class="d-flex flex-row">
-                    <div class="feature-icon-small align-items-center d-inline-flex justify-content-center vi-red bg-gradient-10 fs-4 rounded-3">
-                      <i class="fak fa-chart-increase"></i> 
-                    </div>
-                    <h4 class="p-2 align-middle fw-semibold mb-0 text-body-emphasis">Optimized maintenance outcomes</h4>
-                  </div>
-                  <p class="text-secondary fs-5">By leveraging visualization and consolidated insights from various data, businesses can significantly improve asset lifecycle, condition and performance leveraging predictive maintenance planning and execution and reducing downtime and costs.</p>
-                </div>
+    <div style="overflow: hidden;">
+      <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
+        style="fill: #f3f9ff; width: 100%; height: 4em; transform: scaleX(-1);">
+        <path d="M1200 120L0 16.48V0h1200v120z" />
+      </svg>
+    </div>
+  </main>
 
-                <div class="col d-flex flex-column gap-2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+  <footer id="footer" class="footer">
 
-                  <div class="d-flex flex-row">
-                    <div class="feature-icon-small align-items-center d-inline-flex justify-content-center vi-red bg-gradient-10 fs-4 rounded-3">
-                      <i class="fas fa-book"></i> 
-                    </div>
-                    <h4 class="p-2 align-middle fw-semibold mb-0 text-body-emphasis">Comprehensive asset knowledge</h4>
-                  </div>
-                  <p class="text-secondary fs-5">Users gain an unparalleled understanding of their assets, including condition, location, and management history, enhancing strategic asset utilization and lifecycle management.</p>
-                </div>
-
-                <div class="col d-flex flex-column gap-2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-
-                  <div class="d-flex flex-row">
-                    <div class="feature-icon-small align-items-center d-inline-flex justify-content-center vi-red bg-gradient-10 fs-4 rounded-3">
-                      <i class="fak fa-user-group-2"></i> 
-                    </div>
-                    <h4 class="p-2 align-middle fw-semibold mb-0 text-body-emphasis">Transparency across departments</h4>
-                  </div>
-                  <p class="text-secondary fs-5"> Visualise Info bridges the gap of information silos, fostering transparency and collaboration across different organizational departments, leading to more cohesive and efficient business decisions.</p>
-                </div>
-
-                <div class="col d-flex flex-column gap-2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-
-                  <div class="d-flex flex-row">
-                    <div class="feature-icon-small align-items-center d-inline-flex justify-content-center vi-red bg-gradient-10 fs-4 rounded-3">
-                      <i class="fas fa-arrow-progress"></i> 
-                    </div>
-                    <h4 class="p-2 align-middle fw-semibold mb-0 text-body-emphasis">Streamlined workflow processes</h4>
-                  </div>
-                  <p class="text-secondary fs-5">Integrating immersive visualization tools with data management simplifies complex workflows, enabling more efficient and error-free operations from planning to execution.</p>
-                </div>
-      
-
-              </div>
-            </div>
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img class='companyLogo' src="assets/img/logo.png" alt="">
+          </a>
+          <div class="footer-contact">
+            <a class="nav-link" href="https://www.google.com/maps/place/12+Creekside,+London+SE8+3DX" target="_blank">
+              <p class="footer-text">Fuel Tank, 8-12 Creekside<br />London, SE8 3DX</p>
+            </a>
+            <p class="">
+              <a class="footer-text" href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a>
+            </p>
           </div>
         </div>
-
-        <div class="vi-hero-green bg-gradient shadow-xl py-5 top-header ">
-          <div class="container   py-5">
-            <h1 class="display-2 text-center pb-2 mt-5 fw-bold wow fadeIn mrgn-1"><i class="fa-regular fa-leaf"></i><br>Commitment to a more sustainable future</h1>
+        <div class="col-lg-2 col-md-3 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="resources.html">Resources</a></li> -->
+            <li><a href="docs/eula/index.html">Terms of service</a></li>
+            <li><a href="privacy-policy.html">Privacy policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 footer-links">
+          <h4>Social Links</h4>
+          <div class="social-links d-flex">
+            <a href="https://uk.linkedin.com/company/visualise-info-ltd"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/visualiseinfo/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@VisualiseInfo"><i class="bi bi-youtube"></i></a>
           </div>
         </div>
-        <div class="bg-hero bg-hero-green border-bottom ">
-          <div class="container  pt-5 mb-5 py-5">
-            <p class="col fs-2 text-left mt-5 mx-auto text-body-secondary wow fadeIn">Our innovative asset and data management tools optimize resource usage, reduce environmental impact, and enhance governance practices. We strive to create an inclusive and equitable workplace, engage with communities, and adhere to high standards of ethics, transparency, and accountability. Our solutions help clients achieve their ESG objectives and build a sustainable, responsible, and ethically governed business model.</p>
-          </div>
+      </div>
+    </div>
 
-          <div class="container py-5">
-            <div class="row g-4 py-5 row-cols-1 row-cols-md-2">
-              <div class="col col-md-6 justify-content-center">
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span><span class="px-1 fw-semibold sitename">Visualise <span
+            class='accent-text'>Info</span></span><span>ltd. All Rights Reserved</span></p>
+      <div class="credits text-small text-muted opacity-25">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a class="text-reset" href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
 
-                  <h2 class="fs-3 pb-2 mb-4 fw-normal text-center">Significant reduction of carbon footprint</h2>
-                  <div class="row g-4 row-cols-1">
-                    <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.75s">
-                      <div class="card card-hover-green card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bg-gradient blurred-card" >
-                        <div class="d-flex flex-column card-padding text-white text-shadow-1">
-                          <h3 class="mt-4 pb-5 fs-1 lh-1 fw-semibold"> Immersive 3D visualization</h3>
-                          <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto fs-5 text-secondary text-highlight-green ">
-                              <p>Scans enhanced with a comprehensive asset register and intuitive interaction reduce travel necessity - positively influencing carbon footprint.</p>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+  </footer>
 
-                    <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.75s">
-                      <div class="card card-hover-green card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bg-gradient blurred-card" >
-                        <div class="d-flex flex-column card-padding text-white text-shadow-1">
-                          <h3 class="mt-4 pb-5 fs-1 lh-1 fw-semibold">1st-time fix rate improvement</h3>
-                          <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto fs-5 text-secondary text-highlight-green ">
-                              <p>Photorealistic representation of the assets and their environments improves maintenance response.</p>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                </div>
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
-              </div>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
-              <div class="col col-md-6 justify-content-center">
-              <h2 class="fs-3 pb-2 mb-4 fw-normal text-center">Significant improvement of operational efficiencies</h2>      
-                <div class="row g-4 row-cols-1">
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
 
-                  <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.75s">
-                    <div class="card card-hover-green card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bg-gradient blurred-card" >
-                      <div class="d-flex flex-column card-padding text-white text-shadow-1">
-                        <h3 class="mt-4 pb-5 fs-1 lh-1 fw-semibold">Logic Hub</h3>
-                        <ul class="d-flex list-unstyled mt-auto">
-                          <li class="me-auto fs-5 text-secondary text-highlight-green ">
-                            <p>We empower businesses to make smarter decisions, enhance operational efficiency, and unlock the full potential of their data.</p>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+</body>
 
-                    <div class="col wow fadeIn" data-wow-duration="2s" data-wow-delay="0.75s">
-                      <div class="card card-hover-green card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bg-gradient blurred-card" >
-                        <div class="d-flex flex-column card-padding text-white text-shadow-1">
-                          <h3 class="mt-4 pb-5 fs-1 lh-1 fw-semibold">Saves time and cost</h3>
-                          <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto fs-5 text-secondary text-highlight-green ">
-                              <p>Users can significantly lower operational costs and increase asset longevity by optimising maintenance and performance.</p>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <div class="container my-5">
-
-          <h2 class="display-5 pb-2 fw-semibold ">Our Partners</h2>
-          <div class="row mt-4">
-            <a class="col wow fadeIn" href="http://www.ibm.com/uk-en" target="_blank" data-wow-duration="1s" data-wow-delay="0.2s">
-              <img src="assets/img/02/partner-ibm.png" alt="IBM" class="rounded-3" height="64" loading="lazy">
-            </a>
-            <a class="col wow fadeIn" href="https://www.tes-es.com/" target="_blank" data-wow-duration="1s" data-wow-delay="0.2s">
-              <img src="assets/img/02/partner-tes.png" alt="TES" class="rounded-3" height="64" loading="lazy">
-            </a>
-            <a class="col wow fadeIn" href="https://kpmg.com/uk/en/home.html" target="_blank" data-wow-duration="1s" data-wow-delay="0.2s">
-              <img src="assets/img/02/partner-kpmg.png" alt="KPMG" class="rounded-3" height="64" loading="lazy">
-            </a>
-            <a class="col wow fadeIn" href="https://www.arrow.com/" target="_blank" data-wow-duration="1s" data-wow-delay="0.2s">
-              <img src="assets/img/02/partner-arrow.png" alt="ARROW" class="rounded-3" height="64" loading="lazy">
-            </a>
-            <a class="col wow fadeIn" href="https://www.bpdzenith.com/" target="_blank" data-wow-duration="1s" data-wow-delay="0.2s">
-              <img src="assets/img/02/partner-bpd.png" alt="PBD" class="rounded-3" height="64" loading="lazy">
-            </a>
-            <a class="col wow fadeIn" href="https://www.honeywell.com/gb/en" target="_blank" data-wow-duration="1s" data-wow-delay="0.2s">
-              <img src="assets/img/02/partner-honeywell.png" alt="honeywell" class="rounded-3" height="64" loading="lazy">
-            </a>
-            <a class="col wow fadeIn" href="https://www.siemsatec.net/" target="_blank" data-wow-duration="1s" data-wow-delay="0.2s">
-              <img src="assets/img/02/partner-siemsatec.png" alt="siemsatec" class="rounded-3" height="64" loading="lazy">
-            </a>
-          </div>
-      
-        </div>
-
-        <div class="bold-divider">
-          <footer class="container">
-            <div class="row mt-5">
-              <div class="col-lg-3 my-2">
-                <a href="index.html"><img class="d-block mx-auto" src="logo.png" alt="" height="48"></a>
-                <ul class="nav mt-3 justify-content-center list-unstyled d-flex">
-                  <li class="ms-3"><a class="text-body-secondary" href="https://uk.linkedin.com/company/visualise-info-ltd"><i class="fa-brands fa-linkedin"></i></a></li>
-                  <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/visualiseinfo/"><i class="fa-brands fa-instagram"></i></a></li>
-                  <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-x-twitter"></i></a></li> -->
-                  <li class="ms-3"><a class="text-body-secondary" href="https://www.youtube.com/@VisualiseInfo"><i class="fa-brands fa-youtube"></i></a></li>
-                </ul>
-              </div>
-              <div class="col-lg-6 my-2">
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2"><a class="nav-link text-body-secondary" href="tel:+442071750557"><i class="far fa-fw fa-phone"></i>&nbsp;(+44) 02071750557</a></li>
-                  <li class="nav-item mb-2"><a class="nav-link text-body-secondary" href="mailto:contact@visualiseinfo.com"><i class="far fa-fw fa-envelope"></i>&nbsp;contact@visualiseinfo.com</a></li>
-                  <li class="nav-item mb-2"><a class="nav-link text-body-secondary" href="https://www.google.com/maps/place/12+Creekside,+London+SE8+3DX" target="_blank"><i class="far fa-fw fa-location-dot"></i>&nbsp;Unit B15, 8-12 Creekside, London, SE8 3DX</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-1 offset-lg-1 my-2">
-                <div class="d-flex justify-content-center d-lg-none">
-                  <img src="assets/img/02/ibm-silver.png" class="rounded-3 shadow" height="96" loading="lazy">
-                </div>
-                <div class="d-flex justify-content-end d-none d-lg-block">
-                  <img src="assets/img/02/ibm-silver.png" class="rounded-3 shadow" height="96" loading="lazy">
-                </div>
-              </div>
-  
-  
-            </div>
-              
-              
-              <div class="my-4 d-flex align-items-center">                
-                <span class="ms-1 mb-3 mb-md-0 text-secondary small"> © <span id="cYear">2024</span> Visualise Info, Ltd. All rights reserved. &bull; <a href="privacy-policy.html " class="text-secondary"> Privacy Policy</a></span>
-              </div>
-            </footer>
-          </footer>
-        </div>
-
-        <!-- <a id="back-to-top" href="#top" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up py-1"></i></a> -->
-      </main>
-    <script>
-        document.getElementById('cYear').innerHTML = new Date().getFullYear();
-        var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        if (!mobile) {
-          new WOW().init();        
-        }
-        if (mobile) {
-          document.querySelectorAll('.fs-4').forEach(function(el) {
-            el.classList.remove('fs-4');
-            el.classList.add('fs-5');
-          });
-          document.querySelectorAll('.fs-3').forEach(function(el) {
-            el.classList.remove('fs-3');
-            el.classList.add('fs-4');
-          });
-          document.querySelectorAll('.fs-2').forEach(function(el) {
-            el.classList.remove('fs-2');
-            el.classList.add('fs-3');
-          });
-          document.querySelectorAll('.fs-1').forEach(function(el) {
-            el.classList.remove('fs-1');
-            el.classList.add('fs-2');
-          });
-          document.querySelectorAll('p').forEach(function(el) {
-            el.classList.add('small');
-          });
-          document.querySelectorAll('.py-5').forEach(function(el) {
-            el.classList.remove('py-5');
-            el.classList.add('py-3');
-          });
-          document.querySelectorAll('.pt-5').forEach(function(el) {
-            el.classList.remove('pt-5');
-            el.classList.add('pt-3');
-          });
-          document.querySelectorAll('.pb-5').forEach(function(el) {
-            el.classList.remove('pb-5');
-            el.classList.add('pb-3');
-          });
-          document.querySelectorAll('.mobileRemoveD5').forEach(function(el) {
-            el.classList.remove('display-5');
-            el.classList.remove('mobileRemoveD5');
-          });
-          document.querySelectorAll('.mobileSmall').forEach(function(el) {
-            el.classList.remove('mobileSmall, fs-3, fs-4');
-            el.classList.add('small');
-          });
-        }
-        $(document).ready(function(){
-        $(window).scroll(function () {
-          var video = document.querySelector('video');
-          var scrollBottom =  $(window).height() - $(window).scrollTop();
-            if ($(this).scrollTop() > 1450 && scrollBottom > 1000) {
-              video.pause();
-            }
-            else {
-              video.play();
-            }
-          });
-
-});
-    </script>
-    </body>
 </html>
