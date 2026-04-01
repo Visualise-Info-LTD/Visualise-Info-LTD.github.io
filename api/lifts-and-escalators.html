@@ -81,37 +81,37 @@
             // nwrHeader.set("GET", "POST", "OPTIONS");
 
             // set the x-correlation-id and client_id to the headers
-            nwrHeader.append("x-apikey", "mkMRv988Ft9KqIj1aLMf20TrU7uwg75Uw6hAhD77EKWpwoRe");
+            nwrHeader.append("x-apikey", "GxerGxG90Mfy0xb1ol26f0KcZ0BlfbH2AyGO1Uu8PWjWKmgt");
 
             // Create init object for fetch API
             const init = { method: "GET", headers: nwrHeader };
 
             // Make the request to Network Rail's API with the updated headers
-            const lifts_and_escalators = function() {
+            const lifts_and_escalators = function () {
                 fetch(
                     `https://api1.raildata.org.uk/1033-stations-experience-api---lifts-and-escalatorsv1_0/stations/${urlParams.get("station-id")}/lifts-and-escalators`,
                     init
                 )
-                .then((response) => {
-                    return response.json();
-                })
-                .then((json) => {
-                    // console.log("Success: ", json);
-                    // Display the data in a table
-                    let html = "";
-                    for (let data in json.data.resultSet) {
-                        let vts = json.data.resultSet[data];
-                        let status = vts.status;
-                        let statusClass = status === "Available" ? "text-success" : "text-danger";
-                        let statusIcon = status === "Available" ? "fa-check" : "fa-xmark";
-                        let statusMsg = null
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .then((json) => {
+                        // console.log("Success: ", json);
+                        // Display the data in a table
+                        let html = "";
+                        for (let data in json.data.resultSet) {
+                            let vts = json.data.resultSet[data];
+                            let status = vts.status;
+                            let statusClass = status === "Available" ? "text-success" : "text-danger";
+                            let statusIcon = status === "Available" ? "fa-check" : "fa-xmark";
+                            let statusMsg = null
 
-                        if (status === "Available") { statusMsg = `${vts.type} is currently available.` }
-                        else if (status === "Not Available") { statusMsg = `The status of this ${vts.type} is currently unavailable. Please check before you travel.` }
-                        else { statusMsg = `The status of this ${vts.type} is currently not known. Please check before you travel.`; status = "Data not available"; };
+                            if (status === "Available") { statusMsg = `${vts.type} is currently available.` }
+                            else if (status === "Not Available") { statusMsg = `The status of this ${vts.type} is currently unavailable. Please check before you travel.` }
+                            else { statusMsg = `The status of this ${vts.type} is currently not known. Please check before you travel.`; status = "Data not available"; };
 
 
-                        html += "<div class='hstack px-1'>";
+                            html += "<div class='hstack px-1'>";
                             html += `<div class="p-1">
                                         <i class="fa-solid ${statusIcon} ${statusClass}"></i>
                                     </div>`;
@@ -120,18 +120,18 @@
                                     <small class="fw-semibold m-0">${vts.alternateName} - ${status}</small>
                                     <small class="fw-light">${statusMsg}</small>
                                 </div>`;
-                        html += "</div></div>";
-                    }
-                    document.getElementById("nwr-response").innerHTML = html;
-                    document.getElementById("nwr-msg").classList.remove("visually-hidden");
-                })
-                .catch((error) => {
-                    console.error("Error: ", error);
-                    document.getElementById("nwr-alert").innerHTML = `<div class="alert alert-danger" role="alert">
+                            html += "</div></div>";
+                        }
+                        document.getElementById("nwr-response").innerHTML = html;
+                        document.getElementById("nwr-msg").classList.remove("visually-hidden");
+                    })
+                    .catch((error) => {
+                        console.error("Error: ", error);
+                        document.getElementById("nwr-alert").innerHTML = `<div class="alert alert-danger" role="alert">
                         ${error}`;
-                });
+                    });
             };
-            
+
             lifts_and_escalators();
 
         </script>
