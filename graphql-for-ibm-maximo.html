@@ -6,9 +6,26 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>GraphQL for IBM Maximo | Visualise Info</title>
   <meta name="description"
-    content="GraphQL for IBM Maximo by Visualise Info gives Helios and other applications a consistent, flexible way to access, navigate and update Maximo information.">
-  <meta name="keywords"
-    content="GraphQL for IBM Maximo, IBM Maximo integration, Maximo API, Maximo 7.6.1, IBM Maximo Application Suite, Helios, Visualise Info, enterprise asset management">
+    content="GraphQL for IBM Maximo by Visualise Info provides a production-ready GraphQL API to access and update data in Maximo 7.6.1.x and Maximo Application Suite 8+.">
+  <link rel="canonical" href="https://visualiseinfo.com/graphql-for-ibm-maximo.html">
+
+  <!-- Open Graph and social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GraphQL for IBM Maximo | Visualise Info">
+  <meta property="og:description"
+    content="GraphQL for IBM Maximo by Visualise Info provides a production-ready GraphQL API to access and update data in Maximo 7.6.1.x and Maximo Application Suite 8+.">
+  <meta property="og:url" content="https://visualiseinfo.com/graphql-for-ibm-maximo.html">
+  <meta property="og:image" content="https://visualiseinfo.com/assets/img/graphql-for-ibm-maximo-social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A first for Maximo — GraphQL for IBM Maximo by Visualise Info">
+  <meta property="og:site_name" content="Visualise Info">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GraphQL for IBM Maximo | Visualise Info">
+  <meta name="twitter:description"
+    content="GraphQL for IBM Maximo by Visualise Info provides a production-ready GraphQL API to access and update data in Maximo 7.6.1.x and Maximo Application Suite 8+.">
+  <meta name="twitter:image" content="https://visualiseinfo.com/assets/img/graphql-for-ibm-maximo-social.png">
+  <meta name="twitter:image:alt" content="A first for Maximo — GraphQL for IBM Maximo by Visualise Info">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -30,6 +47,105 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://visualiseinfo.com/#organization",
+          "name": "Visualise Info",
+          "url": "https://visualiseinfo.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://visualiseinfo.com/assets/img/logo.png"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://visualiseinfo.com/graphql-for-ibm-maximo.html#webpage",
+          "url": "https://visualiseinfo.com/graphql-for-ibm-maximo.html",
+          "name": "GraphQL for IBM Maximo | Visualise Info",
+          "description": "GraphQL for IBM Maximo by Visualise Info provides a production-ready GraphQL API to access and update data in Maximo 7.6.1.x and Maximo Application Suite 8+.",
+          "inLanguage": "en-GB",
+          "creator": {
+            "@id": "https://visualiseinfo.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://visualiseinfo.com/#organization"
+          },
+          "about": {
+            "@type": "Thing",
+            "name": "GraphQL for IBM Maximo"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://visualiseinfo.com/assets/img/graphql-for-ibm-maximo-social.png",
+            "width": 1200,
+            "height": 630
+          },
+          "mainEntity": {
+            "@id": "https://visualiseinfo.com/graphql-for-ibm-maximo.html#faq"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://visualiseinfo.com/graphql-for-ibm-maximo.html#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Does IBM Maximo support GraphQL?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Visualise Info provides GraphQL for IBM Maximo as an application-facing GraphQL interface while Maximo's existing APIs remain underneath. It is not a native GraphQL API shipped by IBM."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which versions of IBM Maximo are supported?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "GraphQL for IBM Maximo supports IBM Maximo 7.6.1.x and IBM Maximo Application Suite 8+."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can GraphQL for IBM Maximo update Maximo data?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The current schema supports creating and updating assets, work orders and service requests. Delete operations are supported for assets, locations, work orders, service requests and domains, where Maximo permits the change."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What Maximo data can be accessed through GraphQL?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The currently supported areas are assets, locations, work orders, service requests and domains."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does GraphQL replace the Maximo REST API?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Maximo remains the underlying system and system of record. GraphQL for IBM Maximo provides an application-facing interface over the existing IBM Maximo REST API."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can GraphQL for IBM Maximo be used without Helios?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. It forms part of Helios' Maximo integration, but it can also operate as a standalone capability for other organisations and applications."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 
   <script>
     (function (h, o, t, j, a, r) {
@@ -94,7 +210,7 @@
               <h1 class="display-2 fw-bold mb-3">GraphQL <span class="accent-text">for IBM Maximo</span></h1>
               <p class="graphql-attribution mb-4">by Visualise Info</p>
               <p class="lead fs-4 mb-4">
-                An application interface that gives your application a consistent,
+                The interface that gives your application a consistent,
                 flexible way to access, navigate and update the Maximo information they need.
                 While Maximo remains the system of record.
               </p>
@@ -161,6 +277,11 @@
           Organisations often need Maximo information to appear in several applications and user experiences.
           GraphQL for IBM Maximo provides one application-facing interface over Maximo's existing APIs, keeping the
           integration detail behind a consistent contract.
+        </p>
+        <p class="graphql-seo-summary mx-auto">
+          GraphQL for IBM Maximo is a production-ready GraphQL API developed by Visualise Info for IBM Maximo 7.6.1.x
+          and IBM Maximo Application Suite 8+. It provides a GraphQL interface over Maximo's existing APIs, allowing
+          applications to query, navigate and update supported Maximo information through a consistent interface.
         </p>
       </div>
 
@@ -375,22 +496,115 @@
       </div>
     </section><!-- /Helios or Standalone Section -->
 
-    <!--
-      IBM Statement Section
-      TODO: Remove the hidden attribute only after an attributable IBM statement and speaker details have been
-      approved for publication. Replace both TODO comments below with the approved wording and attribution.
-    -->
-    <section id="ibm-statement" class="ibm-statement section" hidden aria-hidden="true">
-      <div class="container" data-aos="fade-up">
-        <figure class="ibm-statement-card">
-          <i class="bi bi-quote" aria-hidden="true"></i>
-          <blockquote>
-            <p><!-- TODO: Insert the approved IBM statement here. --></p>
-          </blockquote>
-          <figcaption><!-- TODO: Insert the approved speaker name and title here. --></figcaption>
-        </figure>
+    <!-- Frequently Asked Questions Section -->
+    <section id="faq" class="graphql-faq section">
+      <div class="container section-title" data-aos="fade-up">
+        <span class="graphql-section-kicker">Frequently asked questions</span>
+        <h2>GraphQL for IBM Maximo questions</h2>
+        <p class="lead mx-auto">
+          Clear answers about supported Maximo environments, information and integration options.
+        </p>
       </div>
-    </section><!-- /IBM Statement Section -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="accordion graphql-faq-list mx-auto" id="graphqlFaq">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="graphqlFaqHeadingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#graphqlFaqAnswerOne" aria-expanded="true" aria-controls="graphqlFaqAnswerOne">
+                Does IBM Maximo support GraphQL?
+              </button>
+            </h3>
+            <div id="graphqlFaqAnswerOne" class="accordion-collapse collapse show"
+              aria-labelledby="graphqlFaqHeadingOne" data-bs-parent="#graphqlFaq">
+              <div class="accordion-body">
+                Visualise Info provides GraphQL for IBM Maximo as an application-facing GraphQL interface while
+                Maximo's existing APIs remain underneath. It is not a native GraphQL API shipped by IBM.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="graphqlFaqHeadingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#graphqlFaqAnswerTwo" aria-expanded="false" aria-controls="graphqlFaqAnswerTwo">
+                Which versions of IBM Maximo are supported?
+              </button>
+            </h3>
+            <div id="graphqlFaqAnswerTwo" class="accordion-collapse collapse" aria-labelledby="graphqlFaqHeadingTwo"
+              data-bs-parent="#graphqlFaq">
+              <div class="accordion-body">
+                GraphQL for IBM Maximo supports IBM Maximo 7.6.1.x and IBM Maximo Application Suite 8+.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="graphqlFaqHeadingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#graphqlFaqAnswerThree" aria-expanded="false" aria-controls="graphqlFaqAnswerThree">
+                Can GraphQL for IBM Maximo update Maximo data?
+              </button>
+            </h3>
+            <div id="graphqlFaqAnswerThree" class="accordion-collapse collapse" aria-labelledby="graphqlFaqHeadingThree"
+              data-bs-parent="#graphqlFaq">
+              <div class="accordion-body">
+                Yes. The current schema supports creating and updating assets, work orders and service requests. Delete
+                operations are supported for assets, locations, work orders, service requests and domains, where
+                Maximo permits the change.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="graphqlFaqHeadingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#graphqlFaqAnswerFour" aria-expanded="false" aria-controls="graphqlFaqAnswerFour">
+                What Maximo data can be accessed through GraphQL?
+              </button>
+            </h3>
+            <div id="graphqlFaqAnswerFour" class="accordion-collapse collapse" aria-labelledby="graphqlFaqHeadingFour"
+              data-bs-parent="#graphqlFaq">
+              <div class="accordion-body">
+                The currently supported areas are assets, locations, work orders, service requests and domains.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="graphqlFaqHeadingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#graphqlFaqAnswerFive" aria-expanded="false" aria-controls="graphqlFaqAnswerFive">
+                Does GraphQL replace the Maximo REST API?
+              </button>
+            </h3>
+            <div id="graphqlFaqAnswerFive" class="accordion-collapse collapse" aria-labelledby="graphqlFaqHeadingFive"
+              data-bs-parent="#graphqlFaq">
+              <div class="accordion-body">
+                No. Maximo remains the underlying system and system of record. GraphQL for IBM Maximo provides an
+                application-facing interface over the existing IBM Maximo REST API.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="graphqlFaqHeadingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#graphqlFaqAnswerSix" aria-expanded="false" aria-controls="graphqlFaqAnswerSix">
+                Can GraphQL for IBM Maximo be used without Helios?
+              </button>
+            </h3>
+            <div id="graphqlFaqAnswerSix" class="accordion-collapse collapse" aria-labelledby="graphqlFaqHeadingSix"
+              data-bs-parent="#graphqlFaq">
+              <div class="accordion-body">
+                Yes. It forms part of Helios' Maximo integration, but it can also operate as a standalone capability
+                for other organisations and applications.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Frequently Asked Questions Section -->
 
     <!-- Closing Call To Action Section -->
     <section id="graphql-contact" class="call-to-action graphql-cta section">

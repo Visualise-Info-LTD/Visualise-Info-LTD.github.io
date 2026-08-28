@@ -327,6 +327,13 @@ h6 {
     min-width: 245px;
   }
 
+  .navmenu .dropdown ul a.active,
+  .navmenu .dropdown ul a[aria-current="page"] {
+    width: calc(100% - 20px);
+    margin-inline: 10px;
+    padding-inline: 10px;
+  }
+
   .navmenu .dropdown ul a {
     padding: 10px 20px;
     font-size: 15px;
@@ -2825,10 +2832,16 @@ section,
 /* Dedicated page content */
 .graphql-benefits .section-title p,
 .graphql-entities .section-title p,
-.graphql-deployment .section-title p {
+.graphql-deployment .section-title p,
+.graphql-faq .section-title p {
   max-width: 850px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   line-height: 1.65;
+}
+
+.graphql-benefits .section-title .graphql-seo-summary {
+  margin-top: 1.25rem;
+  font-size: 1rem;
 }
 
 .graphql-benefit-card,
@@ -2999,31 +3012,52 @@ section,
   padding: 2.5rem;
 }
 
-.ibm-statement-card {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem;
-  background: #f3f9ff;
-  border-left: 5px solid var(--accent-color);
-  border-radius: 0 28px 28px 0;
-  box-shadow: 0 16px 45px rgba(45, 70, 94, 0.08);
+.graphql-faq .graphql-section-kicker {
+  margin-bottom: 0.8rem;
 }
 
-.ibm-statement-card > i {
-  color: var(--accent-color);
-  font-size: 3rem;
+.graphql-faq-list {
+  max-width: 920px;
 }
 
-.ibm-statement-card blockquote p {
-  margin: 1rem 0;
+.graphql-faq-list .accordion-item {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 86%);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(45, 70, 94, 0.06);
+}
+
+.graphql-faq-list .accordion-button {
+  padding: 1.25rem 1.4rem;
   color: var(--heading-color);
-  font-size: 1.5rem;
-  line-height: 1.55;
+  background: var(--surface-color);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
-.ibm-statement-card figcaption {
-  color: color-mix(in srgb, var(--default-color), transparent 35%);
-  font-weight: 600;
+.graphql-faq-list .accordion-button:not(.collapsed) {
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 95%);
+  box-shadow: none;
+}
+
+.graphql-faq-list .accordion-button:focus {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 45%);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 82%);
+}
+
+.graphql-faq-list .accordion-button::after {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.graphql-faq-list .accordion-body {
+  padding: 1.2rem 1.4rem 1.35rem;
+  color: color-mix(in srgb, var(--default-color), transparent 18%);
+  line-height: 1.7;
 }
 
 .graphql-cta {

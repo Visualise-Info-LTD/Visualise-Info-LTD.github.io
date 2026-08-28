@@ -1,11 +1,13 @@
 User-agent: Googlebot
 User-agent: AdsBot-Google
 Disallow: /assets/
+Allow: /assets/img/graphql-for-ibm-maximo-social.png
 
 User-agent: Googlebot-Image
 Disallow: /
+Allow: /assets/img/graphql-for-ibm-maximo-social.png
 
 User-agent: *
 Allow: /
 
-Sitemap: https://www.visualiseinfo.com/sitemap.xml
+Sitemap: https://visualiseinfo.com/sitemap.xml
