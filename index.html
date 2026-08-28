@@ -80,9 +80,19 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <img class='companyLogo' src="assets/img/logo.png" alt="">
       </a>
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
         <ul>
-          <li><a href="#platform">Platform</a></li>
+          <li class="dropdown platform-dropdown">
+            <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+              aria-controls="platform-submenu" aria-haspopup="true">
+              <span>Platform</span>
+              <i class="bi bi-chevron-down" aria-hidden="true"></i>
+            </button>
+            <ul id="platform-submenu">
+              <li><a href="#platform">Helios</a></li>
+              <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
+            </ul>
+          </li>
           <li><a href="#industries">Industries</a></li>
           <li><a href="#why-visualise-info">Why Visualise Info?</a></li>
           <li><a href="#partner">Partner Program</a></li>
@@ -103,7 +113,8 @@
             </ul>
           </li> -->
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open navigation menu"
+          aria-expanded="false"></button>
       </nav>
 
       <!-- <a class="btn-getstarted" href="index.html#contact">Contact Us</a> -->
@@ -265,6 +276,56 @@
         <path d="M1200 120L0 16.48V0h1200v120z" />
       </svg>
     </div>
+
+    <!-- GraphQL for IBM Maximo Highlight Section -->
+    <section id="graphql-for-maximo" class="graphql-home-highlight section light-background">
+      <div class="container" data-aos="fade-up">
+        <div class="graphql-highlight-card">
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-7">
+              <span class="graphql-eyebrow">
+                <i class="bi bi-stars" aria-hidden="true"></i>
+                A first for Maximo
+              </span>
+              <h2>GraphQL for IBM Maximo</h2>
+              <p class="graphql-attribution">by Visualise Info</p>
+              <p class="lead mb-4">
+                Visualise Info developed GraphQL for IBM Maximo to give Helios and other applications a more flexible,
+                consistent way to access, navigate and update Maximo information.
+              </p>
+              <a href="graphql-for-ibm-maximo.html" class="btn graphql-learn-more">
+                Explore GraphQL for IBM Maximo
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="graphql-mini-flow" role="img"
+                aria-label="Applications and Helios connect through GraphQL for IBM Maximo to IBM Maximo">
+                <div class="graphql-mini-node">
+                  <i class="bi bi-window-stack" aria-hidden="true"></i>
+                  <span>Applications / Helios</span>
+                </div>
+                <div class="graphql-mini-connector" aria-hidden="true">
+                  <i class="bi bi-arrow-down"></i>
+                </div>
+                <div class="graphql-mini-node graphql-mini-node-primary">
+                  <i class="bi bi-diagram-3" aria-hidden="true"></i>
+                  <span>GraphQL for IBM Maximo</span>
+                </div>
+                <div class="graphql-mini-connector" aria-hidden="true">
+                  <i class="bi bi-arrow-down"></i>
+                </div>
+                <div class="graphql-mini-node">
+                  <i class="bi bi-building-gear" aria-hidden="true"></i>
+                  <span>IBM Maximo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /GraphQL for IBM Maximo Highlight Section -->
 
     <!-- Banner Section -->
     <section class="call-to-action-2 section dark-background visually-hidden">
@@ -1491,7 +1552,8 @@
                 </ul>
               </div>
             </div>
-            <a class="btn btn-getstarted" href="index.html#contact">Get in touch to explore partnership
+            <a class="btn btn-getstarted" href="mailto:contact@visualiseinfo.com?subject=Partnership%20Enquiry">Get in
+              touch to explore partnership
               opportunities.</a>
           </div>
 
@@ -1705,6 +1767,7 @@
           <h4>Useful Links</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
             <!-- <li><a href="resources.html">Resources</a></li> -->
             <li><a href="docs/eula/index.html">Terms of service</a></li>
             <li><a href="privacy-policy.html">Privacy policy</a></li>
