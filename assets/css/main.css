@@ -252,7 +252,8 @@ h6 {
   }
 
   .navmenu a,
-  .navmenu a:focus {
+  .navmenu a:focus,
+  .navmenu .nav-dropdown-toggle {
     color: var(--nav-color);
     padding: 18px 15px;
     font-size: 16px;
@@ -265,8 +266,26 @@ h6 {
     transition: 0.3s;
   }
 
+  .navmenu .nav-dropdown-toggle {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .navmenu .nav-dropdown-toggle:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .navmenu .nav-dropdown-toggle:focus-visible {
+    outline: 2px solid var(--nav-hover-color);
+    outline-offset: -2px;
+    border-radius: 8px;
+  }
+
   .navmenu a i,
-  .navmenu a:focus i {
+  .navmenu a:focus i,
+  .navmenu .nav-dropdown-toggle i {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
@@ -278,6 +297,7 @@ h6 {
   }
 
   .navmenu li:hover > a,
+  .navmenu li:hover > .nav-dropdown-toggle,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
@@ -303,6 +323,10 @@ h6 {
     min-width: 200px;
   }
 
+  .navmenu .platform-dropdown > ul {
+    min-width: 245px;
+  }
+
   .navmenu .dropdown ul a {
     padding: 10px 20px;
     font-size: 15px;
@@ -320,10 +344,18 @@ h6 {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover > ul {
+  .navmenu .dropdown:hover > ul,
+  .navmenu .dropdown:focus-within > ul,
+  .navmenu .dropdown.dropdown-open > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
+  }
+
+  .navmenu .dropdown.dropdown-focus-closed:focus-within > ul {
+    opacity: 0;
+    top: 130%;
+    visibility: hidden;
   }
 
   .navmenu .dropdown .dropdown ul {
@@ -379,7 +411,8 @@ h6 {
   }
 
   .navmenu a,
-  .navmenu a:focus {
+  .navmenu a:focus,
+  .navmenu .nav-dropdown-toggle {
     color: var(--nav-dropdown-color);
     padding: 10px 20px;
     font-family: var(--nav-font);
@@ -392,8 +425,28 @@ h6 {
     transition: 0.3s;
   }
 
+  .navmenu .nav-dropdown-toggle {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .navmenu .nav-dropdown-toggle:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .navmenu .nav-dropdown-toggle:focus-visible {
+    outline: 2px solid var(--nav-dropdown-hover-color);
+    outline-offset: -2px;
+    border-radius: 8px;
+  }
+
   .navmenu a i,
-  .navmenu a:focus i {
+  .navmenu a:focus i,
+  .navmenu .nav-dropdown-toggle i {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
@@ -408,12 +461,14 @@ h6 {
   }
 
   .navmenu a i:hover,
-  .navmenu a:focus i:hover {
+  .navmenu a:focus i:hover,
+  .navmenu .nav-dropdown-toggle i:hover {
     background-color: var(--accent-color);
     color: var(--contrast-color);
   }
 
   .navmenu a:hover,
+  .navmenu .nav-dropdown-toggle:hover,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-dropdown-hover-color);
@@ -421,6 +476,16 @@ h6 {
 
   .navmenu .active i,
   .navmenu .active:focus i {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    transform: rotate(180deg);
+  }
+
+  .navmenu .nav-dropdown-toggle.active i {
+    transform: none;
+  }
+
+  .navmenu .nav-dropdown-toggle[aria-expanded="true"] i {
     background-color: var(--accent-color);
     color: var(--contrast-color);
     transform: rotate(180deg);
@@ -440,6 +505,13 @@ h6 {
 
   .navmenu .dropdown ul ul {
     background-color: rgba(33, 37, 41, 0.1);
+  }
+
+  .navmenu .dropdown ul a {
+    min-height: 44px;
+    padding: 11px 20px 11px 28px;
+    font-size: 15.5px;
+    white-space: normal;
   }
 
   .navmenu .dropdown > .dropdown-active {
@@ -472,6 +544,14 @@ h6 {
   .mobile-nav-active .navmenu > ul {
     display: block;
   }
+}
+
+.navmenu .dropdown ul a.active,
+.navmenu .dropdown ul a[aria-current="page"] {
+  color: var(--nav-dropdown-hover-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  border-radius: 10px;
+  font-weight: 600;
 }
 
 /*--------------------------------------------------------------
@@ -2604,11 +2684,15 @@ section,
   color: var(--contrast-color);
 }
 
-.graphql-mini-connector {
-  height: 2rem;
+.graphql-mini-connector,
+.graphql-architecture-connector {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.graphql-mini-connector {
+  height: 2rem;
   color: var(--graphql-blue);
 }
 
@@ -2718,21 +2802,10 @@ section,
 
 .graphql-architecture-connector {
   height: 2.65rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   color: var(--accent-color);
 }
 
-.graphql-architecture-connector span {
-  width: 2px;
-  height: 1rem;
-  background: color-mix(in srgb, var(--accent-color), transparent 35%);
-}
-
 .graphql-architecture-connector i {
-  margin-top: -0.2rem;
   font-size: 1rem;
 }
 

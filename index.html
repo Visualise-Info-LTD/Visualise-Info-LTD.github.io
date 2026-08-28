@@ -80,10 +80,19 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <img class='companyLogo' src="assets/img/logo.png" alt="">
       </a>
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
         <ul>
-          <li><a href="#platform">Platform</a></li>
-          <li><a href="graphql-for-ibm-maximo.html">GraphQL for Maximo</a></li>
+          <li class="dropdown platform-dropdown">
+            <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+              aria-controls="platform-submenu" aria-haspopup="true">
+              <span>Platform</span>
+              <i class="bi bi-chevron-down" aria-hidden="true"></i>
+            </button>
+            <ul id="platform-submenu">
+              <li><a href="#platform">Helios</a></li>
+              <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
+            </ul>
+          </li>
           <li><a href="#industries">Industries</a></li>
           <li><a href="#why-visualise-info">Why Visualise Info?</a></li>
           <li><a href="#partner">Partner Program</a></li>
@@ -1543,7 +1552,8 @@
                 </ul>
               </div>
             </div>
-            <a class="btn btn-getstarted" href="index.html#contact">Get in touch to explore partnership
+            <a class="btn btn-getstarted" href="mailto:contact@visualiseinfo.com?subject=Partnership%20Enquiry">Get in
+              touch to explore partnership
               opportunities.</a>
           </div>
 

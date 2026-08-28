@@ -50,9 +50,19 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <img class='companyLogo' src="assets/img/logo.png" alt="">
       </a>
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
         <ul>
-          <li><a href="index.html#platform">Platform</a></li>
+          <li class="dropdown platform-dropdown">
+            <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+              aria-controls="platform-submenu" aria-haspopup="true">
+              <span>Platform</span>
+              <i class="bi bi-chevron-down" aria-hidden="true"></i>
+            </button>
+            <ul id="platform-submenu">
+              <li><a href="index.html#platform">Helios</a></li>
+              <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
+            </ul>
+          </li>
           <li><a href="index.html#industries">Industries</a></li>
           <li><a href="index.html#why-visualise-info">Why Visualise Info?</a></li>
           <li><a href="index.html#partner">Partner Program</a></li>
@@ -73,7 +83,8 @@
             </ul>
           </li> -->
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open navigation menu"
+          aria-expanded="false"></button>
       </nav>
 
       <!-- <a class="btn-getstarted" href="index.html#about">Contact Us</a> -->

@@ -55,8 +55,18 @@
 
       <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
         <ul>
-          <li><a href="index.html#platform">Platform</a></li>
-          <li><a href="graphql-for-ibm-maximo.html" class="active" aria-current="page">GraphQL for Maximo</a></li>
+          <li class="dropdown platform-dropdown">
+            <button class="nav-dropdown-toggle active" type="button" aria-expanded="false"
+              aria-controls="platform-submenu" aria-haspopup="true">
+              <span>Platform</span>
+              <i class="bi bi-chevron-down" aria-hidden="true"></i>
+            </button>
+            <ul id="platform-submenu">
+              <li><a href="index.html#platform">Helios</a></li>
+              <li><a href="graphql-for-ibm-maximo.html" class="active" aria-current="page">GraphQL for IBM Maximo</a>
+              </li>
+            </ul>
+          </li>
           <li><a href="index.html#industries">Industries</a></li>
           <li><a href="index.html#why-visualise-info">Why Visualise Info?</a></li>
           <li><a href="index.html#partner">Partner Program</a></li>
@@ -84,7 +94,7 @@
               <h1 class="display-2 fw-bold mb-3">GraphQL <span class="accent-text">for IBM Maximo</span></h1>
               <p class="graphql-attribution mb-4">by Visualise Info</p>
               <p class="lead fs-4 mb-4">
-                An application interface that gives Helios and other applications a consistent,
+                An application interface that gives your application a consistent,
                 flexible way to access, navigate and update the Maximo information they need.
                 While Maximo remains the system of record.
               </p>
@@ -111,8 +121,7 @@
                 </span>
               </div>
               <div class="graphql-architecture-connector" aria-hidden="true">
-                <span></span>
-                <i class="bi bi-chevron-down"></i>
+                <i class="bi bi-arrow-down"></i>
               </div>
               <div class="graphql-architecture-node graphql-architecture-node-primary">
                 <span class="graphql-architecture-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></span>
@@ -122,8 +131,7 @@
                 </span>
               </div>
               <div class="graphql-architecture-connector" aria-hidden="true">
-                <span></span>
-                <i class="bi bi-chevron-down"></i>
+                <i class="bi bi-arrow-down"></i>
               </div>
               <div class="graphql-architecture-node">
                 <span class="graphql-architecture-icon"><i class="bi bi-building-gear" aria-hidden="true"></i></span>
@@ -185,7 +193,7 @@
               <span class="graphql-card-icon"><i class="bi bi-layers" aria-hidden="true"></i></span>
               <h3>Use a consistent application contract</h3>
               <p>
-                The shared Helios schema gives consuming applications a common way to work with supported Maximo
+                The GraphQL schema gives consuming applications a common way to work with supported Maximo
                 information while the executor handles Maximo-specific translation.
               </p>
             </article>
@@ -202,13 +210,14 @@
             <span class="graphql-section-kicker">A more flexible way to work with Maximo</span>
             <h2 class="display-6 fw-bold mb-4">A modern interface, with Maximo underneath</h2>
             <p class="lead">
-              GraphQL for IBM Maximo does not replace Maximo or its APIs. It translates application requests into
-              Maximo OSLC REST API calls and presents the results through the shared Helios GraphQL schema.
+              GraphQL for IBM Maximo sits seamlessly on top of your existing architecture. It translates incoming
+              application requests into optimised Maximo OSLC REST API calls, serving data through a single, unified
+              GraphQL schema without modifying your underlying setup.
             </p>
             <p>
-              Maximo remains the enterprise system and system of record. The difference is at the application layer:
-              teams can give modern applications a consistent way to request and update supported information without
-              making every consuming experience understand the same Maximo-specific integration behaviour.
+              Maximo remains your untouched enterprise system of record. Modernising the application layer delivers a
+              clear advantage: teams can build fast, modern apps without forcing every consuming experience to
+              understand complex, Maximo-specific integration behaviours.
             </p>
           </div>
 
@@ -347,8 +356,8 @@
               <span class="graphql-card-icon"><i class="bi bi-bounding-box-circles" aria-hidden="true"></i></span>
               <h3>Within Helios</h3>
               <p>
-                It provides the consistent Maximo interface used by Helios to work with supported enterprise asset and
-                work information.
+                It provides the consistent Maximo interface used by Helios to work with supported enterprise asset
+                management systems.
               </p>
             </article>
           </div>
