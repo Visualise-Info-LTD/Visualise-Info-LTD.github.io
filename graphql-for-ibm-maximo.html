@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>GraphQL for IBM Maximo | Visualise Info</title>
+  <meta name="description"
+    content="GraphQL for IBM Maximo by Visualise Info gives Helios and other applications a consistent, flexible way to access, navigate and update Maximo information.">
+  <meta name="keywords"
+    content="GraphQL for IBM Maximo, IBM Maximo integration, Maximo API, Maximo 7.6.1, IBM Maximo Application Suite, Helios, Visualise Info, enterprise asset management">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <script>
+    (function (h, o, t, j, a, r) {
+      h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+      h._hjSettings = { hjid: 3904011, hjsv: 6 };
+      a = o.getElementsByTagName('head')[0];
+      r = o.createElement('script'); r.async = 1;
+      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+  </script>
+</head>
+
+<body class="graphql-maximo-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div
+      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0" aria-label="Visualise Info home">
+        <img class="companyLogo" src="assets/img/logo.png" alt="Visualise Info">
+      </a>
+
+      <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html#platform">Platform</a></li>
+          <li><a href="graphql-for-ibm-maximo.html" class="active" aria-current="page">GraphQL for Maximo</a></li>
+          <li><a href="index.html#industries">Industries</a></li>
+          <li><a href="index.html#why-visualise-info">Why Visualise Info?</a></li>
+          <li><a href="index.html#partner">Partner Program</a></li>
+          <li><a href="index.html#about">Company</a></li>
+        </ul>
+        <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open navigation menu"
+          aria-expanded="false"></button>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- GraphQL Hero Section -->
+    <section id="graphql-hero" class="hero graphql-hero section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7">
+            <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+              <span class="company-badge mb-4">
+                <i class="bi bi-stars me-2" aria-hidden="true"></i>
+                A first for Maximo
+              </span>
+              <h1 class="display-2 fw-bold mb-3">GraphQL <span class="accent-text">for IBM Maximo</span></h1>
+              <p class="graphql-attribution mb-4">by Visualise Info</p>
+              <p class="lead fs-4 mb-4">
+                An application interface that gives Helios and other applications a consistent,
+                flexible way to access, navigate and update the Maximo information they need.
+                While Maximo remains the system of record.
+              </p>
+              <div class="hero-buttons d-flex flex-wrap gap-3">
+                <a href="mailto:contact@visualiseinfo.com?subject=GraphQL%20for%20IBM%20Maximo%20enquiry"
+                  class="btn btn-primary">Discuss your Maximo integration</a>
+                <a href="#why-it-matters" class="btn btn-link d-inline-flex align-items-center">
+                  See what it enables
+                  <i class="bi bi-arrow-down ms-2" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="graphql-architecture" data-aos="zoom-in-up" data-aos-delay="300" role="img"
+              aria-label="Applications and Helios connect through GraphQL for IBM Maximo to IBM Maximo, which remains the underlying system">
+              <p class="graphql-architecture-label">A simple application-facing interface</p>
+              <div class="graphql-architecture-node">
+                <span class="graphql-architecture-icon"><i class="bi bi-window-stack" aria-hidden="true"></i></span>
+                <span>
+                  <strong>Applications / Helios</strong>
+                  <small>The experiences people use</small>
+                </span>
+              </div>
+              <div class="graphql-architecture-connector" aria-hidden="true">
+                <span></span>
+                <i class="bi bi-chevron-down"></i>
+              </div>
+              <div class="graphql-architecture-node graphql-architecture-node-primary">
+                <span class="graphql-architecture-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></span>
+                <span>
+                  <strong>GraphQL for IBM Maximo</strong>
+                  <small>by Visualise Info</small>
+                </span>
+              </div>
+              <div class="graphql-architecture-connector" aria-hidden="true">
+                <span></span>
+                <i class="bi bi-chevron-down"></i>
+              </div>
+              <div class="graphql-architecture-node">
+                <span class="graphql-architecture-icon"><i class="bi bi-building-gear" aria-hidden="true"></i></span>
+                <span>
+                  <strong>IBM Maximo</strong>
+                  <small>Enterprise system and system of record</small>
+                </span>
+              </div>
+              <p class="graphql-architecture-note">Maximo's existing APIs remain underneath.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /GraphQL Hero Section -->
+
+    <div class="section-divider" aria-hidden="true">
+      <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1200 120L0 16.48V0h1200v120z"></path>
+      </svg>
+    </div>
+
+    <!-- Why It Matters Section -->
+    <section id="why-it-matters" class="graphql-benefits section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Make Maximo information easier for applications to use</h2>
+        <p class="lead mx-auto">
+          Organisations often need Maximo information to appear in several applications and user experiences.
+          GraphQL for IBM Maximo provides one application-facing interface over Maximo's existing APIs, keeping the
+          integration detail behind a consistent contract.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="100">
+            <article class="graphql-benefit-card">
+              <span class="graphql-card-icon"><i class="bi bi-ui-checks-grid" aria-hidden="true"></i></span>
+              <h3>Bring the right information into view</h3>
+              <p>
+                Applications can request the fields they need, narrow supported lists and work through larger result
+                sets in manageable pages.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="200">
+            <article class="graphql-benefit-card">
+              <span class="graphql-card-icon"><i class="bi bi-bezier2" aria-hidden="true"></i></span>
+              <h3>Follow connected information</h3>
+              <p>
+                Applications can move between related assets, locations, work orders and service requests through the
+                same interface.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="300">
+            <article class="graphql-benefit-card">
+              <span class="graphql-card-icon"><i class="bi bi-layers" aria-hidden="true"></i></span>
+              <h3>Use a consistent application contract</h3>
+              <p>
+                The shared Helios schema gives consuming applications a common way to work with supported Maximo
+                information while the executor handles Maximo-specific translation.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Why It Matters Section -->
+
+    <!-- Maximo Underneath Section -->
+    <section id="maximo-underneath" class="graphql-underneath section">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6" data-aos="fade-up">
+            <span class="graphql-section-kicker">A more flexible way to work with Maximo</span>
+            <h2 class="display-6 fw-bold mb-4">A modern interface, with Maximo underneath</h2>
+            <p class="lead">
+              GraphQL for IBM Maximo does not replace Maximo or its APIs. It translates application requests into
+              Maximo OSLC REST API calls and presents the results through the shared Helios GraphQL schema.
+            </p>
+            <p>
+              Maximo remains the enterprise system and system of record. The difference is at the application layer:
+              teams can give modern applications a consistent way to request and update supported information without
+              making every consuming experience understand the same Maximo-specific integration behaviour.
+            </p>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="graphql-capability-panel">
+              <h3>What the interface supports</h3>
+              <ul>
+                <li>
+                  <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                  <span>Selecting the information an application requires</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                  <span>Filtering and ordering supported lists</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                  <span>Cursor-based pagination across supported information</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                  <span>Moving between related Maximo records</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                  <span>Supported create, update and delete operations</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Maximo Underneath Section -->
+
+    <!-- Supported Information Section -->
+    <section id="supported-information" class="graphql-entities section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>What it connects</h2>
+        <p class="lead mx-auto">
+          Applications can view all five supported Maximo information areas. The current schema also supports creating
+          and updating assets, work orders and service requests, plus delete operations across all five areas where
+          Maximo permits the change.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-6 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="50">
+            <article class="graphql-entity-card">
+              <span class="graphql-entity-icon"><i class="bi bi-box-seam" aria-hidden="true"></i></span>
+              <h3>Assets</h3>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
+            <article class="graphql-entity-card">
+              <span class="graphql-entity-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span>
+              <h3>Locations</h3>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="150">
+            <article class="graphql-entity-card">
+              <span class="graphql-entity-icon"><i class="bi bi-clipboard-check" aria-hidden="true"></i></span>
+              <h3>Work Orders</h3>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="200">
+            <article class="graphql-entity-card">
+              <span class="graphql-entity-icon"><i class="bi bi-chat-square-text" aria-hidden="true"></i></span>
+              <h3>Service Requests</h3>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="250">
+            <article class="graphql-entity-card">
+              <span class="graphql-entity-icon"><i class="bi bi-list-check" aria-hidden="true"></i></span>
+              <h3>Domains</h3>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="300">
+            <article class="graphql-entity-card graphql-entity-card-more">
+              <span class="graphql-entity-icon"><i class="bi bi-plus-lg" aria-hidden="true"></i></span>
+              <h3>And more</h3>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Supported Information Section -->
+
+    <!-- Compatibility Section -->
+    <section id="compatibility" class="graphql-compatibility section">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-5" data-aos="fade-up">
+            <span class="graphql-section-kicker">Built for real Maximo environments</span>
+            <h2 class="display-6 fw-bold mb-3">Supported across established and current Maximo deployments</h2>
+            <p class="lead mb-0">
+              The same capability supports organisations running either of the current supported Maximo lines.
+            </p>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="row gy-3">
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="graphql-version-card">
+                  <i class="bi bi-server" aria-hidden="true"></i>
+                  <span>IBM Maximo</span>
+                  <strong>7.6.1.x</strong>
+                </div>
+              </div>
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="graphql-version-card">
+                  <i class="bi bi-cloud-check" aria-hidden="true"></i>
+                  <span>IBM Maximo Application Suite</span>
+                  <strong>8+</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Compatibility Section -->
+
+    <!-- Helios or Standalone Section -->
+    <section id="helios-or-standalone" class="graphql-deployment section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Built into Helios. Available beyond it.</h2>
+        <p class="lead mx-auto">
+          GraphQL for IBM Maximo forms part of the technology behind Helios' EAM integration, but the capability is
+          not restricted to Helios.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+            <article class="graphql-deployment-card">
+              <span class="graphql-card-icon"><i class="bi bi-bounding-box-circles" aria-hidden="true"></i></span>
+              <h3>Within Helios</h3>
+              <p>
+                It provides the consistent Maximo interface used by Helios to work with supported enterprise asset and
+                work information.
+              </p>
+            </article>
+          </div>
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
+            <article class="graphql-deployment-card">
+              <span class="graphql-card-icon"><i class="bi bi-plug" aria-hidden="true"></i></span>
+              <h3>As a standalone capability</h3>
+              <p>
+                It can operate independently for organisations or applications that need an application-facing
+                interface to IBM Maximo.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Helios or Standalone Section -->
+
+    <!--
+      IBM Statement Section
+      TODO: Remove the hidden attribute only after an attributable IBM statement and speaker details have been
+      approved for publication. Replace both TODO comments below with the approved wording and attribution.
+    -->
+    <section id="ibm-statement" class="ibm-statement section" hidden aria-hidden="true">
+      <div class="container" data-aos="fade-up">
+        <figure class="ibm-statement-card">
+          <i class="bi bi-quote" aria-hidden="true"></i>
+          <blockquote>
+            <p><!-- TODO: Insert the approved IBM statement here. --></p>
+          </blockquote>
+          <figcaption><!-- TODO: Insert the approved speaker name and title here. --></figcaption>
+        </figure>
+      </div>
+    </section><!-- /IBM Statement Section -->
+
+    <!-- Closing Call To Action Section -->
+    <section id="graphql-contact" class="call-to-action graphql-cta section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row content justify-content-center align-items-center position-relative">
+          <div class="col-lg-9 mx-auto text-center">
+            <h2 class="display-5 mb-4">Talk to us about IBM Maximo integration</h2>
+            <p class="fs-5 mb-4">
+              Whether you are exploring Helios or need a standalone integration capability, we can discuss how
+              GraphQL for IBM Maximo could fit your environment.
+            </p>
+            <a href="mailto:contact@visualiseinfo.com?subject=GraphQL%20for%20IBM%20Maximo%20enquiry"
+              class="btn btn-cta">Contact Visualise Info</a>
+          </div>
+
+          <div class="shape shape-1" aria-hidden="true">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M47.1,-57.1C59.9,-45.6,68.5,-28.9,71.4,-10.9C74.2,7.1,71.3,26.3,61.5,41.1C51.7,55.9,35,66.2,16.9,69.2C-1.3,72.2,-21,67.8,-36.9,57.9C-52.8,48,-64.9,32.6,-69.1,15.1C-73.3,-2.4,-69.5,-22,-59.4,-37.1C-49.3,-52.2,-32.8,-62.9,-15.7,-64.9C1.5,-67,34.3,-68.5,47.1,-57.1Z"
+                transform="translate(100 100)"></path>
+            </svg>
+          </div>
+          <div class="shape shape-2" aria-hidden="true">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M41.3,-49.1C54.4,-39.3,66.6,-27.2,71.1,-12.1C75.6,3,72.4,20.9,63.3,34.4C54.2,47.9,39.2,56.9,23.2,62.3C7.1,67.7,-10,69.4,-24.8,64.1C-39.7,58.8,-52.3,46.5,-60.1,31.5C-67.9,16.4,-70.9,-1.4,-66.3,-16.6C-61.8,-31.8,-49.7,-44.3,-36.3,-54C-22.9,-63.7,-8.2,-70.6,3.6,-75.1C15.4,-79.6,28.2,-58.9,41.3,-49.1Z"
+                transform="translate(100 100)"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Closing Call To Action Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center" aria-label="Visualise Info home">
+            <img class="companyLogo" src="assets/img/logo.png" alt="Visualise Info">
+          </a>
+          <div class="footer-contact">
+            <a class="nav-link" href="https://www.google.com/maps/place/12+Creekside,+London+SE8+3DX" target="_blank"
+              rel="noopener noreferrer">
+              <p class="footer-text">Fuel Tank, 8-12 Creekside<br>London, SE8 3DX</p>
+            </a>
+            <p>
+              <a class="footer-text" href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a>
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
+            <li><a href="docs/eula/index.html">Terms of service</a></li>
+            <li><a href="privacy-policy.html">Privacy policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 footer-links">
+          <h4>Social Links</h4>
+          <div class="social-links d-flex">
+            <a href="https://uk.linkedin.com/company/visualise-info-ltd" aria-label="Visualise Info on LinkedIn">
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/visualiseinfo/" aria-label="Visualise Info on Instagram">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.youtube.com/@VisualiseInfo" aria-label="Visualise Info on YouTube">
+              <i class="bi bi-youtube" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 footer-links">
+          <h4>Certifications</h4>
+          <div class="d-flex">
+            <iframe
+              src="https://registry.blockmarktech.com/certificates/63b9d9dc-78cd-4919-8bb4-9bb0096cec7c/widget/?tooltip_position=top_left&theme=transparent&hover=true"
+              title="Visualise Info certification" style="border:none;height:80px;width:80px;"></iframe>
+            <a href="https://ico.org.uk/ESDWebPages/Entry/ZB727534" aria-label="Visualise Info ICO registration">
+              <img class="rounded" src="assets/img/ico.org.uk.png" alt="ICO"
+                style="border:none;height:80px;width:80px;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span><span class="px-1 fw-semibold sitename">Visualise <span
+            class="accent-text">Info</span></span><span>ltd. All Rights Reserved</span></p>
+      <div class="credits text-small text-muted opacity-25">
+        Designed by <a class="text-reset" href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
+    aria-label="Back to top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
