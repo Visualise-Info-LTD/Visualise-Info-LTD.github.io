@@ -3477,6 +3477,35 @@ section,
   line-height: 1.45;
 }
 
+.helios-product-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  overflow: hidden;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 78%);
+  border-radius: 28px;
+  box-shadow: 0 16px 42px rgba(45, 70, 94, 0.09);
+}
+
+.helios-product-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.helios-product-media-contain {
+  padding: clamp(1rem, 3vw, 2rem);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, #339aff, transparent 96%), transparent 62%),
+    var(--surface-color);
+}
+
+.helios-product-media-contain img {
+  object-fit: contain;
+}
+
 .helios-problem-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -4035,6 +4064,7 @@ section,
   }
 
   .helios-media-placeholder,
+  .helios-product-media,
   .helios-context-diagram,
   .helios-proof-card,
   .helios-control-card,

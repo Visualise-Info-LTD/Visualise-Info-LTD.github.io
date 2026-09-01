@@ -2,10 +2,14 @@ User-agent: Googlebot
 User-agent: AdsBot-Google
 Disallow: /assets/
 Allow: /assets/img/graphql-for-ibm-maximo-social.png
+Allow: /assets/img/helios/social.png
+Allow: /assets/img/logo.png
 
 User-agent: Googlebot-Image
 Disallow: /
 Allow: /assets/img/graphql-for-ibm-maximo-social.png
+Allow: /assets/img/helios/social.png
+Allow: /assets/img/logo.png
 
 User-agent: *
 Allow: /
