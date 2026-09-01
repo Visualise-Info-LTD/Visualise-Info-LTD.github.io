@@ -217,15 +217,12 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"
     rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/site.css" rel="stylesheet">
 
   <script>
     (function (h, o, t, j, a, r) {
@@ -241,45 +238,42 @@
 
 <body class="helios-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div
-      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0" aria-label="Visualise Info home">
-        <img class="companyLogo" src="assets/img/logo.png" alt="Visualise Info">
+  <header id="site-header" class="site-header">
+    <div class="site-header__bar container-xl">
+      <a href="index.html" class="site-brand" aria-label="Visualise Info home">
+        <img class="site-brand__logo" src="assets/img/logo.png" alt="Visualise Info">
       </a>
-
-      <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
-        <ul>
-          <li class="dropdown platform-dropdown">
-            <button class="nav-dropdown-toggle active" type="button" aria-expanded="false"
-              aria-controls="platform-submenu" aria-haspopup="true">
+      <nav class="site-navigation" aria-label="Primary navigation">
+        <ul id="site-navigation-menu" class="site-navigation__list">
+          <li class="site-navigation__item">
+            <button class="site-navigation__submenu-toggle active" type="button" aria-expanded="false"
+              aria-controls="platform-submenu" aria-haspopup="true" data-submenu-toggle>
               <span>Platform</span>
               <i class="bi bi-chevron-down" aria-hidden="true"></i>
             </button>
-            <ul id="platform-submenu">
+            <ul id="platform-submenu" class="site-navigation__submenu">
               <li><a href="helios.html" class="active" aria-current="page">Helios</a></li>
               <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
             </ul>
           </li>
-          <li><a href="index.html#industries">Industries</a></li>
-          <li><a href="index.html#why-visualise-info">Why Visualise Info?</a></li>
-          <li><a href="index.html#partner">Partner Program</a></li>
-          <li><a href="index.html#about">Company</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="index.html#industries">Industries</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="index.html#why-visualise-info">Why Visualise Info?</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="index.html#partner">Partner Program</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="index.html#about">Company</a></li>
         </ul>
-        <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open navigation menu"
-          aria-expanded="false"></button>
+        <button class="site-navigation__mobile-toggle bi bi-list" type="button" aria-label="Open navigation menu"
+          aria-controls="site-navigation-menu" aria-expanded="false" data-nav-toggle></button>
       </nav>
-
-      <a class="btn-getstarted" href="index.html#contact">Contact</a>
+      <a class="site-header__cta" href="index.html#contact">Contact</a>
     </div>
   </header>
 
   <main class="main">
-    <section id="helios-hero" class="hero helios-hero section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <section id="helios-hero" class="helios-hero section">
+      <div class="container">
         <div class="row align-items-center gy-5">
           <div class="col-lg-6">
-            <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-hero__content">
               <span class="helios-eyebrow">
                 <i class="bi bi-bounding-box-circles" aria-hidden="true"></i>
                 Enterprise spatial platform
@@ -290,7 +284,7 @@
                 with the information needed to understand and manage it.
               </p>
               <p class="helios-tagline">Built to Simplify, Designed to Scale</p>
-              <div class="hero-buttons d-flex flex-wrap gap-3">
+              <div class="product-hero__actions d-flex flex-wrap gap-3">
                 <a href="mailto:contact@visualiseinfo.com?subject=Helios%20demo%20enquiry"
                   class="btn helios-primary-button">See Helios in action</a>
                 <a href="#spatial-experience" class="btn helios-btn-secondary">Explore capabilities</a>
@@ -298,7 +292,7 @@
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="zoom-in-up" data-aos-delay="250">
+          <div class="col-lg-6">
             <!-- TODO media: replace this placeholder with assets/img/helios/overview.png.
                  Ideal capture: a wide Helios spatial overview showing panorama or point cloud, minimap and spatial POIs. -->
             <div class="helios-media-placeholder helios-media-placeholder-hero" role="img"
@@ -313,8 +307,8 @@
       </div>
     </section>
 
-    <section id="common-context" class="helios-context section light-background">
-      <div class="container section-title" data-aos="fade-up">
+    <section id="common-context" class="helios-context section section--tinted">
+      <div class="container section-heading">
         <span class="helios-section-kicker">The operational challenge</span>
         <h2>The information exists. The context is scattered.</h2>
         <p class="lead mx-auto">
@@ -324,7 +318,7 @@
         </p>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
         <div class="helios-problem-list" aria-label="Common operational information problems">
           <article class="helios-problem-item">
             <span aria-hidden="true">01</span>
@@ -393,7 +387,7 @@
     <section id="spatial-experience" class="helios-spatial section">
       <div class="container">
         <div class="row align-items-center gy-5">
-          <div class="col-lg-6" data-aos="fade-up">
+          <div class="col-lg-6">
             <span class="helios-section-kicker">The digital representation</span>
             <h2 class="display-6 fw-semibold">The environment is the foundation</h2>
             <p class="lead">
@@ -412,7 +406,7 @@
               <span><i class="bi bi-geo-alt" aria-hidden="true"></i> Spatial POIs</span>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6">
             <figure class="helios-product-media">
               <img src="assets/img/helios/pointcloud.png"
                 alt="Helios point-cloud exploration view with the minimap and spatial view controls visible"
@@ -423,8 +417,8 @@
       </div>
     </section>
 
-    <section id="workflows" class="helios-workflows section light-background">
-      <div class="container section-title" data-aos="fade-up">
+    <section id="workflows" class="helios-workflows section section--tinted">
+      <div class="container section-heading">
         <span class="helios-section-kicker">From place to action</span>
         <h2>A clearer way to understand and carry out work</h2>
         <p class="lead mx-auto">
@@ -434,11 +428,11 @@
       </div>
       <div class="container">
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3 justify-content-center">
-          <div class="col" data-aos="fade-up"><article class="helios-workflow-card"><i class="bi bi-search" aria-hidden="true"></i><h3>Find what you need</h3><p>Locate spaces, assets, records and supporting information through where they are.</p></article></div>
-          <div class="col" data-aos="fade-up" data-aos-delay="50"><article class="helios-workflow-card"><i class="bi bi-eye" aria-hidden="true"></i><h3>Understand it in context</h3><p>See an issue alongside its surroundings, related information and operational history.</p></article></div>
-          <div class="col" data-aos="fade-up" data-aos-delay="100"><article class="helios-workflow-card"><i class="bi bi-arrow-left-right" aria-hidden="true"></i><h3>Compare records with reality</h3><p>Review registered information beside visual evidence so discrepancies are easier to identify.</p></article></div>
-          <div class="col" data-aos="fade-up" data-aos-delay="150"><article class="helios-workflow-card"><i class="bi bi-tools" aria-hidden="true"></i><h3>Coordinate and carry out work</h3><p>Bring instructions, reporting and location information together for planning and field activity.</p></article></div>
-          <div class="col" data-aos="fade-up" data-aos-delay="200"><article class="helios-workflow-card"><i class="bi bi-people" aria-hidden="true"></i><h3>Review and collaborate remotely</h3><p>Give teams a shared visual reference and reduce site visits when remote review is sufficient.</p></article></div>
+          <div class="col"><article class="helios-workflow-card"><i class="bi bi-search" aria-hidden="true"></i><h3>Find what you need</h3><p>Locate spaces, assets, records and supporting information through where they are.</p></article></div>
+          <div class="col"><article class="helios-workflow-card"><i class="bi bi-eye" aria-hidden="true"></i><h3>Understand it in context</h3><p>See an issue alongside its surroundings, related information and operational history.</p></article></div>
+          <div class="col"><article class="helios-workflow-card"><i class="bi bi-arrow-left-right" aria-hidden="true"></i><h3>Compare records with reality</h3><p>Review registered information beside visual evidence so discrepancies are easier to identify.</p></article></div>
+          <div class="col"><article class="helios-workflow-card"><i class="bi bi-tools" aria-hidden="true"></i><h3>Coordinate and carry out work</h3><p>Bring instructions, reporting and location information together for planning and field activity.</p></article></div>
+          <div class="col"><article class="helios-workflow-card"><i class="bi bi-people" aria-hidden="true"></i><h3>Review and collaborate remotely</h3><p>Give teams a shared visual reference and reduce site visits when remote review is sufficient.</p></article></div>
         </div>
       </div>
     </section>
@@ -446,7 +440,7 @@
     <section id="operations" class="helios-feature-section section">
       <div class="container">
         <div class="row align-items-center gy-5">
-          <div class="col-lg-6" data-aos="fade-up">
+          <div class="col-lg-6">
             <span class="helios-section-kicker">Enterprise operations</span>
             <h2 class="display-6 fw-semibold">Understand operational records in physical context</h2>
             <p class="lead">
@@ -460,7 +454,7 @@
               <li><i class="bi bi-check2" aria-hidden="true"></i> Capture field information through configurable forms</li>
             </ul>
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6">
             <figure class="helios-product-media helios-product-media-contain mb-4">
               <img src="assets/img/helios/devices.png"
                 alt="Helios shown across laptop, phone and tablet with spatial asset information and sensor history"
@@ -475,6 +469,10 @@
                 locations, work orders and related operational information spatially. Maximo remains the system of
                 record; Helios makes its information easier to understand and use in physical context.
               </p>
+              <p class="helios-integration-breadth">
+                Beyond IBM Maximo, Helios can work with enterprise platforms including Salesforce, SAP, IFS, MRI and
+                others.
+              </p>
               <a href="graphql-for-ibm-maximo.html" class="helios-inline-link">
                 Explore GraphQL for IBM Maximo <i class="bi bi-arrow-right" aria-hidden="true"></i>
               </a>
@@ -484,10 +482,10 @@
       </div>
     </section>
 
-    <section id="iot" class="helios-feature-section section light-background">
+    <section id="iot" class="helios-feature-section section section--tinted">
       <div class="container">
         <div class="row align-items-center gy-5">
-          <div class="col-lg-5" data-aos="fade-up">
+          <div class="col-lg-5">
             <span class="helios-section-kicker">Location-aware IoT</span>
             <h2 class="display-6 fw-semibold">See what is happening, where it is happening</h2>
             <p class="lead">
@@ -506,9 +504,9 @@
               <small>Recommended: 16:9 screenshot or short loop</small>
             </div>
             <div class="row g-3">
-              <div class="col-md-4" data-aos="fade-up"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-broadcast" aria-hidden="true"></i></span><h3>Understand current conditions</h3><p>View live sensor readings at their relevant asset or location.</p></article></div>
-              <div class="col-md-4" data-aos="fade-up" data-aos-delay="75"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-clock-history" aria-hidden="true"></i></span><h3>Review change over time</h3><p>Use historic readings and trends to see how conditions change.</p></article></div>
-              <div class="col-md-4" data-aos="fade-up" data-aos-delay="150"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-bell" aria-hidden="true"></i></span><h3>Focus attention</h3><p>Use threshold alerts to highlight readings that need review.</p></article></div>
+              <div class="col-md-4"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-broadcast" aria-hidden="true"></i></span><h3>Understand current conditions</h3><p>View live sensor readings at their relevant asset or location.</p></article></div>
+              <div class="col-md-4"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-clock-history" aria-hidden="true"></i></span><h3>Review change over time</h3><p>Use historic readings and trends to see how conditions change.</p></article></div>
+              <div class="col-md-4"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-bell" aria-hidden="true"></i></span><h3>Focus attention</h3><p>Use threshold alerts to highlight readings that need review.</p></article></div>
             </div>
           </div>
         </div>
@@ -518,7 +516,7 @@
     <section id="navigation" class="helios-feature-section section">
       <div class="container">
         <div class="row align-items-center gy-5">
-          <div class="col-lg-6 order-lg-2" data-aos="fade-up">
+          <div class="col-lg-6 order-lg-2">
             <span class="helios-section-kicker">Indoor navigation</span>
             <h2 class="display-6 fw-semibold">Help people find the right place</h2>
             <p class="lead">
@@ -530,7 +528,7 @@
               been configured. Available routes depend on the environment and its surveyed information.
             </p>
           </div>
-          <div class="col-lg-6 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6 order-lg-1">
             <!-- Temporary still: replace assets/img/helios/navigation.png with assets/img/helios/navigation.gif when supplied. -->
             <figure class="helios-product-media">
               <img src="assets/img/helios/navigation.png"
@@ -542,8 +540,8 @@
       </div>
     </section>
 
-    <section id="information" class="helios-feature-section section light-background">
-      <div class="container section-title" data-aos="fade-up">
+    <section id="information" class="helios-feature-section section section--tinted">
+      <div class="container section-heading">
         <span class="helios-section-kicker">Relevant information</span>
         <h2>Bring information to the point of need</h2>
         <p class="lead mx-auto">
@@ -562,16 +560,16 @@
           <small>Recommended: wide 21:9 screenshot or paired 4:3 captures</small>
         </div>
         <div class="row g-3 justify-content-center">
-          <div class="col-sm-6 col-lg-3" data-aos="fade-up"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span><h3>Use place as the reference</h3><p>Spatial points of interest give information a clear location within the environment.</p></article></div>
-          <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="50"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-paperclip" aria-hidden="true"></i></span><h3>Open supporting material</h3><p>Reach files, links, attachments and media from the place they relate to.</p></article></div>
-          <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-info-circle" aria-hidden="true"></i></span><h3>Keep context together</h3><p>Bring operational and location-aware details into the same view.</p></article></div>
-          <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="150"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-grid-1x2" aria-hidden="true"></i></span><h3>Create focused views</h3><p>Use InfoHub to organise sensor data, content and information for a specific need.</p></article></div>
+          <div class="col-sm-6 col-lg-3"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span><h3>Use place as the reference</h3><p>Spatial points of interest give information a clear location within the environment.</p></article></div>
+          <div class="col-sm-6 col-lg-3"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-paperclip" aria-hidden="true"></i></span><h3>Open supporting material</h3><p>Reach files, links, attachments and media from the place they relate to.</p></article></div>
+          <div class="col-sm-6 col-lg-3"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-info-circle" aria-hidden="true"></i></span><h3>Keep context together</h3><p>Bring operational and location-aware details into the same view.</p></article></div>
+          <div class="col-sm-6 col-lg-3"><article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-grid-1x2" aria-hidden="true"></i></span><h3>Create focused views</h3><p>Use InfoHub to organise sensor data, content and information for a specific need.</p></article></div>
         </div>
       </div>
     </section>
 
     <section id="applications" class="helios-applications section">
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-heading">
         <span class="helios-section-kicker">Applications of the platform</span>
         <h2>One platform. Many operational workflows.</h2>
         <p class="lead mx-auto">
@@ -579,7 +577,7 @@
           shared Helios platform, shaped around the environment and information each workflow needs.
         </p>
       </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
         <p class="helios-outcome-summary">
           Applied to the right workflow, Helios can reduce duplicated administration and unnecessary site visits where
           remote review is sufficient, while improving visibility and making discrepancies easier to identify.
@@ -598,7 +596,7 @@
     </section>
 
     <section id="enterprise-control" class="helios-control section">
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-heading">
         <span class="helios-section-kicker">Approachable and governable</span>
         <h2>Designed for people. Controlled for the enterprise.</h2>
         <p class="lead mx-auto">
@@ -608,7 +606,7 @@
       </div>
       <div class="container">
         <div class="row g-4">
-          <div class="col-lg-6" data-aos="fade-up">
+          <div class="col-lg-6">
             <article class="helios-control-card">
               <span class="helios-card-icon"><i class="bi bi-person-check" aria-hidden="true"></i></span>
               <h3>Designed for people</h3>
@@ -619,7 +617,7 @@
               </ul>
             </article>
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6">
             <article class="helios-control-card">
               <span class="helios-card-icon"><i class="bi bi-shield-lock" aria-hidden="true"></i></span>
               <h3>Controlled for the enterprise</h3>
@@ -634,8 +632,8 @@
       </div>
     </section>
 
-    <section id="deployment" class="helios-deployment section light-background">
-      <div class="container section-title" data-aos="fade-up">
+    <section id="deployment" class="helios-deployment section section--tinted">
+      <div class="container section-heading">
         <span class="helios-section-kicker">Flexible delivery</span>
         <h2>Deploy Helios around your environment</h2>
         <p class="lead mx-auto">
@@ -645,15 +643,15 @@
       </div>
       <div class="container">
         <div class="row g-4 justify-content-center">
-          <div class="col-md-6 col-lg-4" data-aos="fade-up"><article class="helios-feature-card helios-deployment-card"><span class="helios-card-icon"><i class="bi bi-cloud" aria-hidden="true"></i></span><h3>Visualise Info cloud</h3><p>Deploy Helios through Visualise Info's managed cloud environment.</p></article></div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="75"><article class="helios-feature-card helios-deployment-card"><span class="helios-card-icon"><i class="bi bi-hdd-rack" aria-hidden="true"></i></span><h3>On premises</h3><p>Use an on-premises deployment where organisational requirements call for it.</p></article></div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150"><article class="helios-feature-card helios-deployment-card"><span class="helios-card-icon"><i class="bi bi-badge-3d" aria-hidden="true"></i></span><h3>LiDAR scanning</h3><p>Visualise Info can supply LiDAR scanning where spatial capture is required.</p></article></div>
+          <div class="col-md-6 col-lg-4"><article class="helios-feature-card helios-deployment-card"><span class="helios-card-icon"><i class="bi bi-cloud" aria-hidden="true"></i></span><h3>Visualise Info cloud</h3><p>Deploy Helios through Visualise Info's managed cloud environment.</p></article></div>
+          <div class="col-md-6 col-lg-4"><article class="helios-feature-card helios-deployment-card"><span class="helios-card-icon"><i class="bi bi-hdd-rack" aria-hidden="true"></i></span><h3>On premises</h3><p>Use an on-premises deployment where organisational requirements call for it.</p></article></div>
+          <div class="col-md-6 col-lg-4"><article class="helios-feature-card helios-deployment-card"><span class="helios-card-icon"><i class="bi bi-badge-3d" aria-hidden="true"></i></span><h3>LiDAR scanning</h3><p>Visualise Info can supply LiDAR scanning where spatial capture is required.</p></article></div>
         </div>
       </div>
     </section>
 
     <section id="faq" class="graphql-faq helios-faq section">
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-heading">
         <span class="helios-section-kicker">Common questions</span>
         <h2>Frequently asked questions about Helios</h2>
         <p class="lead mx-auto">
@@ -661,7 +659,7 @@
         </p>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
         <div class="accordion graphql-faq-list mx-auto" id="heliosFaq">
           <div class="accordion-item">
             <h3 class="accordion-header" id="heliosFaqHeadingOne">
@@ -819,9 +817,9 @@
       </div>
     </section>
 
-    <section id="helios-contact" class="call-to-action helios-cta section">
-      <div class="container" data-aos="fade-up">
-        <div class="row content justify-content-center align-items-center position-relative">
+    <section id="helios-contact" class="product-cta helios-cta section">
+      <div class="container">
+        <div class="row product-cta__content justify-content-center align-items-center position-relative">
           <div class="col-lg-9 mx-auto text-center">
             <h2 class="display-6 fw-semibold mb-3">See Helios in action</h2>
             <p class="lead mb-4">
@@ -837,74 +835,59 @@
     </section>
   </main>
 
-  <footer id="footer" class="footer">
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center" aria-label="Visualise Info home">
-            <img class="companyLogo" src="assets/img/logo.png" alt="Visualise Info">
-          </a>
-          <div class="footer-contact">
-            <a class="nav-link" href="https://www.google.com/maps/place/12+Creekside,+London+SE8+3DX"
-              target="_blank" rel="noopener noreferrer">
-              <p class="footer-text">Fuel Tank, 8-12 Creekside<br>London, SE8 3DX</p>
-            </a>
-            <p><a class="footer-text" href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a></p>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-3 col-6 footer-links">
-          <h4>Product</h4>
-          <ul>
+  <footer id="footer" class="site-footer">
+    <div class="container site-footer__grid">
+      <section>
+        <a href="index.html" class="site-footer__brand" aria-label="Visualise Info home">
+          <img class="site-brand__logo" src="assets/img/logo.png" alt="Visualise Info">
+        </a>
+        <a class="site-footer__address" href="https://www.google.com/maps/place/12+Creekside,+London+SE8+3DX"
+          target="_blank" rel="noopener noreferrer">Fuel Tank, 8-12 Creekside<br>London, SE8 3DX</a>
+        <p><a class="site-footer__contact" href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a></p>
+      </section>
+      <nav aria-labelledby="footer-product-heading">
+        <h2 id="footer-product-heading">Product</h2>
+        <ul class="site-footer__links">
             <li><a href="helios.html" aria-current="page">Helios</a></li>
             <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-3 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-links-heading">
+        <h2 id="footer-links-heading">Useful Links</h2>
+        <ul class="site-footer__links">
             <li><a href="index.html">Home</a></li>
             <li><a href="docs/eula/index.html">Terms of service</a></li>
             <li><a href="privacy-policy.html">Privacy policy</a></li>
-          </ul>
-          <div class="social-links d-flex mt-4" aria-label="Social links">
+        </ul>
+        <div class="site-footer__social" aria-label="Social links">
             <a href="https://uk.linkedin.com/company/visualise-info-ltd" aria-label="Visualise Info on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
             <a href="https://www.instagram.com/visualiseinfo/" aria-label="Visualise Info on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
             <a href="https://www.youtube.com/@VisualiseInfo" aria-label="Visualise Info on YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
-          </div>
         </div>
-        <div class="col-lg-2 col-md-3 col-6 footer-links">
-          <h4>Certifications</h4>
-          <div class="d-flex">
-            <iframe
-              src="https://registry.blockmarktech.com/certificates/63b9d9dc-78cd-4919-8bb4-9bb0096cec7c/widget/?tooltip_position=top_left&theme=transparent&hover=true"
-              title="Visualise Info certification" style="border:none;height:80px;width:80px;"></iframe>
-            <a href="https://ico.org.uk/ESDWebPages/Entry/ZB727534" aria-label="Visualise Info ICO registration">
-              <img class="rounded" src="assets/img/ico.org.uk.png" alt="ICO"
-                style="border:none;height:80px;width:80px;">
-            </a>
-          </div>
+      </nav>
+      <section aria-labelledby="footer-certifications-heading">
+        <h2 id="footer-certifications-heading">Certifications</h2>
+        <div class="site-footer__certifications">
+          <iframe
+            src="https://registry.blockmarktech.com/certificates/63b9d9dc-78cd-4919-8bb4-9bb0096cec7c/widget/?tooltip_position=top_left&theme=transparent&hover=true"
+            title="Visualise Info certification"></iframe>
+          <a href="https://ico.org.uk/ESDWebPages/Entry/ZB727534" aria-label="Visualise Info ICO registration">
+            <img class="rounded" src="assets/img/ico.org.uk.png" alt="ICO registered">
+          </a>
         </div>
-      </div>
+      </section>
     </div>
-
-    <div class="container copyright text-center mt-4">
+    <div class="container site-footer__copyright">
       <p>© <span>Copyright</span><span class="px-1 fw-semibold sitename">Visualise <span
             class="accent-text">Info</span></span><span>ltd. All Rights Reserved</span></p>
-      <div class="credits text-small text-muted opacity-25">
-        Designed by <a class="text-reset" href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
     </div>
   </footer>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
-    aria-label="Back to top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+  <button type="button" class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"
+      aria-hidden="true"></i></button>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 
 </html>

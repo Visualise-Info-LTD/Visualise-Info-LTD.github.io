@@ -15,20 +15,14 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"
     rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <!-- Bootstrap provides the site's grid, utilities and accordion behaviour. -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/site.css" rel="stylesheet">
 
   <script>
       (function (h, o, t, j, a, r) {
@@ -45,63 +39,43 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div
-      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img class='companyLogo' src="assets/img/logo.png" alt="">
+  <header id="site-header" class="site-header">
+    <div class="site-header__bar container-xl">
+      <a href="index.html" class="site-brand" aria-label="Visualise Info home">
+        <img class="site-brand__logo" src="assets/img/logo.png" alt="Visualise Info">
       </a>
-      <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
-        <ul>
-          <li class="dropdown platform-dropdown">
-            <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="platform-submenu"
-              aria-haspopup="true">
+      <nav class="site-navigation" aria-label="Primary navigation">
+        <ul id="site-navigation-menu" class="site-navigation__list">
+          <li class="site-navigation__item">
+            <button class="site-navigation__submenu-toggle" type="button" aria-expanded="false"
+              aria-controls="platform-submenu" aria-haspopup="true" data-submenu-toggle>
               <span>Platform</span>
               <i class="bi bi-chevron-down" aria-hidden="true"></i>
             </button>
-            <ul id="platform-submenu">
+            <ul id="platform-submenu" class="site-navigation__submenu">
               <li><a href="helios.html">Helios</a></li>
               <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
             </ul>
           </li>
-          <li><a href="#industries">Industries</a></li>
-          <li><a href="#why-visualise-info">Why Visualise Info?</a></li>
-          <li><a href="#partner">Partner Program</a></li>
-          <li><a href="#about">Company</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#partners">Partner Program</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a href="resources.html#video-library">Video Library</a></li>
-              <li><a href="resources.html#white-papers">White Papers</a></li>
-              <li><a href="resources.html#case-studies">Case Studies</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a href="#about">About</a></li>
-            </ul>
-          </li> -->
+          <li class="site-navigation__item"><a class="site-navigation__link" href="#industries">Industries</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="#why-visualise-info">Why Visualise Info?</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="#partner">Partner Program</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="#about">Company</a></li>
         </ul>
-        <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open navigation menu"
-          aria-expanded="false"></button>
+        <button class="site-navigation__mobile-toggle bi bi-list" type="button" aria-label="Open navigation menu"
+          aria-controls="site-navigation-menu" aria-expanded="false" data-nav-toggle></button>
       </nav>
-
-      <a class="btn-getstarted" href="#contact">Contact</a>
-
+      <a class="site-header__cta" href="#contact">Contact</a>
     </div>
   </header>
 
   <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <section id="hero" class="home-hero section">
+      <div class="container">
         <div class="row align-items-center gy-5">
           <div class="col-lg-7">
-            <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+            <div class="home-hero__content">
               <h1 class="display-1 fw-bold mb-3">
                 Complex Data
                 <br> at a
@@ -111,32 +85,24 @@
                 Understand operations through the places where they happen. Helios connects your physical environment
                 with the information needed to understand and manage it.
               </blockquote>
-              <div class="hero-buttons">
+              <div class="home-hero__actions">
                 <a href="helios.html" class="btn helios-primary-button">Explore Helios</a>
               </div>
             </div>
           </div>
           <div class="col-lg-5">
-            <div class="hero-image" data-aos="zoom-in-up" data-aos-delay="300">
+            <div class="home-hero__visual">
               <img src="assets/img/hero-1.svg" alt="" class="img-fluid">
             </div>
           </div>
         </div>
       </div>
-    </section><!-- /Hero Section -->
+    </section>
 
-    <div style="overflow: hidden;">
-      <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
-        style="fill: #f3f9ff; width: 100%; height: 4em; transform: rotate(180deg) scaleX(-1);">
-        <path d="M1200 120L0 16.48V0h1200v120z" />
-      </svg>
-    </div>
-
-    <!-- Helios Summary Section -->
-    <section id="platform" class="helios-home-section section light-background">
+    <section id="platform" class="helios-home-section section section--tinted">
       <div class="container">
         <div class="row align-items-center gy-5">
-          <div class="col-lg-6" data-aos="fade-up">
+          <div class="col-lg-6">
             <div class="helios-home-copy">
               <span class="helios-eyebrow">
                 <i class="bi bi-bounding-box-circles" aria-hidden="true"></i>
@@ -152,7 +118,7 @@
               <a href="helios.html" class="btn helios-primary-button">Explore Helios</a>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6">
             <div class="helios-home-media">
               <video controls muted playsinline preload="metadata"
                 aria-label="Helios product demonstration showing spatial navigation and contextual information">
@@ -163,11 +129,11 @@
           </div>
         </div>
       </div>
-    </section><!-- /Helios Summary Section -->
+    </section>
 
     <!-- GraphQL for IBM Maximo Highlight Section -->
     <section id="graphql-for-maximo" class="graphql-home-highlight section">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
         <div class="graphql-highlight-card">
           <div class="row align-items-center gy-5">
             <div class="col-lg-7">
@@ -213,52 +179,40 @@
           </div>
         </div>
       </div>
-    </section><!-- /GraphQL for IBM Maximo Highlight Section -->
+    </section>
 
-
-    <!-- Industries Section -->
-    <div style="overflow: hidden;">
-      <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
-        style="fill: #f3f9ff; width: 100%; height: 4em; transform: rotate(180deg) scaleX(-1);">
-        <path d="M1200 120L0 16.48V0h1200v120z" />
-      </svg>
-    </div>
-
-    <section id="industries" class="services section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+    <section id="industries" class="industries-section section section--tinted">
+      <div class="container section-heading">
         <h2>Industries We Serve<span class="accent-text">.</span></h2>
-        <h5 class="homepage-section-intro fw-normal">We support a wide range of industries where operational visibility
+        <p class="homepage-section-intro fw-normal">We support a wide range of industries where operational visibility
           and proactive
-          decision-making are critical.</h5>
-      </div><!-- End Section Title -->
+          decision-making are critical.</p>
+      </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
         <div class="row g-4">
 
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card p-1">
+          <div class="col-lg-12">
+            <div class="industry-card">
               <div class="accordion accordion-flush" id="accordionUtilitiesEnergy">
                 <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed rounded-2" type="button" data-bs-toggle="collapse"
+                  <h3 class="accordion-header">
+                    <button class="industry-card__summary accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#accordionItem1" aria-expanded="false" aria-controls="accordionItem1">
-                      <div class="icon flex-shrink-0">
+                      <span class="industry-card__icon" aria-hidden="true">
                         <i class="bi bi-lightning-charge"></i>
-                      </div>
-                      <div>
-                        <h3 class="m-0">Utilities & Energy</h3>
-                        <p class="my-1">
+                      </span>
+                      <span class="industry-card__copy">
+                        <span class="industry-card__title">Utilities &amp; Energy</span>
+                        <span class="industry-card__description">
                           Visualise infrastructure in real-time to improve maintenance, safety, and compliance.
-                        </p>
-                        <!-- <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a> -->
-                      </div>
+                        </span>
+                      </span>
                     </button>
-                  </h2>
+                  </h3>
                   <div id="accordionItem1" class="accordion-collapse collapse"
                     data-bs-parent="#accordionUtilitiesEnergy">
-                    <div class="accordion-body">
+                    <div class="industry-card__details accordion-body">
                       <div class="row">
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
@@ -306,30 +260,30 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Utilities & Energy Card -->
+          </div>
 
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card p-1">
+          <div class="col-lg-12">
+            <div class="industry-card">
               <div class="accordion accordion-flush" id="accordionTransportationRail">
                 <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed rounded-2" type="button" data-bs-toggle="collapse"
+                  <h3 class="accordion-header">
+                    <button class="industry-card__summary accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#accordionItem2" aria-expanded="false" aria-controls="accordionItem2">
-                      <div class="icon flex-shrink-0">
+                      <span class="industry-card__icon" aria-hidden="true">
                         <i class="bi bi-bus-front"></i>
-                      </div>
-                      <div>
-                        <h3 class="m-0">Transportation & Rail</h3>
-                        <p class="my-1">
+                      </span>
+                      <span class="industry-card__copy">
+                        <span class="industry-card__title">Transportation &amp; Rail</span>
+                        <span class="industry-card__description">
                           Understand station layouts, asset status, and IoT inputs to streamline operations and reduce
-                          disruption.</p>
-                        <!-- <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a> -->
-                      </div>
+                          disruption.
+                        </span>
+                      </span>
                     </button>
-                  </h2>
+                  </h3>
                   <div id="accordionItem2" class="accordion-collapse collapse"
                     data-bs-parent="#accordionTransportationRail">
-                    <div class="accordion-body">
+                    <div class="industry-card__details accordion-body">
                       <div class="row">
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
@@ -380,32 +334,31 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Transportation & Rail Card -->
+          </div>
 
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card p-1">
+          <div class="col-lg-12">
+            <div class="industry-card">
               <div class="accordion accordion-flush" id="accordionManufacturingHeavyAssets">
                 <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed rounded-2" type="button" data-bs-toggle="collapse"
+                  <h3 class="accordion-header">
+                    <button class="industry-card__summary accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#accordionItemManufacturing" aria-expanded="false"
                       aria-controls="accordionItemManufacturing">
-                      <div class="icon flex-shrink-0">
+                      <span class="industry-card__icon" aria-hidden="true">
                         <i class="bi bi-boxes"></i>
-                      </div>
-                      <div>
-                        <h3 class="m-0">Manufacturing & Heavy Assets</h3>
-                        <p class="my-1">
+                      </span>
+                      <span class="industry-card__copy">
+                        <span class="industry-card__title">Manufacturing &amp; Heavy Assets</span>
+                        <span class="industry-card__description">
                           Gain full visibility over your facility's layout, assets, and systems to improve uptime and
                           reduce delays.
-                        </p>
-                        <!-- <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a> -->
-                      </div>
+                        </span>
+                      </span>
                     </button>
-                  </h2>
+                  </h3>
                   <div id="accordionItemManufacturing" class="accordion-collapse collapse"
                     data-bs-parent="#accordionManufacturingHeavyAssets">
-                    <div class="accordion-body">
+                    <div class="industry-card__details accordion-body">
                       <div class="row">
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
@@ -441,32 +394,31 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Manufacturing & Heavy Assets Card -->
+          </div>
 
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card p-1">
+          <div class="col-lg-12">
+            <div class="industry-card">
               <div class="accordion accordion-flush" id="accordionHealthcare">
                 <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed rounded-2" type="button" data-bs-toggle="collapse"
+                  <h3 class="accordion-header">
+                    <button class="industry-card__summary accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#accordionItemHealthcare" aria-expanded="false"
                       aria-controls="accordionItemHealthcare">
-                      <div class="icon flex-shrink-0">
+                      <span class="industry-card__icon" aria-hidden="true">
                         <i class="bi bi-hospital"></i>
-                      </div>
-                      <div>
-                        <h3 class="m-0">Healthcare & Smart Operating Theatres</h3>
-                        <p class="my-1">
+                      </span>
+                      <span class="industry-card__copy">
+                        <span class="industry-card__title">Healthcare &amp; Smart Operating Theatres</span>
+                        <span class="industry-card__description">
                           Reduce operating theatre downtime, improve patient safety and drive sustainability
                           efficiencies through real-time data driven theatre monitoring and management.
-                        </p>
-                        <!-- <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a> -->
-                      </div>
+                        </span>
+                      </span>
                     </button>
-                  </h2>
+                  </h3>
                   <div id="accordionItemHealthcare" class="accordion-collapse collapse"
                     data-bs-parent="#accordionHealthcare">
-                    <div class="accordion-body">
+                    <div class="industry-card__details accordion-body">
                       <div class="row">
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
@@ -513,32 +465,31 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Healthcare & Smart Operating Theatres Card -->
+          </div>
 
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card p-1">
+          <div class="col-lg-12">
+            <div class="industry-card">
               <div class="accordion accordion-flush" id="accordionMaritime">
                 <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed rounded-2" type="button" data-bs-toggle="collapse"
+                  <h3 class="accordion-header">
+                    <button class="industry-card__summary accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#accordionItemMaritime" aria-expanded="false"
                       aria-controls="accordionItemMaritime">
-                      <div class="icon flex-shrink-0">
+                      <span class="industry-card__icon" aria-hidden="true">
                         <i class="bi bi-compass"></i>
-                      </div>
-                      <div>
-                        <h3 class="m-0">Maritime</h3>
-                        <p class="my-1">
+                      </span>
+                      <span class="industry-card__copy">
+                        <span class="industry-card__title">Maritime</span>
+                        <span class="industry-card__description">
                           Monitor vessel operations, dockside assets and port infrastructure, and geolocate
                           documentation through a unified, spatial platform designed for complex environments.
-                        </p>
-                        <!-- <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a> -->
-                      </div>
+                        </span>
+                      </span>
                     </button>
-                  </h2>
+                  </h3>
                   <div id="accordionItemMaritime" class="accordion-collapse collapse"
                     data-bs-parent="#accordionMaritime">
-                    <div class="accordion-body">
+                    <div class="industry-card__details accordion-body">
                       <div class="row">
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
@@ -585,30 +536,29 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Maritime Card -->
+          </div>
 
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card p-1">
+          <div class="col-lg-12">
+            <div class="industry-card">
               <div class="accordion accordion-flush" id="accordionOilGas">
                 <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed rounded-2" type="button" data-bs-toggle="collapse"
+                  <h3 class="accordion-header">
+                    <button class="industry-card__summary accordion-button collapsed" type="button" data-bs-toggle="collapse"
                       data-bs-target="#accordionItemOilGas" aria-expanded="false" aria-controls="accordionItemOilGas">
-                      <div class="icon flex-shrink-0">
+                      <span class="industry-card__icon" aria-hidden="true">
                         <i class="bi bi-droplet-half"></i>
-                      </div>
-                      <div>
-                        <h3 class="m-0">Oil &amp; Gas</h3>
-                        <p class="my-1">
+                      </span>
+                      <span class="industry-card__copy">
+                        <span class="industry-card__title">Oil &amp; Gas</span>
+                        <span class="industry-card__description">
                           Improve situational awareness across remote and high-risk sites with integrated asset data,
                           IoT monitoring, and historic operational insight.
-                        </p>
-                        <!-- <a href="service-details.html" class="read-more">Read More <i class="bi bi-arrow-right"></i></a> -->
-                      </div>
+                        </span>
+                      </span>
                     </button>
-                  </h2>
+                  </h3>
                   <div id="accordionItemOilGas" class="accordion-collapse collapse" data-bs-parent="#accordionOilGas">
-                    <div class="accordion-body">
+                    <div class="industry-card__details accordion-body">
                       <div class="row">
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
@@ -654,26 +604,19 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Oil & Gas Card -->
+          </div>
 
 
         </div>
 
       </div>
 
-    </section><!-- /Industries Section -->
+    </section>
 
-    <div style="overflow: hidden;">
-      <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
-        style="fill: #f3f9ff; width: 100%; height: 4em; transform: scaleX(-1);">
-        <path d="M1200 120L0 16.48V0h1200v120z" />
-      </svg>
-    </div>
-
-    <section id="why-visualise-info" class="why-vi section">
+    <section id="why-visualise-info" class="why-section section">
       <div class="container">
-        <div class="row stats-row" data-aos="fade-up" data-aos-delay="250">
-          <div class="pt-3 ps-4">
+        <div class="value-grid row g-4">
+          <div class="value-grid__intro col-12">
             <h2>Why Visualise <span class="accent-text">Info?</span></h2>
             <p class="text-body-secondary fs-5">At Visualise Info, we bridge the gap between complex enterprise systems
               and the people who use them. <br />
@@ -683,11 +626,11 @@
                 that scales from individual facilities to global portfolios.</span></p>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="stat-item">
-              <div class="stat-icon">
+            <div class="value-card">
+              <div class="value-card__icon">
                 <i class="bi bi-geo-alt"></i>
               </div>
-              <div class="stat-content">
+              <div class="value-card__content">
                 <h4>Spatial Intelligence</h4>
                 <p class="mb-0 text-small">Connect assets, buildings, systems, and data in an intuitive visual
                   interface.</p>
@@ -695,11 +638,11 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="stat-item">
-              <div class="stat-icon">
+            <div class="value-card">
+              <div class="value-card__icon">
                 <i class="bi bi-broadcast"></i>
               </div>
-              <div class="stat-content">
+              <div class="value-card__content">
                 <h4 class="">Contextual Insight</h4>
                 <p class="mb-0 ">Transform live sensor and system data into real-time understanding that
                   drives confident, informed decisions.</p>
@@ -707,11 +650,11 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="stat-item">
-              <div class="stat-icon">
+            <div class="value-card">
+              <div class="value-card__icon">
                 <i class="bi bi-graph-up"></i>
               </div>
-              <div class="stat-content">
+              <div class="value-card__content">
                 <h4>Scalable Platform</h4>
                 <p class="mb-0 ">Adapt seamlessly from single-site deployment to enterprise-wide
                   transformation.</p>
@@ -719,11 +662,11 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
-            <div class="stat-item">
-              <div class="stat-icon">
+            <div class="value-card">
+              <div class="value-card__icon">
                 <i class="bi bi-arrow-up-right-circle"></i>
               </div>
-              <div class="stat-content">
+              <div class="value-card__content">
                 <h4 class="">Transformational Outcomes</h4>
                 <p class="mb-0 ">Empower teams to see, decide, and act faster, turning visibility into
                   measurable impact.</p>
@@ -734,21 +677,20 @@
       </div>
     </section>
 
-    <!-- Reseller Section -->
-    <section id="partner" class="about section">
+    <section id="partner" class="partner-section section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
 
         <div class="row gy-4 p-2 p-md-0 align-items-center justify-content-between">
 
-          <div class="col-lg-5 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5 order-lg-2">
             <img src="assets/img/reseller-program-1.svg" alt="" class="img-fluid">
           </div>
 
-          <div class="col-xl-5 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-            <span class="about-meta">Reseller Program</span>
-            <h2 class="about-title">Partner With Visualise Info<span class="accent-text">.</span></h2>
-            <p class="about-description">
+          <div class="col-xl-5 order-lg-1">
+            <span class="section-kicker">Reseller Program</span>
+            <h2 class="partner-title">Partner With Visualise Info<span class="accent-text">.</span></h2>
+            <p class="partner-copy">
               Enhance your enterprise asset management offerings with Helios, a platform built for clarity and control.
               <br />
               We partner with consultancies, integrators, and resellers to deliver visual-first solutions that integrate
@@ -798,136 +740,75 @@
                 </ul>
               </div>
             </div>
-            <a class="btn btn-getstarted" href="mailto:contact@visualiseinfo.com?subject=Partnership%20Enquiry">Get in
+            <a class="btn button-primary" href="mailto:contact@visualiseinfo.com?subject=Partnership%20Enquiry">Get in
               touch to explore partnership
               opportunities.</a>
           </div>
 
-          <!-- <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="image-wrapper">
-              <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
-                <img src="assets/img/reseller-1.webp" alt="Business Meeting" class="img-fluid main-image rounded-4">
-                <img src="assets/img/reseller-2.webp" alt="Team Discussion" class="img-fluid small-image rounded-4">
-              </div>
-            </div>
-          </div> -->
         </div>
 
       </div>
 
-    </section><!-- /Partners Section -->
+    </section>
 
-    <!-- about Section -->
-    <section id="about" class="solutions section mt-5">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up" style="padding-bottom: 0;">
+    <section id="about" class="company-section section">
+      <div class="container section-heading">
         <h2>About Visualise Info<span class="accent-text">.</span></h2>
-      </div><!-- End Section Title -->
+      </div>
 
-      <div class="container" data-aos="fade-up">
+      <div class="container">
 
         <div class="row p-2 p-md-0 gy-3">
 
-          <div class="col-lg-6 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6 order-lg-1">
             <img src="assets/img/about-1.svg" alt="" class="img-fluid">
           </div>
 
-          <div class="col-lg-6 order-lg-2 d-flex flex-column justify-content-center" data-aos="fade-up"
-            data-aos-delay="200">
-            <div class="solutions-content ps-0 ps-lg-3">
+          <div class="col-lg-6 order-lg-2 d-flex flex-column justify-content-center">
+            <div class="company-content ps-0 ps-lg-3">
               <h4>
                 We are a UK-based software company transforming how enterprise organisations interact with
                 data.
               </h4>
-              <h5 class="fw-normal">
+              <p class="company-description">
                 We specialise in visualising complex asset and sensor information in a way that&apos;s intuitive,
                 interactive, and spatially aware.
-              </h5>
+              </p>
               <h3 class="mt-5">
                 Our Mission<span class="accent-text">.</span>
               </h3>
-              <h5 class="fw-normal text-body-secondarys ">
+              <p class="company-description text-body-secondary">
                 Simplify complexity, connect insight, and empower transformation at every level.
                 Built on deep expertise in EAM, IoT, and visualisation, our platform turns disconnected data into
                 clarity that drives confident, measurable decisions.
-                </h6>
-                <h3 class="mt-5">
-                  Our Clients<span class="accent-text">.</span>
-                </h3>
-                <div class="container text-center">
-                  <div class="row d-flex justify-content-center align-items-center">
-                    <div class="col flex-grow-1">
-                      <img src="assets/img/clients/Hammerson.png" class="rounded-3" height="64" loading="lazy"
-                        style="mix-blend-mode: multiply;">
-                    </div>
-                    <div class="col flex-grow-1">
-                      <img src="assets/img/clients/JLL.png" class="rounded-3" height="64" loading="lazy"
-                        style="mix-blend-mode: multiply;">
-                    </div>
-                    <div class="col flex-grow-1">
-                      <img src="assets/img/clients/Matterport.png" class="rounded-3" height="64" loading="lazy"
-                        style="mix-blend-mode: multiply;">
-                    </div>
-                    <div class="col flex-grow-1">
-                      <img src="assets/img/clients/NetworkRail.png" class="rounded-3" height="64" loading="lazy"
-                        style="mix-blend-mode: multiply;">
-                    </div>
-                    <div class="col flex-grow-1">
-                      <img src="assets/img/clients/NHS.png" class="rounded-3" height="64" loading="lazy"
-                        style="mix-blend-mode: multiply;">
-                    </div>
-                    <div class="col">
-                      <img src="assets/img/clients/Placesforpeople.png" class="rounded-3" height="64" loading="lazy"
-                        style="mix-blend-mode: multiply;">
-                    </div>
-                    <div class="col">
-                      <img src="assets/img/clients/Savills.png" class="rounded-3" height="64" loading="lazy"
-                        style="mix-blend-mode: multiply;">
-                    </div>
-                    <div class="col">
-                      <img src="assets/img/clients/Wightlink.png" class="rounded-3" height="64" loading="lazy"
-                        style="mix-blend-mode: multiply;">
-                    </div>
-                    <div class="col">
-                      <img src="assets/img/clients/WorthingHomes.png" class="rounded-3" height="64" loading="lazy"
-                        style="mix-blend-mode: multiply;">
-                    </div>
-
-                  </div>
-                </div>
+              </p>
+              <h3 class="mt-5">Our Clients<span class="accent-text">.</span></h3>
+              <div class="logo-cloud logo-cloud--clients" aria-label="Visualise Info clients">
+                <img src="assets/img/clients/Hammerson.png" alt="Hammerson" loading="lazy">
+                <img src="assets/img/clients/JLL.png" alt="JLL" loading="lazy">
+                <img src="assets/img/clients/Matterport.png" alt="Matterport" loading="lazy">
+                <img src="assets/img/clients/NetworkRail.png" alt="Network Rail" loading="lazy">
+                <img src="assets/img/clients/NHS.png" alt="NHS" loading="lazy">
+                <img src="assets/img/clients/Placesforpeople.png" alt="Places for People" loading="lazy">
+                <img src="assets/img/clients/Savills.png" alt="Savills" loading="lazy">
+                <img src="assets/img/clients/Wightlink.png" alt="Wightlink" loading="lazy">
+                <img src="assets/img/clients/WorthingHomes.png" alt="Worthing Homes" loading="lazy">
+              </div>
 
             </div>
 
           </div>
 
-          <div class="col-lg-12 order-lg-3 mt-0 solutions-content" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-12 order-lg-3 mt-0 company-content">
             <h3 class="mt-5">
               Our Partnerships<span class="accent-text">.</span>
             </h3>
-            <div class="container text-center">
-              <div class="row">
-                <div class="col">
-                  <img src="assets/img/partners/arrow.png" class="rounded-3" height="96" loading="lazy"
-                    style="mix-blend-mode: multiply;">
-                </div>
-                <div class="col">
-                  <img src="assets/img/partners/Deloitte.png" class="rounded-3" height="96" loading="lazy"
-                    style="mix-blend-mode: multiply;">
-                </div>
-                <div class="col">
-                  <img src="assets/img/partners/ibm-silver.png" class="rounded-3" height="96" loading="lazy"
-                    style="mix-blend-mode: multiply;">
-                </div>
-                <div class="col">
-                  <img src="assets/img/partners/MultiTech.png" class="rounded-3" height="96" loading="lazy"
-                    style="mix-blend-mode: multiply;">
-                </div>
-                <div class="col">
-                  <img src="assets/img/partners/NavVis.png" class="rounded-3" height="96" loading="lazy"
-                    style="mix-blend-mode: multiply;">
-                </div>
-              </div>
+            <div class="logo-cloud logo-cloud--partners" aria-label="Visualise Info partnerships">
+              <img src="assets/img/partners/arrow.png" alt="Arrow" loading="lazy">
+              <img src="assets/img/partners/Deloitte.png" alt="Deloitte" loading="lazy">
+              <img src="assets/img/partners/ibm-silver.png" alt="IBM Silver Business Partner" loading="lazy">
+              <img src="assets/img/partners/MultiTech.png" alt="MultiTech" loading="lazy">
+              <img src="assets/img/partners/NavVis.png" alt="NavVis" loading="lazy">
             </div>
           </div>
         </div>
@@ -936,49 +817,8 @@
 
     </section>
 
-    <!-- resources Section VISUALLY HIDDEN-->
-    <section id="resources" class="resources section visually-hidden invisible">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up" style="padding-bottom: 0;">
-        <h2>Resources<span class="accent-text">.</span></h2>
-        <p class="lead">Explore our growing library of case studies, white papers, and videos <br />to
-          learn
-          how
-          Visualise Info transforms data into operational clarity.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-3" data-aos="fade-up">
-
-          <div class="col-lg-6 d-flex flex-column justify-content-center " data-aos="fade-up" data-aos-delay="200">
-            <div class="solutions-content ps-0 ps-lg-3">
-              <h4>
-                Topics include:
-              </h4>
-              <ul class="feature-list">
-                <li><span><i class="bi bi-dash-lg"></i></span> Bridging the Digital Literacy Gap</li>
-                <li><i class="bi bi-dash-lg"></i> Enterprise Asset Visualisation with Maximo</li>
-                <li><i class="bi bi-dash-lg"></i> Real-Time IoT Monitoring in Action</li>
-              </ul>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/resources-1.svg" alt="" class="img-fluid">
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section light-background">
-      <div class="container section-title" data-aos="fade-up">
+    <section id="contact" class="contact-section section section--tinted">
+      <div class="container section-heading">
         <h2>Get in touch</h2>
         <p class="homepage-section-intro lead mx-auto">
           Tell us about your environment, operational challenge or partnership enquiry. We will route your message to
@@ -986,34 +826,30 @@
         </p>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 align-items-stretch">
-          <div class="col-lg-5">
-            <div class="info-box">
+      <div class="container contact-layout">
+        <div class="contact-summary">
               <h3>Start a conversation</h3>
               <p>Share what you are trying to understand, connect or improve, and we can discuss the most useful next step.</p>
 
-              <div class="info-item">
-                <div class="icon-box" aria-hidden="true"><i class="bi bi-envelope"></i></div>
-                <div class="content">
+          <div class="contact-method">
+            <div class="contact-method__icon" aria-hidden="true"><i class="bi bi-envelope"></i></div>
+            <div>
                   <h4>Email</h4>
                   <p><a href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a></p>
-                </div>
-              </div>
-
-              <div class="info-item">
-                <div class="icon-box" aria-hidden="true"><i class="bi bi-geo-alt"></i></div>
-                <div class="content">
-                  <h4>Visualise Info</h4>
-                  <p>Fuel Tank, 8-12 Creekside</p>
-                  <p>London, SE8 3DX</p>
-                </div>
-              </div>
             </div>
           </div>
 
-          <div class="col-lg-7">
-            <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST"
+          <div class="contact-method">
+            <div class="contact-method__icon" aria-hidden="true"><i class="bi bi-geo-alt"></i></div>
+            <div>
+                  <h4>Visualise Info</h4>
+                  <p>Fuel Tank, 8-12 Creekside</p>
+                  <p>London, SE8 3DX</p>
+            </div>
+          </div>
+        </div>
+
+        <form id="contact-form" class="enquiry-form" action="https://api.web3forms.com/submit" method="POST"
               aria-describedby="contact-form-help">
               <input type="hidden" name="access_key" value="213da306-e450-4072-8ea7-2a6ee8bafd74">
               <input type="hidden" name="subject" value="New website enquiry">
@@ -1068,90 +904,63 @@
                   </small>
                 </div>
               </div>
-            </form>
-          </div>
-        </div>
+        </form>
       </div>
-    </section><!-- /Contact Section -->
+    </section>
   </main>
 
-  <footer id="footer" class="footer">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <img class='companyLogo' src="assets/img/logo.png" alt="">
-          </a>
-          <div class="footer-contact">
-            <a class="nav-link" href="https://www.google.com/maps/place/12+Creekside,+London+SE8+3DX" target="_blank">
-              <p class="footer-text">Fuel Tank, 8-12 Creekside<br />London, SE8 3DX</p>
-            </a>
-            <p class="">
-              <a class="footer-text" href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a>
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-3 col-6 footer-links">
-          <h4>Product</h4>
-          <ul>
+  <footer id="footer" class="site-footer">
+    <div class="container site-footer__grid">
+      <section>
+        <a href="index.html" class="site-footer__brand" aria-label="Visualise Info home">
+          <img class="site-brand__logo" src="assets/img/logo.png" alt="Visualise Info">
+        </a>
+        <a class="site-footer__address" href="https://www.google.com/maps/place/12+Creekside,+London+SE8+3DX"
+          target="_blank" rel="noopener noreferrer">Fuel Tank, 8-12 Creekside<br>London, SE8 3DX</a>
+        <p><a class="site-footer__contact" href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a></p>
+      </section>
+      <nav aria-labelledby="footer-product-heading">
+        <h2 id="footer-product-heading">Product</h2>
+        <ul class="site-footer__links">
             <li><a href="helios.html">Helios</a></li>
             <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-3 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-links-heading">
+        <h2 id="footer-links-heading">Useful Links</h2>
+        <ul class="site-footer__links">
             <li><a href="docs/eula/index.html">Terms of service</a></li>
             <li><a href="privacy-policy.html">Privacy policy</a></li>
-          </ul>
-          <div class="social-links d-flex mt-4" aria-label="Social links">
-            <a href="https://uk.linkedin.com/company/visualise-info-ltd"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.instagram.com/visualiseinfo/"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.youtube.com/@VisualiseInfo"><i class="bi bi-youtube"></i></a>
-          </div>
+        </ul>
+        <div class="site-footer__social" aria-label="Social links">
+          <a href="https://uk.linkedin.com/company/visualise-info-ltd" aria-label="Visualise Info on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/visualiseinfo/" aria-label="Visualise Info on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@VisualiseInfo" aria-label="Visualise Info on YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
         </div>
-        <div class="col-lg-2 col-md-3 col-6 footer-links">
-          <h4>Certifications</h4>
-          <div class="d-flex">
-            <iframe
-              src="https://registry.blockmarktech.com/certificates/63b9d9dc-78cd-4919-8bb4-9bb0096cec7c/widget/?tooltip_position=top_left&theme=transparent&hover=true"
-              style="border:none;height:80px;width:80px;"></iframe>
-            <a href="https://ico.org.uk/ESDWebPages/Entry/ZB727534"><img class="rounded" src="assets/img/ico.org.uk.png"
-                style="border:none;height:80px;width:80px;"></a>
-          </div>
+      </nav>
+      <section aria-labelledby="footer-certifications-heading">
+        <h2 id="footer-certifications-heading">Certifications</h2>
+        <div class="site-footer__certifications">
+          <iframe
+            src="https://registry.blockmarktech.com/certificates/63b9d9dc-78cd-4919-8bb4-9bb0096cec7c/widget/?tooltip_position=top_left&theme=transparent&hover=true"
+            title="Visualise Info certification"></iframe>
+          <a href="https://ico.org.uk/ESDWebPages/Entry/ZB727534" aria-label="Visualise Info ICO registration"><img
+              class="rounded" src="assets/img/ico.org.uk.png" alt="ICO registered"></a>
         </div>
-      </div>
+      </section>
     </div>
-
-    <div class="container copyright text-center mt-4">
+    <div class="container site-footer__copyright">
       <p>© <span>Copyright</span><span class="px-1 fw-semibold sitename">Visualise <span
             class='accent-text'>Info</span></span><span>ltd. All Rights Reserved</span></p>
-      <div class="credits text-small text-muted opacity-25">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a class="text-reset" href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <button type="button" class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"
+      aria-hidden="true"></i></button>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="https://web3forms.com/client/script.js" async defer></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site.js"></script>
 
 </body>
 

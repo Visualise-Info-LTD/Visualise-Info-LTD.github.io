@@ -16,18 +16,12 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"
     rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/site.css" rel="stylesheet">
 
   <script>
     (function (h, o, t, j, a, r) {
@@ -41,62 +35,43 @@
   </script>
 </head>
 
-<body class="starter-page-page">
+<body class="privacy-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div
-      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img class='companyLogo' src="assets/img/logo.png" alt="">
+  <header id="site-header" class="site-header">
+    <div class="site-header__bar container-xl">
+      <a href="index.html" class="site-brand" aria-label="Visualise Info home">
+        <img class="site-brand__logo" src="assets/img/logo.png" alt="Visualise Info">
       </a>
-      <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
-        <ul>
-          <li class="dropdown platform-dropdown">
-            <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
-              aria-controls="platform-submenu" aria-haspopup="true">
+      <nav class="site-navigation" aria-label="Primary navigation">
+        <ul id="site-navigation-menu" class="site-navigation__list">
+          <li class="site-navigation__item">
+            <button class="site-navigation__submenu-toggle" type="button" aria-expanded="false"
+              aria-controls="platform-submenu" aria-haspopup="true" data-submenu-toggle>
               <span>Platform</span>
               <i class="bi bi-chevron-down" aria-hidden="true"></i>
             </button>
-            <ul id="platform-submenu">
+            <ul id="platform-submenu" class="site-navigation__submenu">
               <li><a href="helios.html">Helios</a></li>
               <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
             </ul>
           </li>
-          <li><a href="index.html#industries">Industries</a></li>
-          <li><a href="index.html#why-visualise-info">Why Visualise Info?</a></li>
-          <li><a href="index.html#partner">Partner Program</a></li>
-          <li><a href="index.html#about">Company</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="index.html#partners">Partner Program</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a href="index.html#white-papers">White Papers</a></li>
-              <li><a href="index.html#case-studies">Case Studies</a></li>
-              <li><a href="index.html#video-library">Video Library</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a href="index.html#about">About</a></li>
-            </ul>
-          </li> -->
+          <li class="site-navigation__item"><a class="site-navigation__link" href="index.html#industries">Industries</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="index.html#why-visualise-info">Why Visualise Info?</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="index.html#partner">Partner Program</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="index.html#about">Company</a></li>
         </ul>
-        <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open navigation menu"
-          aria-expanded="false"></button>
+        <button class="site-navigation__mobile-toggle bi bi-list" type="button" aria-label="Open navigation menu"
+          aria-controls="site-navigation-menu" aria-expanded="false" data-nav-toggle></button>
       </nav>
-
-      <a class="btn-getstarted" href="index.html#contact">Contact</a>
-
+      <a class="site-header__cta" href="index.html#contact">Contact</a>
     </div>
   </header>
 
-  <main class="main mt-5">
+  <main>
 
     <!-- privacy Policy Section -->
     <section id="privacy-policy" class="section">
-      <div class="container" data-aos="fade-down">
+      <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <h1 class="fw-bold mb-0">Privacy Policy</h1>
@@ -169,86 +144,62 @@
         </div>
       </div>
 
-    </section><!-- /Video Library Section -->
+    </section>
 
   </main>
 
-  <footer id="footer" class="footer">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <img class='companyLogo' src="assets/img/logo.png" alt="">
-          </a>
-          <div class="footer-contact">
-            <a class="nav-link" href="https://www.google.com/maps/place/12+Creekside,+London+SE8+3DX" target="_blank">
-              <p class="footer-text">Fuel Tank, 8-12 Creekside<br />London, SE8 3DX</p>
-            </a>
-            <p class="">
-              <a class="footer-text" href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a>
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Product</h4>
-          <ul>
+  <footer id="footer" class="site-footer">
+    <div class="container site-footer__grid">
+      <section>
+        <a href="index.html" class="site-footer__brand" aria-label="Visualise Info home">
+          <img class="site-brand__logo" src="assets/img/logo.png" alt="Visualise Info">
+        </a>
+        <a class="site-footer__address" href="https://www.google.com/maps/place/12+Creekside,+London+SE8+3DX"
+          target="_blank" rel="noopener noreferrer">Fuel Tank, 8-12 Creekside<br>London, SE8 3DX</a>
+        <p><a class="site-footer__contact" href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a></p>
+      </section>
+      <nav aria-labelledby="footer-product-heading">
+        <h2 id="footer-product-heading">Product</h2>
+        <ul class="site-footer__links">
             <li><a href="helios.html">Helios</a></li>
             <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-links-heading">
+        <h2 id="footer-links-heading">Useful Links</h2>
+        <ul class="site-footer__links">
             <li><a href="index.html">Home</a></li>
             <li><a href="docs/eula/index.html">Terms of service</a></li>
-          </ul>
-          <div class="social-links d-flex mt-4" aria-label="Social links">
-            <a href="https://uk.linkedin.com/company/visualise-info-ltd"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.instagram.com/visualiseinfo/"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.youtube.com/@VisualiseInfo"><i class="bi bi-youtube"></i></a>
-          </div>
+        </ul>
+        <div class="site-footer__social" aria-label="Social links">
+          <a href="https://uk.linkedin.com/company/visualise-info-ltd" aria-label="Visualise Info on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/visualiseinfo/" aria-label="Visualise Info on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@VisualiseInfo" aria-label="Visualise Info on YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
         </div>
-        <div class="col-lg-2 col-md-3 col-6 footer-links">
-          <h4>Certifications</h4>
-          <div class="d-flex">
-            <iframe
-              src="https://registry.blockmarktech.com/certificates/63b9d9dc-78cd-4919-8bb4-9bb0096cec7c/widget/?tooltip_position=top_left&theme=transparent&hover=true"
-              style="border:none;height:80px;width:80px;"></iframe>
-            <a href="https://ico.org.uk/ESDWebPages/Entry/ZB727534"><img class="rounded" src="assets/img/ico.org.uk.png"
-                style="border:none;height:80px;width:80px;"></a>
-          </div>
+      </nav>
+      <section aria-labelledby="footer-certifications-heading">
+        <h2 id="footer-certifications-heading">Certifications</h2>
+        <div class="site-footer__certifications">
+          <iframe
+            src="https://registry.blockmarktech.com/certificates/63b9d9dc-78cd-4919-8bb4-9bb0096cec7c/widget/?tooltip_position=top_left&theme=transparent&hover=true"
+            title="Visualise Info certification"></iframe>
+          <a href="https://ico.org.uk/ESDWebPages/Entry/ZB727534" aria-label="Visualise Info ICO registration">
+            <img class="rounded" src="assets/img/ico.org.uk.png" alt="ICO registered">
+          </a>
         </div>
-      </div>
+      </section>
     </div>
-
-    <div class="container copyright text-center mt-4">
+    <div class="container site-footer__copyright">
       <p>© <span>Copyright</span><span class="px-1 fw-semibold sitename">Visualise <span
             class='accent-text'>Info</span></span><span>ltd. All Rights Reserved</span></p>
-      <div class="credits text-small text-muted opacity-25">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a class="text-reset" href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <button type="button" class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"
+      aria-hidden="true"></i></button>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site.js"></script>
 
 </body>
 
