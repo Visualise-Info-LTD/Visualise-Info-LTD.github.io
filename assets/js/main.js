@@ -9,6 +9,8 @@
 (function() {
   "use strict";
 
+  initContactForm();
+
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
@@ -228,6 +230,102 @@
       faqItem.parentNode.classList.toggle('faq-active');
     });
   });
+
+  /**
+   * Web3Forms contact form
+   */
+  function initContactForm() {
+    const contactForm = document.querySelector('#contact-form');
+
+    if (contactForm) {
+      const submitButton = contactForm.querySelector('#contact-submit');
+      const submitLabel = submitButton.querySelector('.contact-submit-label');
+      const submitSpinner = submitButton.querySelector('.spinner-border');
+      const statusMessage = contactForm.querySelector('#contact-form-status');
+      const errorMessage = contactForm.querySelector('#contact-form-error');
+      const defaultSubmitLabel = submitLabel.textContent;
+
+      function clearContactMessages() {
+        statusMessage.textContent = '';
+        statusMessage.classList.remove('is-success');
+        errorMessage.textContent = '';
+        errorMessage.hidden = true;
+      }
+
+      function resetContactCaptcha() {
+        if (typeof window.hcaptcha !== 'undefined') {
+          window.hcaptcha.reset();
+        }
+      }
+
+      contactForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        clearContactMessages();
+
+        if (!contactForm.checkValidity()) {
+          contactForm.reportValidity();
+          contactForm.querySelector(':invalid')?.focus();
+          return;
+        }
+
+        const captchaResponse = contactForm.querySelector('[name="h-captcha-response"]');
+
+        if (!captchaResponse) {
+          errorMessage.textContent = 'The spam check is still loading. Please wait a moment and try again.';
+          errorMessage.hidden = false;
+          errorMessage.focus();
+          return;
+        }
+
+        if (!captchaResponse.value) {
+          errorMessage.textContent = 'Please complete the hCaptcha check before sending your message.';
+          errorMessage.hidden = false;
+          const captchaFrame = contactForm.querySelector('.h-captcha iframe');
+          captchaFrame ? captchaFrame.focus() : errorMessage.focus();
+          return;
+        }
+
+        submitButton.disabled = true;
+        contactForm.setAttribute('aria-busy', 'true');
+        submitLabel.textContent = 'Sending…';
+        submitSpinner.hidden = false;
+        statusMessage.textContent = 'Sending your message…';
+
+        try {
+          const formData = new FormData(contactForm);
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(Object.fromEntries(formData))
+          });
+          const result = await response.json().catch(() => null);
+
+          if (!response.ok || !result?.success) {
+            throw new Error(result?.message || 'Submission failed');
+          }
+
+          contactForm.reset();
+          resetContactCaptcha();
+          statusMessage.classList.add('is-success');
+          statusMessage.textContent = 'Thank you. Your message has been sent successfully.';
+        } catch (error) {
+          console.error('Web3Forms submission failed:', error);
+          resetContactCaptcha();
+          errorMessage.textContent = 'We could not send your message. Your details have been kept; please complete the hCaptcha check and try again.';
+          errorMessage.hidden = false;
+          errorMessage.focus();
+        } finally {
+          submitButton.disabled = false;
+          contactForm.removeAttribute('aria-busy');
+          submitLabel.textContent = defaultSubmitLabel;
+          submitSpinner.hidden = true;
+        }
+      });
+    }
+  }
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
