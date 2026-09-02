@@ -136,7 +136,7 @@
   }
 
   function updateSectionNavigation() {
-    const links = [...document.querySelectorAll('.site-navigation__link[href^="#"]')];
+    const links = [...document.querySelectorAll('.site-navigation a[href^="#"]')];
     if (!links.length) return;
 
     let current = null;
@@ -150,6 +150,12 @@
     });
 
     links.forEach((link) => link.classList.toggle("active", link === current));
+
+    submenuToggles.forEach((toggle) => {
+      const submenu = document.getElementById(toggle.getAttribute("aria-controls"));
+      const hasActiveItem = submenu?.querySelector("a.active, a[aria-current='page']");
+      toggle.classList.toggle("active", Boolean(hasActiveItem));
+    });
   }
 
   function alignHashTarget() {

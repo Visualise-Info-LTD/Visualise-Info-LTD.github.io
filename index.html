@@ -22,18 +22,8 @@
   <!-- Bootstrap provides the site's grid, utilities and accordion behaviour. -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/css/site.css" rel="stylesheet">
-
-  <script>
-      (function (h, o, t, j, a, r) {
-        h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-        h._hjSettings = { hjid: 3904011, hjsv: 6 };
-        a = o.getElementsByTagName('head')[0];
-        r = o.createElement('script'); r.async = 1;
-        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-        a.appendChild(r);
-      })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-  </script>
+  <link href="assets/css/site.css?v=20260902" rel="stylesheet">
+  <script src="/assets/js/analytics-consent.js" defer></script>
 
 </head>
 
@@ -53,14 +43,23 @@
               <i class="bi bi-chevron-down" aria-hidden="true"></i>
             </button>
             <ul id="platform-submenu" class="site-navigation__submenu">
-              <li><a href="helios.html">Helios</a></li>
-              <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
+              <li><a href="helios/">Helios</a></li>
+              <li><a href="graphql-for-ibm-maximo/">GraphQL for IBM Maximo</a></li>
             </ul>
           </li>
           <li class="site-navigation__item"><a class="site-navigation__link" href="#industries">Industries</a></li>
-          <li class="site-navigation__item"><a class="site-navigation__link" href="#why-visualise-info">Why Visualise Info?</a></li>
           <li class="site-navigation__item"><a class="site-navigation__link" href="#partner">Partner Program</a></li>
-          <li class="site-navigation__item"><a class="site-navigation__link" href="#about">Company</a></li>
+          <li class="site-navigation__item">
+            <button class="site-navigation__submenu-toggle" type="button" aria-expanded="false"
+              aria-controls="company-submenu" aria-haspopup="true" data-submenu-toggle>
+              <span>Company</span>
+              <i class="bi bi-chevron-down" aria-hidden="true"></i>
+            </button>
+            <ul id="company-submenu" class="site-navigation__submenu">
+              <li><a href="#why-visualise-info">Why Visualise Info?</a></li>
+              <li><a href="#about">About us</a></li>
+            </ul>
+          </li>
         </ul>
         <button class="site-navigation__mobile-toggle bi bi-list" type="button" aria-label="Open navigation menu"
           aria-controls="site-navigation-menu" aria-expanded="false" data-nav-toggle></button>
@@ -82,11 +81,11 @@
                 <span class="accent-text">Glance</span>
               </h1>
               <blockquote class="blockquote fs-4 mb-4">
-                Understand operations through the places where they happen. Helios connects your physical environment
-                with the information needed to understand and manage it.
+                Visualise Info builds software that helps enterprise teams understand complex physical environments.
+                Helios makes the places where work happens easier to explore, understand and manage.
               </blockquote>
               <div class="home-hero__actions">
-                <a href="helios.html" class="btn helios-primary-button">Explore Helios</a>
+                <a href="helios/" class="btn helios-primary-button">Explore Helios</a>
               </div>
             </div>
           </div>
@@ -108,14 +107,14 @@
                 <i class="bi bi-bounding-box-circles" aria-hidden="true"></i>
                 Helios spatial platform
               </span>
-              <h2>One spatial view of your physical environment</h2>
-              <p class="homepage-section-intro lead mx-0 mb-3">
-                Explore point clouds, panoramic imagery, maps and location-aware information through one familiar
-                interface. Connect operational systems, IoT and content where they add value—without making any one
-                integration a prerequisite.
+              <h2>Connect your physical world with the data that runs it.</h2>
+              <p class="homepage-section-intro fs-5 mx-0 mb-3">
+                Helios brings your sites, assets, records and sensor data together in one navigable environment. Teams
+                can explore the physical environment, then access the operational information they need exactly where it
+                matters.
               </p>
               <p class="helios-tagline">Built to Simplify, Designed to Scale</p>
-              <a href="helios.html" class="btn helios-primary-button">Explore Helios</a>
+              <a href="helios/" class="btn helios-primary-button">Explore Helios</a>
             </div>
           </div>
           <div class="col-lg-6">
@@ -143,11 +142,12 @@
               </span>
               <h2>GraphQL for IBM Maximo</h2>
               <p class="graphql-attribution">by Visualise Info</p>
-              <p class="lead mb-4">
+              <p class="homepage-section-maximo fs-5 my-5">
                 Visualise Info developed GraphQL for IBM Maximo to give Helios and other applications a more flexible,
-                consistent way to access, navigate and update Maximo information.
+                consistent way to access, navigate and update Maximo information, simplifying integration while keeping
+                Maximo as the underlying system of record.
               </p>
-              <a href="graphql-for-ibm-maximo.html" class="btn graphql-learn-more">
+              <a href="graphql-for-ibm-maximo/" class="btn graphql-learn-more">
                 Explore GraphQL for IBM Maximo
                 <i class="bi bi-arrow-right" aria-hidden="true"></i>
               </a>
@@ -184,9 +184,10 @@
     <section id="industries" class="industries-section section section--tinted">
       <div class="container section-heading">
         <h2>Industries We Serve<span class="accent-text">.</span></h2>
-        <p class="homepage-section-intro fw-normal">We support a wide range of industries where operational visibility
-          and proactive
-          decision-making are critical.</p>
+        <p class="homepage-section-intro fw-normal">
+          We work with organisations responsible for complex facilities, infrastructure and operational assets.
+          Helios can be shaped around the environment, information and workflows each sector needs.
+        </p>
       </div>
 
       <div class="container">
@@ -197,15 +198,17 @@
               <div class="accordion accordion-flush" id="accordionUtilitiesEnergy">
                 <div class="accordion-item">
                   <h3 class="accordion-header">
-                    <button class="industry-card__summary accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordionItem1" aria-expanded="false" aria-controls="accordionItem1">
+                    <button class="industry-card__summary accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#accordionItem1" aria-expanded="false"
+                      aria-controls="accordionItem1">
                       <span class="industry-card__icon" aria-hidden="true">
                         <i class="bi bi-lightning-charge"></i>
                       </span>
                       <span class="industry-card__copy">
                         <span class="industry-card__title">Utilities &amp; Energy</span>
                         <span class="industry-card__description">
-                          Visualise infrastructure in real-time to improve maintenance, safety, and compliance.
+                          Connect distributed infrastructure, asset information and available sensor data through
+                          spatial context.
                         </span>
                       </span>
                     </button>
@@ -217,40 +220,28 @@
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
                             <li>
-                              <h6 class="accent-text">Remote site monitoring for hard-to-access assets:</h6>
-                              <p>Track and manage equipment in remote or hazardous locations through IoT-enabled digital
-                                twins.</p>
+                              <h6 class="accent-text">Remote context for distributed assets:</h6>
+                              <p>Review equipment, site imagery and available sensor information through the location
+                                they relate to.</p>
                             </li>
                             <li>
-                              <h6 class="accent-text">Predictive maintenance for critical infrastructure:</h6>
-                              <p>Prevent failures in turbines, transformers, and substations with real-time sensor
-                                insights.
-                              </p>
-                            </li>
-                            <li>
-                              <h6 class="accent-text">Grid and pipeline visibility:</h6>
-                              <p>Consolidate multiple assets and sites into a unified 3D view for better oversight and
-                                planning.</p>
+                              <h6 class="accent-text">Infrastructure planning:</h6>
+                              <p>Use a shared spatial view to understand where assets sit and what surrounds planned
+                                work.</p>
                             </li>
                           </ul>
                         </div>
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
                             <li>
-                              <h6 class="accent-text">Faster response to outages or anomalies:</h6>
-                              <p>Role-based, context-aware data enables field teams to act quickly and accurately during
-                                incidents.</p>
+                              <h6 class="accent-text">Condition information in context:</h6>
+                              <p>Connect current and historic readings to the relevant equipment or location so teams
+                                can review them in place.</p>
                             </li>
                             <li>
-                              <h6 class="accent-text">Capital efficiency in asset management:</h6>
-                              <p>Extend the lifespans of expensive infrastructure while optimising maintenance spending.
-                              </p>
-                            </li>
-                            <li>
-                              <h6 class="accent-text">Compliance and safety monitoring:</h6>
-                              <p>Continuously track conditions to support regulatory reporting and ensure workforce
-                                safety.
-                              </p>
+                              <h6 class="accent-text">Shared field information:</h6>
+                              <p>Give office and site teams the same reference for assets, records, instructions and
+                                supporting documents.</p>
                             </li>
                           </ul>
                         </div>
@@ -267,16 +258,16 @@
               <div class="accordion accordion-flush" id="accordionTransportationRail">
                 <div class="accordion-item">
                   <h3 class="accordion-header">
-                    <button class="industry-card__summary accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordionItem2" aria-expanded="false" aria-controls="accordionItem2">
+                    <button class="industry-card__summary accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#accordionItem2" aria-expanded="false"
+                      aria-controls="accordionItem2">
                       <span class="industry-card__icon" aria-hidden="true">
                         <i class="bi bi-bus-front"></i>
                       </span>
                       <span class="industry-card__copy">
                         <span class="industry-card__title">Transportation &amp; Rail</span>
                         <span class="industry-card__description">
-                          Understand station layouts, asset status, and IoT inputs to streamline operations and reduce
-                          disruption.
+                          Bring station, depot and infrastructure information into a shared spatial view.
                         </span>
                       </span>
                     </button>
@@ -288,43 +279,28 @@
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
                             <li>
-                              <h6 class="accent-text">Vegetation monitoring:</h6>
-                              <p>Use IoT sensors and 3D visualisation to identify hazards (like encroaching vegetation)
-                                before they disrupt rail services.</p>
+                              <h6 class="accent-text">Stations and depots in context:</h6>
+                              <p>Explore layouts, assets and supporting information through a navigable representation
+                                of the environment.</p>
                             </li>
                             <li>
-                              <h6 class="accent-text">Accessible journey planning:</h6>
-                              <p>Provide real-time travel information and planning tools that support inclusive,
-                                accessible
-                                experiences for all passengers.
-                              </p>
-                            </li>
-                            <li>
-                              <h6 class="accent-text">Predictive maintenance:</h6>
-                              <p>Overlay live sensor data on trains and rail infrastructure to anticipate faults and
-                                reduce
-                                downtime.</p>
+                              <h6 class="accent-text">Indoor navigation:</h6>
+                              <p>Provide configured routes, stops, maps and written instructions through complex
+                                indoor environments.</p>
                             </li>
                           </ul>
                         </div>
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
                             <li>
-                              <h6 class="accent-text">Remote monitoring of depots and lines:</h6>
-                              <p>Manage hard-to-reach or hazardous rail assets without on-site visits by using
-                                IoT-enabled
-                                digital twins.</p>
+                              <h6 class="accent-text">Remote review:</h6>
+                              <p>Give teams a shared visual reference when the available imagery and operational
+                                information are sufficient for off-site review.</p>
                             </li>
                             <li>
-                              <h6 class="accent-text">Incident & disruption response:</h6>
-                              <p>Equip staff with role-based insights for faster, safer decision-making during service
-                                interruptions.</p>
-                            </li>
-                            <li>
-                              <h6 class="accent-text">Regulatory compliance:</h6>
-                              <p>Continuously track and visualise operational conditions to meet strict rail safety
-                                standards.
-                              </p>
+                              <h6 class="accent-text">Maintenance coordination:</h6>
+                              <p>Connect asset records, work information, documents and location context when planning
+                                or reviewing activity.</p>
                             </li>
                           </ul>
                         </div>
@@ -341,8 +317,8 @@
               <div class="accordion accordion-flush" id="accordionManufacturingHeavyAssets">
                 <div class="accordion-item">
                   <h3 class="accordion-header">
-                    <button class="industry-card__summary accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordionItemManufacturing" aria-expanded="false"
+                    <button class="industry-card__summary accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#accordionItemManufacturing" aria-expanded="false"
                       aria-controls="accordionItemManufacturing">
                       <span class="industry-card__icon" aria-hidden="true">
                         <i class="bi bi-boxes"></i>
@@ -350,8 +326,7 @@
                       <span class="industry-card__copy">
                         <span class="industry-card__title">Manufacturing &amp; Heavy Assets</span>
                         <span class="industry-card__description">
-                          Gain full visibility over your facility's layout, assets, and systems to improve uptime and
-                          reduce delays.
+                          Understand facilities, equipment and operational information through where work happens.
                         </span>
                       </span>
                     </button>
@@ -363,28 +338,28 @@
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
                             <li>
-                              <h6 class="accent-text">Full facility visibility:</h6>
-                              <p>Gain a unified 3D view of your entire facility's layout, assets, and systems to improve
-                                uptime and reduce production delays.</p>
+                              <h6 class="accent-text">Facility and equipment context:</h6>
+                              <p>Use a shared spatial view to understand layouts, equipment locations and the
+                                information connected to them.</p>
                             </li>
                             <li>
-                              <h6 class="accent-text">Predictive equipment maintenance:</h6>
-                              <p>Anticipate and prevent machine failures on the factory floor with IoT sensor alerts,
-                                reducing unplanned downtime.</p>
+                              <h6 class="accent-text">Maintenance preparation:</h6>
+                              <p>Bring asset records, work information and visual site context together before work
+                                begins.</p>
                             </li>
                           </ul>
                         </div>
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
                             <li>
-                              <h6 class="accent-text">Operational efficiency:</h6>
-                              <p>Identify and address bottlenecks by visualising workflows in real time, leading to more
-                                efficient production processes.</p>
+                              <h6 class="accent-text">Live and historic conditions:</h6>
+                              <p>View available sensor readings and threshold states beside the relevant equipment or
+                                area.</p>
                             </li>
                             <li>
-                              <h6 class="accent-text">Workplace safety & compliance:</h6>
-                              <p>Monitor critical safety parameters (temperature, pressure, air quality, etc.) to
-                                maintain a safe work environment and meet regulatory standards.</p>
+                              <h6 class="accent-text">Information at the point of need:</h6>
+                              <p>Connect instructions, documents and media to the place or asset where teams need them.
+                              </p>
                             </li>
                           </ul>
                         </div>
@@ -401,17 +376,17 @@
               <div class="accordion accordion-flush" id="accordionHealthcare">
                 <div class="accordion-item">
                   <h3 class="accordion-header">
-                    <button class="industry-card__summary accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordionItemHealthcare" aria-expanded="false"
+                    <button class="industry-card__summary accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#accordionItemHealthcare" aria-expanded="false"
                       aria-controls="accordionItemHealthcare">
                       <span class="industry-card__icon" aria-hidden="true">
                         <i class="bi bi-hospital"></i>
                       </span>
                       <span class="industry-card__copy">
-                        <span class="industry-card__title">Healthcare &amp; Smart Operating Theatres</span>
+                        <span class="industry-card__title">Healthcare &amp; Operating Theatres</span>
                         <span class="industry-card__description">
-                          Reduce operating theatre downtime, improve patient safety and drive sustainability
-                          efficiencies through real-time data driven theatre monitoring and management.
+                          Place facilities, equipment and environmental information in the context of the spaces teams
+                          manage.
                         </span>
                       </span>
                     </button>
@@ -423,39 +398,27 @@
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
                             <li>
-                              <h6 class="accent-text">Reduced operating theatre downtime:</h6>
-                              <p>Real-time monitoring ensures surgical theatres are always ready for patients and
-                                clinical teams, minimising idle time.</p>
+                              <h6 class="accent-text">Theatre environment monitoring:</h6>
+                              <p>Connect available HVAC and environmental readings to the room or equipment they
+                                describe.</p>
                             </li>
                             <li>
-                              <h6 class="accent-text">Improved patient safety:</h6>
-                              <p>Live data overlays highlight risks and support proactive decision-making in
-                                high-pressure healthcare environments.</p>
-                            </li>
-                            <li>
-                              <h6 class="accent-text">Energy efficiency:</h6>
-                              <p>Optimise energy, lighting, and equipment usage with continuous monitoring, reducing
-                                waste and operating costs.</p>
+                              <h6 class="accent-text">Facilities and equipment context:</h6>
+                              <p>Give estates teams a visual reference for spaces, assets, records and current work.</p>
                             </li>
                           </ul>
                         </div>
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
                             <li>
-                              <h6 class="accent-text">Role-based insights for staff:</h6>
-                              <p>Deliver the right information at the right time to each user, so clinicians and
-                                managers can act quickly and accurately in their roles.</p>
+                              <h6 class="accent-text">Remote review:</h6>
+                              <p>Review imagery, asset information and recorded conditions away from site when the
+                                available context is sufficient.</p>
                             </li>
                             <li>
-                              <h6 class="accent-text">Predictive equipment maintenance:</h6>
-                              <p>Prevent failures of surgical tools and critical infrastructure before they cause
-                                disruptions to care.</p>
-                            </li>
-                            <li>
-                              <h6 class="accent-text">HVAC monitoring (HTM03 compliance):</h6>
-                              <p>Continuously track and control operating theatre air-handling systems in real time.
-                                Perform ventilation inspections remotely to ensure compliance with HTM03 standards and
-                                reduce theatre downtime.</p>
+                              <h6 class="accent-text">Information for different teams:</h6>
+                              <p>Use permissions and focused views to present relevant location, asset and supporting
+                                information.</p>
                             </li>
                           </ul>
                         </div>
@@ -472,8 +435,8 @@
               <div class="accordion accordion-flush" id="accordionMaritime">
                 <div class="accordion-item">
                   <h3 class="accordion-header">
-                    <button class="industry-card__summary accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordionItemMaritime" aria-expanded="false"
+                    <button class="industry-card__summary accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#accordionItemMaritime" aria-expanded="false"
                       aria-controls="accordionItemMaritime">
                       <span class="industry-card__icon" aria-hidden="true">
                         <i class="bi bi-compass"></i>
@@ -481,8 +444,7 @@
                       <span class="industry-card__copy">
                         <span class="industry-card__title">Maritime</span>
                         <span class="industry-card__description">
-                          Monitor vessel operations, dockside assets and port infrastructure, and geolocate
-                          documentation through a unified, spatial platform designed for complex environments.
+                          Connect vessel, dockside and port information to the physical environment it describes.
                         </span>
                       </span>
                     </button>
@@ -494,39 +456,28 @@
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
                             <li>
-                              <h6 class="accent-text">Real-time vessel monitoring:</h6>
-                              <p>Track vessel performance, conditions, and location through a unified digital twin for a
-                                complete real-time operational picture.</p>
+                              <h6 class="accent-text">Vessel and port context:</h6>
+                              <p>Explore physical layouts alongside the asset and location information used to manage
+                                them.</p>
                             </li>
                             <li>
-                              <h6 class="accent-text">Port & dock asset management:</h6>
-                              <p>Visualise critical dockside equipment and port infrastructure in 3D for more efficient
-                                maintenance and oversight.</p>
-                            </li>
-                            <li>
-                              <h6 class="accent-text">Instant documentation access:</h6>
-                              <p>Geolocate work orders, compliance records, and manuals directly in their spatial
-                                context, allowing crew to pull up relevant documents by clicking on the asset in the 3D
-                                model.</p>
+                              <h6 class="accent-text">Documents where they apply:</h6>
+                              <p>Connect manuals, work information and supporting media to the relevant asset or
+                                location.</p>
                             </li>
                           </ul>
                         </div>
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
                             <li>
-                              <h6 class="accent-text">Predictive maintenance:</h6>
-                              <p>Prevent costly downtime on ships and port machinery with IoT-driven condition
-                                monitoring and alerts.</p>
+                              <h6 class="accent-text">Condition monitoring:</h6>
+                              <p>Place current readings, history and threshold alerts beside the equipment they relate
+                                to.</p>
                             </li>
                             <li>
-                              <h6 class="accent-text">Safety and compliance:</h6>
-                              <p>Continuously track operations against maritime regulations and safety standards to
-                                enhance operational compliance.</p>
-                            </li>
-                            <li>
-                              <h6 class="accent-text">Unified operations platform:</h6>
-                              <p>Integrate vessel, port, and logistics data into one spatially-aware system for
-                                streamlined maritime operations management.</p>
+                              <h6 class="accent-text">Remote collaboration:</h6>
+                              <p>Give shore, port and vessel teams a shared visual reference for reviewing an issue or
+                                planning work.</p>
                             </li>
                           </ul>
                         </div>
@@ -543,16 +494,17 @@
               <div class="accordion accordion-flush" id="accordionOilGas">
                 <div class="accordion-item">
                   <h3 class="accordion-header">
-                    <button class="industry-card__summary accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordionItemOilGas" aria-expanded="false" aria-controls="accordionItemOilGas">
+                    <button class="industry-card__summary accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#accordionItemOilGas" aria-expanded="false"
+                      aria-controls="accordionItemOilGas">
                       <span class="industry-card__icon" aria-hidden="true">
                         <i class="bi bi-droplet-half"></i>
                       </span>
                       <span class="industry-card__copy">
                         <span class="industry-card__title">Oil &amp; Gas</span>
                         <span class="industry-card__description">
-                          Improve situational awareness across remote and high-risk sites with integrated asset data,
-                          IoT monitoring, and historic operational insight.
+                          Review remote and complex sites with asset information, imagery and sensor context in one
+                          spatial view.
                         </span>
                       </span>
                     </button>
@@ -563,38 +515,28 @@
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
                             <li>
-                              <h6 class="accent-text">Situational awareness for remote sites:</h6>
-                              <p>Unify IoT sensor readings and asset data into one real-time spatial platform, giving a
-                                complete overview of operations across remote and high-risk locations.</p>
+                              <h6 class="accent-text">Remote site context:</h6>
+                              <p>Bring imagery, asset records and available operational information together around the
+                                physical environment.</p>
                             </li>
                             <li>
-                              <h6 class="accent-text">Fewer site visits:</h6>
-                              <p>Monitor pipelines, rigs, and processing facilities remotely with live data overlays and
-                                digital twins, greatly reducing the need for costly on-site inspections.</p>
-                            </li>
-                            <li>
-                              <h6 class="accent-text">Improved worker safety:</h6>
-                              <p>Provide role-based, context-aware insights that minimise worker exposure in hazardous
-                                environments (e.g. offshore platforms, refineries).</p>
+                              <h6 class="accent-text">Remote review:</h6>
+                              <p>Use the shared spatial view to assess an issue away from site when the available
+                                information provides sufficient context.</p>
                             </li>
                           </ul>
                         </div>
                         <div class="col-lg-6">
                           <ul class="list-unstyled">
                             <li>
-                              <h6 class="accent-text">Predictive failure prevention:</h6>
-                              <p>Leverage IoT-driven analytics to predict equipment issues before they happen, cutting
-                                downtime and maintenance costs.</p>
+                              <h6 class="accent-text">Sensor information in place:</h6>
+                              <p>View live readings, history and threshold states at the equipment or location they
+                                describe.</p>
                             </li>
                             <li>
-                              <h6 class="accent-text">Faster onboarding &amp; training:</h6>
-                              <p>Use immersive 3D visualisations to accelerate workforce training and readiness, helping
-                                new employees become effective quickly while maintaining compliance.</p>
-                            </li>
-                            <li>
-                              <h6 class="accent-text">Stronger regulatory compliance:</h6>
-                              <p>Continuously monitor conditions to meet strict safety and environmental standards,
-                                strengthening compliance and accountability.</p>
+                              <h6 class="accent-text">Planning and field coordination:</h6>
+                              <p>Connect work information, documents and site context for teams preparing or carrying
+                                out activity.</p>
                             </li>
                           </ul>
                         </div>
@@ -617,59 +559,58 @@
       <div class="container">
         <div class="value-grid row g-4">
           <div class="value-grid__intro col-12">
-            <h2>Why Visualise <span class="accent-text">Info?</span></h2>
-            <p class="text-body-secondary fs-5">At Visualise Info, we bridge the gap between complex enterprise systems
-              and the people who use them. <br />
-              Our visual-first platform lets you navigate your physical environment, access data in context, and take
-              action through an intuitive 3D interface, <span class=''>turning live operational data into
-                clear, actionable insight
-                that scales from individual facilities to global portfolios.</span></p>
+            <h2 class="partner-title">Why Visualise <span class="accent-text">Info?</span></h2>
+            <p class="text-body-secondary fs-5">
+              Enterprise spatial software has to fit the way an organisation already works. We combine control of the
+              Helios platform with practical experience of enterprise asset management, operational data and
+              integration.
+            </p>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="value-card">
               <div class="value-card__icon">
-                <i class="bi bi-geo-alt"></i>
+                <i class="bi bi-building-gear"></i>
               </div>
               <div class="value-card__content">
-                <h4>Spatial Intelligence</h4>
-                <p class="mb-0 text-small">Connect assets, buildings, systems, and data in an intuitive visual
-                  interface.</p>
+                <h3>Enterprise operations experience</h3>
+                <p class="mb-0">Our work spans EAM, assets, locations, work information, IoT and the operational
+                  relationships between them.</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="value-card">
               <div class="value-card__icon">
-                <i class="bi bi-broadcast"></i>
+                <i class="bi bi-diagram-3"></i>
               </div>
               <div class="value-card__content">
-                <h4 class="">Contextual Insight</h4>
-                <p class="mb-0 ">Transform live sensor and system data into real-time understanding that
-                  drives confident, informed decisions.</p>
+                <h3>Works with existing systems</h3>
+                <p class="mb-0">Helios can work alongside EAM, IoT and content platforms while those systems remain
+                  authoritative sources of information.</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="value-card">
               <div class="value-card__icon">
-                <i class="bi bi-graph-up"></i>
+                <i class="bi bi-bounding-box-circles"></i>
               </div>
               <div class="value-card__content">
-                <h4>Scalable Platform</h4>
-                <p class="mb-0 ">Adapt seamlessly from single-site deployment to enterprise-wide
-                  transformation.</p>
+                <h3>Direct product ownership</h3>
+                <p class="mb-0">Helios is developed by Visualise Info, giving us direct control over the spatial
+                  experience and the integrations around it.</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="value-card">
               <div class="value-card__icon">
-                <i class="bi bi-arrow-up-right-circle"></i>
+                <i class="bi bi-person-check"></i>
               </div>
               <div class="value-card__content">
-                <h4 class="">Transformational Outcomes</h4>
-                <p class="mb-0 ">Empower teams to see, decide, and act faster, turning visibility into
-                  measurable impact.</p>
+                <h3>Practical adoption</h3>
+                <p class="mb-0">Responsive interfaces, accessibility considerations and cloud or on-premises options
+                  help Helios fit office, site and organisational needs.</p>
               </div>
             </div>
           </div>
@@ -688,20 +629,13 @@
           </div>
 
           <div class="col-xl-5 order-lg-1">
-            <span class="section-kicker">Reseller Program</span>
+            <span class="section-kicker">Partner Program</span>
             <h2 class="partner-title">Partner With Visualise Info<span class="accent-text">.</span></h2>
             <p class="partner-copy">
-              Enhance your enterprise asset management offerings with Helios, a platform built for clarity and control.
-              <br />
-              We partner with consultancies, integrators, and resellers to deliver visual-first solutions that integrate
-              with leading EAM systems and other enterprise tools.
-              <br /> As a Visualise Info partner, you can expand your services, offer more value to clients, and share
-              in our success.
-              <br />
-              <small class="fw-light opacity-75">
-                (Our technical team works hand-in-hand with partners to support deployment and tailor Helios to each
-                client's needs.)
-              </small>
+              We work with consultancies, integrators and resellers that understand their clients' environments and
+              operational priorities. Visualise Info brings the Helios platform, product expertise and enterprise
+              integration experience; partners bring sector knowledge, delivery relationships and complementary
+              services.
             </p>
 
 
@@ -710,39 +644,32 @@
                 <ul class="feature-list">
                   <li>
                     <i class="bi bi-check-circle-fill"></i>
-                    <small>Broaden your portfolio by delivering
-                      Helios-powered spatial experiences, IoT integrations, and connected operational workflows.
+                    <small>Add Helios to customer programmes that need a practical spatial view of facilities, assets
+                      and operational information.
                     </small>
                   </li>
                   <li>
                     <i class="bi bi-check-circle-fill"></i>
-                    <small>Support clients with Helios deployment, integration projects, and managed services.
+                    <small>Combine your sector and delivery knowledge with our experience of EAM, IoT and spatial
+                      software.
                     </small>
                   </li>
                   <li>
                     <i class="bi bi-check-circle-fill"></i>
-                    <small>Differentiate your consultancy by embedding Helios into
-                      clients' digital transformation roadmaps, providing clear spatial tools that connect people,
-                      place, and information.
+                    <small>Shape each engagement around the client's existing systems, information, access needs and
+                      preferred deployment approach.
                     </small>
                   </li>
                   <li>
                     <i class="bi bi-check-circle-fill"></i>
-                    <small>Connect Helios with the operational systems and information clients already use.
-                    </small>
-                  </li>
-                  <li>
-                    <i class="bi bi-check-circle-fill"></i>
-                    <small>Continue to add value with training, change management,
-                      and monitoring services centred around Helios.
+                    <small>Agree clear responsibilities for integration, deployment, customer support and adoption.
                     </small>
                   </li>
                 </ul>
               </div>
             </div>
-            <a class="btn button-primary" href="mailto:contact@visualiseinfo.com?subject=Partnership%20Enquiry">Get in
-              touch to explore partnership
-              opportunities.</a>
+            <a class="btn button-primary" href="mailto:contact@visualiseinfo.com?subject=Partnership%20Enquiry">Talk to
+              us about partnering</a>
           </div>
 
         </div>
@@ -767,20 +694,21 @@
           <div class="col-lg-6 order-lg-2 d-flex flex-column justify-content-center">
             <div class="company-content ps-0 ps-lg-3">
               <h4>
-                We are a UK-based software company transforming how enterprise organisations interact with
-                data.
+                Visualise Info is a UK software company specialising in spatial tools for complex enterprise
+                environments.
               </h4>
               <p class="company-description">
-                We specialise in visualising complex asset and sensor information in a way that&apos;s intuitive,
-                interactive, and spatially aware.
+                We work where physical places, enterprise asset management and operational data meet. Our focus is
+                making specialist information easier for facilities, engineering, asset and operational teams to
+                understand and use.
               </p>
               <h3 class="mt-5">
-                Our Mission<span class="accent-text">.</span>
+                What We Do<span class="accent-text">.</span>
               </h3>
               <p class="company-description text-body-secondary">
-                Simplify complexity, connect insight, and empower transformation at every level.
-                Built on deep expertise in EAM, IoT, and visualisation, our platform turns disconnected data into
-                clarity that drives confident, measurable decisions.
+                We develop Helios, including our own 3D viewer, and the integration capabilities that connect it to
+                enterprise systems, IoT data and content. Our experience includes established IBM Maximo integration,
+                alongside delivery through the Visualise Info cloud or on premises.
               </p>
               <h3 class="mt-5">Our Clients<span class="accent-text">.</span></h3>
               <div class="logo-cloud logo-cloud--clients" aria-label="Visualise Info clients">
@@ -828,88 +756,92 @@
 
       <div class="container contact-layout">
         <div class="contact-summary">
-              <h3>Start a conversation</h3>
-              <p>Share what you are trying to understand, connect or improve, and we can discuss the most useful next step.</p>
+          <h3>Start a conversation</h3>
+          <p>Share what you are trying to understand, connect or improve, and we can discuss the most useful next step.
+          </p>
 
           <div class="contact-method">
             <div class="contact-method__icon" aria-hidden="true"><i class="bi bi-envelope"></i></div>
             <div>
-                  <h4>Email</h4>
-                  <p><a href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a></p>
+              <h4>Email</h4>
+              <p><a href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a></p>
             </div>
           </div>
 
           <div class="contact-method">
             <div class="contact-method__icon" aria-hidden="true"><i class="bi bi-geo-alt"></i></div>
             <div>
-                  <h4>Visualise Info</h4>
-                  <p>Fuel Tank, 8-12 Creekside</p>
-                  <p>London, SE8 3DX</p>
+              <h4>Visualise Info</h4>
+              <p>Fuel Tank, 8-12 Creekside</p>
+              <p>London, SE8 3DX</p>
             </div>
           </div>
         </div>
 
         <form id="contact-form" class="enquiry-form" action="https://api.web3forms.com/submit" method="POST"
-              aria-describedby="contact-form-help">
-              <input type="hidden" name="access_key" value="213da306-e450-4072-8ea7-2a6ee8bafd74">
-              <input type="hidden" name="subject" value="New website enquiry">
-              <input type="hidden" name="from_name" value="Visualise Info website">
+          aria-describedby="contact-form-help">
+          <input type="hidden" name="access_key" value="213da306-e450-4072-8ea7-2a6ee8bafd74">
+          <input type="hidden" name="subject" value="New website enquiry">
+          <input type="hidden" name="from_name" value="Visualise Info website">
 
-              <h3>Send an enquiry</h3>
-              <p id="contact-form-help">Fields marked with an asterisk are required.</p>
+          <h3>Send an enquiry</h3>
+          <p id="contact-form-help">Fields marked with an asterisk are required.</p>
 
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label for="contact-name" class="form-label">Name <span class="required-indicator" aria-hidden="true">*</span></label>
-                  <input type="text" class="form-control" id="contact-name" name="name" autocomplete="name"
-                    maxlength="120" required>
-                </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="contact-name" class="form-label">Name <span class="required-indicator"
+                  aria-hidden="true">*</span></label>
+              <input type="text" class="form-control" id="contact-name" name="name" autocomplete="name" maxlength="120"
+                required>
+            </div>
 
-                <div class="col-md-6">
-                  <label for="contact-email" class="form-label">Work email <span class="required-indicator" aria-hidden="true">*</span></label>
-                  <input type="email" class="form-control" id="contact-email" name="email" autocomplete="email"
-                    maxlength="254" required>
-                </div>
+            <div class="col-md-6">
+              <label for="contact-email" class="form-label">Work email <span class="required-indicator"
+                  aria-hidden="true">*</span></label>
+              <input type="email" class="form-control" id="contact-email" name="email" autocomplete="email"
+                maxlength="254" required>
+            </div>
 
-                <div class="col-12">
-                  <label for="contact-company" class="form-label">Company / Organisation</label>
-                  <input type="text" class="form-control" id="contact-company" name="company"
-                    autocomplete="organization" maxlength="160">
-                </div>
+            <div class="col-12">
+              <label for="contact-company" class="form-label">Company / Organisation</label>
+              <input type="text" class="form-control" id="contact-company" name="company" autocomplete="organization"
+                maxlength="160">
+            </div>
 
-                <div class="col-12">
-                  <label for="contact-message" class="form-label">Message <span class="required-indicator" aria-hidden="true">*</span></label>
-                  <textarea class="form-control" id="contact-message" name="message" rows="6" maxlength="3000"
-                    required></textarea>
-                </div>
+            <div class="col-12">
+              <label for="contact-message" class="form-label">Message <span class="required-indicator"
+                  aria-hidden="true">*</span></label>
+              <textarea class="form-control" id="contact-message" name="message" rows="6" maxlength="3000"
+                required></textarea>
+            </div>
 
-                <div class="col-12 contact-captcha">
-                  <div class="h-captcha" data-captcha="true"></div>
-                </div>
+            <div class="col-12 contact-captcha">
+              <div class="h-captcha" data-captcha="true"></div>
+            </div>
 
-                <div class="col-12">
-                  <p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite"
-                    aria-atomic="true"></p>
-                  <p id="contact-form-error" class="contact-form-error" role="alert" tabindex="-1" hidden></p>
-                </div>
+            <div class="col-12">
+              <p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite"
+                aria-atomic="true"></p>
+              <p id="contact-form-error" class="contact-form-error" role="alert" tabindex="-1" hidden></p>
+            </div>
 
-                <div class="col-12 d-flex flex-column flex-sm-row align-items-sm-center gap-3">
-                  <button type="submit" class="btn" id="contact-submit">
-                    <span class="spinner-border spinner-border-sm" aria-hidden="true" hidden></span>
-                    <span class="contact-submit-label">Send message</span>
-                  </button>
-                  <small class="contact-privacy-note">
-                    Your details will be used to respond to your enquiry. Read our
-                    <a href="privacy-policy.html">privacy policy</a>.
-                  </small>
-                </div>
-              </div>
+            <div class="col-12 d-flex flex-column flex-sm-row align-items-sm-center gap-3">
+              <button type="submit" class="btn" id="contact-submit">
+                <span class="spinner-border spinner-border-sm" aria-hidden="true" hidden></span>
+                <span class="contact-submit-label">Send message</span>
+              </button>
+              <small class="contact-privacy-note">
+                Your details will be used to respond to your enquiry. Read our
+                <a href="privacy-policy.html">privacy policy</a>.
+              </small>
+            </div>
+          </div>
         </form>
       </div>
     </section>
   </main>
 
-  <footer id="footer" class="site-footer">
+  <footer id="footer" class="site-footer site-footer--after-tinted">
     <div class="container site-footer__grid">
       <section>
         <a href="index.html" class="site-footer__brand" aria-label="Visualise Info home">
@@ -922,28 +854,31 @@
       <nav aria-labelledby="footer-product-heading">
         <h2 id="footer-product-heading">Product</h2>
         <ul class="site-footer__links">
-            <li><a href="helios.html">Helios</a></li>
-            <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
+          <li><a href="helios/">Helios</a></li>
+          <li><a href="graphql-for-ibm-maximo/">GraphQL for IBM Maximo</a></li>
         </ul>
       </nav>
       <nav aria-labelledby="footer-links-heading">
         <h2 id="footer-links-heading">Useful Links</h2>
         <ul class="site-footer__links">
-            <li><a href="docs/eula/index.html">Terms of service</a></li>
-            <li><a href="privacy-policy.html">Privacy policy</a></li>
+          <li><a href="trust-centre/">Trust Centre</a></li>
+          <li><a href="privacy-policy.html">Privacy policy</a></li>
         </ul>
         <div class="site-footer__social" aria-label="Social links">
-          <a href="https://uk.linkedin.com/company/visualise-info-ltd" aria-label="Visualise Info on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-          <a href="https://www.instagram.com/visualiseinfo/" aria-label="Visualise Info on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
-          <a href="https://www.youtube.com/@VisualiseInfo" aria-label="Visualise Info on YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+          <a href="https://uk.linkedin.com/company/visualise-info-ltd" aria-label="Visualise Info on LinkedIn"><i
+              class="bi bi-linkedin" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/visualiseinfo/" aria-label="Visualise Info on Instagram"><i
+              class="bi bi-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@VisualiseInfo" aria-label="Visualise Info on YouTube"><i
+              class="bi bi-youtube" aria-hidden="true"></i></a>
         </div>
       </nav>
       <section aria-labelledby="footer-certifications-heading">
-        <h2 id="footer-certifications-heading">Certifications</h2>
+        <h2 id="footer-certifications-heading">Assurance &amp; Registration</h2>
         <div class="site-footer__certifications">
           <iframe
             src="https://registry.blockmarktech.com/certificates/63b9d9dc-78cd-4919-8bb4-9bb0096cec7c/widget/?tooltip_position=top_left&theme=transparent&hover=true"
-            title="Visualise Info certification"></iframe>
+            title="Visualise Info Cyber Essentials Plus certificate"></iframe>
           <a href="https://ico.org.uk/ESDWebPages/Entry/ZB727534" aria-label="Visualise Info ICO registration"><img
               class="rounded" src="assets/img/ico.org.uk.png" alt="ICO registered"></a>
         </div>
@@ -960,7 +895,7 @@
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://web3forms.com/client/script.js" async defer></script>
-  <script src="assets/js/site.js"></script>
+  <script src="assets/js/site.js?v=20260902"></script>
 
 </body>
 
