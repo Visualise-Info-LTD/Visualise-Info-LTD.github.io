@@ -118,9 +118,9 @@
           "featureList": [
             "3D point clouds, panoramic imagery, 2D maps and spatial points of interest",
             "Location-aware assets, locations, work orders, service requests and field reporting",
-            "Live and historic IoT information with threshold alerting",
+            "Current and historical IoT readings in asset or location context",
             "Indoor routing, multiple stops, maps, written instructions and route preferences",
-            "Location-aware documents, media and InfoHub content",
+            "Location-aware documents, media and user-configurable dashboard views",
             "Enterprise users, groups, role-based access control and site-level permissions",
             "Visualise Info cloud and on-premises deployment options",
             "LiDAR scanning supplied by Visualise Info where required"
@@ -175,10 +175,10 @@
             },
             {
               "@type": "Question",
-              "name": "Can Helios show live IoT information?",
+              "name": "How does sensor information reach Helios?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. Helios can show live and historic sensor information in the relevant physical context. Threshold alerts can highlight readings that need attention."
+                "text": "Sensor data can be brought into Helios from external sensor, building or source systems through configured integrations. Helios can then show current and historical readings against the relevant asset or location."
               }
             },
             {
@@ -336,7 +336,8 @@
         </div>
 
         <p class="helios-diagram-intro">
-          Helios makes the physical environment the common reference point.
+          Helios uses the physical environment to make information from specialist systems easier for people to find,
+          understand and use.
         </p>
         <div class="helios-context-diagram helios-context-diagram-canvas" aria-labelledby="context-diagram-title">
           <h3 id="context-diagram-title" class="visually-hidden">
@@ -393,8 +394,9 @@
               issue.
             </p>
             <p>
-              Point clouds, panoramic imagery, maps and spatial points of interest make that environment intuitive to
-              explore. Operational information and workflows can then be connected directly to the places they describe.
+              Point clouds, panoramic imagery, maps and spatial points of interest can form the navigable 3D environment
+              commonly described as a digital twin. Helios extends that spatial foundation by connecting operational
+              information and workflows directly to the places they describe.
             </p>
             <div class="helios-capability-list">
               <span><i class="bi bi-badge-3d" aria-hidden="true"></i> 3D point clouds</span>
@@ -406,8 +408,8 @@
           <div class="col-lg-6">
             <figure class="helios-product-media helios-product-media-wide helios-product-media-blended">
               <img src="/assets/img/helios/pointcloud.png"
-                alt="Helios point-cloud exploration view with the minimap and spatial view controls visible" width="1536"
-                height="1024" loading="lazy" decoding="async">
+                alt="Helios point-cloud exploration view with the minimap and spatial view controls visible"
+                width="1536" height="1024" loading="lazy" decoding="async">
             </figure>
           </div>
         </div>
@@ -471,10 +473,16 @@
               across separate systems.
             </p>
             <ul class="helios-check-list">
-              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Find assets and locations through where they are</li>
-              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Open work orders and service requests from the
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Find assets and locations through where
+                they are</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Open work orders and service requests from
+                the
                 environment</li>
-              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Capture field information through configurable forms
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Capture field information through
+                configurable forms
+              </li>
+              <li class="text-muted">Helios works with enterprise platforms including IBM Maximo, Salesforce, SAP, IFS,
+                MRI and more.
               </li>
             </ul>
           </div>
@@ -493,10 +501,6 @@
                 locations, work orders and related operational information spatially. Maximo remains the system of
                 record; Helios makes its information easier to understand and use in physical context.
               </p>
-              <p class="helios-integration-breadth">
-                Beyond IBM Maximo, Helios can work with enterprise platforms including Salesforce, SAP, IFS, MRI and
-                others.
-              </p>
               <a href="/graphql-for-ibm-maximo/" class="helios-inline-link">
                 Explore GraphQL for IBM Maximo <i class="bi bi-arrow-right" aria-hidden="true"></i>
               </a>
@@ -513,39 +517,48 @@
             <span class="helios-section-kicker">Location-aware IoT</span>
             <h2 class="display-6 fw-semibold">See what is happening, where it is happening</h2>
             <p class="lead">
-              See where a reading comes from, understand what surrounds it and review change without separating the
-              data from the environment it describes.
+              Sensor data starts in external sensors, building systems and other source platforms. Configured
+              integrations, including IoTHub where appropriate, bring relevant readings into Helios so teams can review
+              them against the asset or location they describe.
             </p>
           </div>
           <div class="col-lg-7">
-            <figure class="helios-product-media helios-product-media-wide helios-product-media-blended mb-4">
+            <figure class="helios-product-media helios-product-media-wide helios-product-media-blended">
               <img src="/assets/img/helios/iot.png"
-                alt="Helios sensor readings and threshold status shown in context around an engine room location"
-                width="2809" height="1585" loading="lazy" decoding="async">
+                alt="Helios IoT concept showing sensor readings in context with an illustrative threshold-exceeded alert"
+                width="2809" height="1581" loading="lazy" decoding="async">
             </figure>
-            <div class="row g-3">
-              <div class="col-md-4">
-                <article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-broadcast"
-                      aria-hidden="true"></i></span>
-                  <h3>Understand current conditions</h3>
-                  <p>View live sensor readings at their relevant asset or location.</p>
-                </article>
-              </div>
-              <div class="col-md-4">
-                <article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-clock-history"
-                      aria-hidden="true"></i></span>
-                  <h3>Review change over time</h3>
-                  <p>Use historic readings and trends to see how conditions change.</p>
-                </article>
-              </div>
-              <div class="col-md-4">
-                <article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-bell"
-                      aria-hidden="true"></i></span>
-                  <h3>Focus attention</h3>
-                  <p>Use threshold alerts to highlight readings that need review.</p>
-                </article>
-              </div>
-            </div>
+          </div>
+        </div>
+        <div class="row g-3 mt-4">
+          <div class="col-md-6 col-xl-3">
+            <article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-broadcast"
+                  aria-hidden="true"></i></span>
+              <h3>Start with source systems</h3>
+              <p>Readings originate in sensor networks, building systems and other operational sources.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-clock-history"
+                  aria-hidden="true"></i></span>
+              <h3>Connect relevant readings</h3>
+              <p>Configured integrations bring the information needed for each Helios environment into view.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="helios-feature-card"><span class="helios-card-icon"><i class="bi bi-graph-up"
+                  aria-hidden="true"></i></span>
+              <h3>Review readings in context</h3>
+              <p>See current and historical values against the relevant asset or location.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="helios-feature-card helios-feature-card--roadmap">
+              <span class="helios-card-icon"><i class="bi bi-bell" aria-hidden="true"></i></span>
+              <h3>Detect changes and trigger action</h3>
+              <p>Identify unusual sensor readings and threshold breaches, then trigger configured responses such as
+                notifications, emails or creating a work order against the relevant asset.</p>
+            </article>
           </div>
         </div>
       </div>
@@ -554,7 +567,7 @@
     <section id="navigation" class="helios-feature-section section">
       <div class="container">
         <div class="row align-items-center gy-5">
-          <div class="col-lg-6 order-lg-2">
+          <div class="col-lg-7 order-lg-2">
             <span class="helios-section-kicker">Indoor navigation</span>
             <h2 class="display-6 fw-semibold">Help people find the right place</h2>
             <p class="lead">
@@ -565,8 +578,34 @@
               Route preferences can account for features such as stairs, lifts and ramps where navigation data has
               been configured. Available routes depend on the environment and its surveyed information.
             </p>
+            <div class="row g-3 mt-4">
+              <div class="col-md-4">
+                <article class="helios-feature-card">
+                  <span class="helios-card-icon"><i class="bi bi-signpost-split" aria-hidden="true"></i></span>
+                  <h3>Plan multi-stop routes</h3>
+                  <p>Organise several destinations into one journey rather than navigating to each location separately.
+                  </p>
+                </article>
+              </div>
+              <div class="col-md-4">
+                <article class="helios-feature-card">
+                  <span class="helios-card-icon"><i class="bi bi-universal-access" aria-hidden="true"></i></span>
+                  <h3>Support different access needs</h3>
+                  <p>Use configured route preferences to account for features such as stairs, lifts and ramps.</p>
+                </article>
+              </div>
+              <div class="col-md-4">
+                <article class="helios-feature-card">
+                  <span class="helios-card-icon"><i class="bi bi-map" aria-hidden="true"></i></span>
+                  <h3>Navigate with spatial context</h3>
+                  <p>Follow routes through the same environment used to explore assets, points of interest and
+                    operational
+                    information.</p>
+                </article>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-6 order-lg-1">
+          <div class="col-lg-5 order-lg-1">
             <!-- Temporary still: replace assets/img/helios/navigation.png with assets/img/helios/navigation.gif when supplied. -->
             <figure class="helios-product-media helios-product-media-wide helios-product-media-blended">
               <img src="/assets/img/helios/navigation.png"
@@ -575,6 +614,7 @@
             </figure>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -636,10 +676,6 @@
         </p>
       </div>
       <div class="container">
-        <p class="helios-outcome-summary">
-          Applied to the right workflow, Helios can reduce duplicated administration and unnecessary site visits where
-          remote review is sufficient, while improving visibility and making discrepancies easier to identify.
-        </p>
         <ul class="helios-application-list" aria-label="Operational applications of Helios">
           <li><i class="bi bi-box-seam" aria-hidden="true"></i><span>Asset management</span></li>
           <li><i class="bi bi-arrow-left-right" aria-hidden="true"></i><span>Project handover</span></li>
@@ -669,10 +705,13 @@
               <span class="helios-card-icon"><i class="bi bi-person-check" aria-hidden="true"></i></span>
               <h3>Designed for people</h3>
               <ul class="helios-check-list">
-                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Familiar point, click, drag and zoom interactions
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Familiar point, click, drag and zoom
+                  interactions
                 </li>
-                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Personalised, location-aware information</li>
-                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Route preferences and responsive views</li>
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Personalised, location-aware information
+                </li>
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Route preferences and responsive views
+                </li>
               </ul>
             </article>
           </div>
@@ -681,9 +720,12 @@
               <span class="helios-card-icon"><i class="bi bi-shield-lock" aria-hidden="true"></i></span>
               <h3>Controlled for the enterprise</h3>
               <ul class="helios-check-list">
-                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Users, groups and role-based access control</li>
-                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Site, feature, entity and content permissions</li>
-                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Site, storage and media administration</li>
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Users, groups and role-based access
+                  control</li>
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Site, feature, entity and content
+                  permissions</li>
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Site, storage and media administration
+                </li>
               </ul>
             </article>
           </div>
@@ -693,11 +735,10 @@
 
     <section id="deployment" class="helios-deployment section section--tinted">
       <div class="container section-heading">
-        <span class="helios-section-kicker">Flexible delivery</span>
-        <h2>Deploy Helios around your environment</h2>
+        <span class="helios-section-kicker">Flexible deployment</span>
+        <h2>Choose how Helios is deployed</h2>
         <p class="lead mx-auto">
-          Choose the deployment approach that fits your organisation and bring in spatial capture support where it is
-          needed.
+          Choose the deployment approach that fits your organisation.
         </p>
       </div>
       <div class="container">
@@ -716,12 +757,13 @@
               <p>Use an on-premises deployment where organisational requirements call for it.</p>
             </article>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <article class="helios-feature-card helios-deployment-card"><span class="helios-card-icon"><i
-                  class="bi bi-badge-3d" aria-hidden="true"></i></span>
-              <h3>LiDAR scanning</h3>
+          <div class="col-md-12 col-lg-4">
+            <aside class="helios-proof-card" aria-labelledby="spatial-capture-title">
+              <span class="helios-card-icon"><i class="bi bi-badge-3d" aria-hidden="true"></i></span>
+              <p class="helios-proof-label">Spatial capture support</p>
+              <h2 id="spatial-capture-title" class="h5 mb-2">LiDAR scanning</h2>
               <p>Visualise Info can supply LiDAR scanning where spatial capture is required.</p>
-            </article>
+            </aside>
           </div>
         </div>
       </div>
@@ -829,14 +871,15 @@
             <h3 class="accordion-header" id="heliosFaqHeadingSix">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#heliosFaqAnswerSix" aria-expanded="false" aria-controls="heliosFaqAnswerSix">
-                Can Helios show live IoT information?
+                How does sensor information reach Helios?
               </button>
             </h3>
             <div id="heliosFaqAnswerSix" class="accordion-collapse collapse" aria-labelledby="heliosFaqHeadingSix"
               data-bs-parent="#heliosFaq">
               <div class="accordion-body">
-                Yes. Helios can show live and historic sensor information in the relevant physical context. Threshold
-                alerts can highlight readings that need attention.
+                Sensor data can be brought into Helios from external sensor, building or source systems through
+                configured integrations. Helios can then show current and historical readings against the relevant asset
+                or location.
               </div>
             </div>
           </div>
