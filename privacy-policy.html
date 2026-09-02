@@ -16,238 +16,305 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"
     rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <script>
-    (function (h, o, t, j, a, r) {
-      h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-      h._hjSettings = { hjid: 3904011, hjsv: 6 };
-      a = o.getElementsByTagName('head')[0];
-      r = o.createElement('script'); r.async = 1;
-      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-  </script>
+  <link href="assets/css/site.css?v=20260902" rel="stylesheet">
+  <script src="/assets/js/analytics-consent.js" defer></script>
 </head>
 
-<body class="starter-page-page">
+<body class="privacy-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div
-      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img class='companyLogo' src="assets/img/logo.png" alt="">
+  <header id="site-header" class="site-header">
+    <div class="site-header__bar container-xl">
+      <a href="index.html" class="site-brand" aria-label="Visualise Info home">
+        <img class="site-brand__logo" src="assets/img/logo.png" alt="Visualise Info">
       </a>
-      <nav id="navmenu" class="navmenu" aria-label="Primary navigation">
-        <ul>
-          <li class="dropdown platform-dropdown">
-            <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
-              aria-controls="platform-submenu" aria-haspopup="true">
+      <nav class="site-navigation" aria-label="Primary navigation">
+        <ul id="site-navigation-menu" class="site-navigation__list">
+          <li class="site-navigation__item">
+            <button class="site-navigation__submenu-toggle" type="button" aria-expanded="false"
+              aria-controls="platform-submenu" aria-haspopup="true" data-submenu-toggle>
               <span>Platform</span>
               <i class="bi bi-chevron-down" aria-hidden="true"></i>
             </button>
-            <ul id="platform-submenu">
-              <li><a href="index.html#platform">Helios</a></li>
-              <li><a href="graphql-for-ibm-maximo.html">GraphQL for IBM Maximo</a></li>
+            <ul id="platform-submenu" class="site-navigation__submenu">
+              <li><a href="helios/">Helios</a></li>
+              <li><a href="graphql-for-ibm-maximo/">GraphQL for IBM Maximo</a></li>
             </ul>
           </li>
-          <li><a href="index.html#industries">Industries</a></li>
-          <li><a href="index.html#why-visualise-info">Why Visualise Info?</a></li>
-          <li><a href="index.html#partner">Partner Program</a></li>
-          <li><a href="index.html#about">Company</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="index.html#partners">Partner Program</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a href="index.html#white-papers">White Papers</a></li>
-              <li><a href="index.html#case-studies">Case Studies</a></li>
-              <li><a href="index.html#video-library">Video Library</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a href="index.html#about">About</a></li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="index.html#industries">Industries</a>
+          </li>
+          <li class="site-navigation__item"><a class="site-navigation__link" href="index.html#partner">Partner
+              Program</a></li>
+          <li class="site-navigation__item">
+            <button class="site-navigation__submenu-toggle" type="button" aria-expanded="false"
+              aria-controls="company-submenu" aria-haspopup="true" data-submenu-toggle>
+              <span>Company</span>
+              <i class="bi bi-chevron-down" aria-hidden="true"></i>
+            </button>
+            <ul id="company-submenu" class="site-navigation__submenu">
+              <li><a href="index.html#why-visualise-info">Why Visualise Info?</a></li>
+              <li><a href="index.html#about">About us</a></li>
             </ul>
-          </li> -->
+          </li>
         </ul>
-        <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open navigation menu"
-          aria-expanded="false"></button>
+        <button class="site-navigation__mobile-toggle bi bi-list" type="button" aria-label="Open navigation menu"
+          aria-controls="site-navigation-menu" aria-expanded="false" data-nav-toggle></button>
       </nav>
-
-      <!-- <a class="btn-getstarted" href="index.html#about">Contact Us</a> -->
-
+      <a class="site-header__cta" href="index.html#contact">Contact</a>
     </div>
   </header>
 
-  <main class="main mt-5">
+  <main>
+    <section class="trust-hero privacy-hero section" aria-labelledby="privacy-policy-title">
+      <div class="container">
+        <div class="trust-hero__grid">
+          <div class="trust-hero__content">
+            <span class="trust-kicker">
+              <i class="bi bi-shield-lock" aria-hidden="true"></i>
+              SECURITY & Privacy
+            </span>
+            <h1 class="fs-1" id="privacy-policy-title">Privacy Policy</h1>
+            <p class="trust-review-date">As of <time datetime="2026-09-01">1 September 2026</time></p>
 
-    <!-- privacy Policy Section -->
-    <section id="privacy-policy" class="section">
-      <div class="container" data-aos="fade-down">
-        <div class="row">
-          <div class="col-sm-12">
-            <h1 class="fw-bold mb-0">Privacy Policy</h1>
-            <p class="text-body-tertiary">As of August 2025</p>
-          </div>
-          <br>
-          <div class="col-sm-12">
-            <p class="small">This privacy policy has been compiled to better serve those who are concerned with how
-              their personally identifiable information (“<strong>PII</strong>”) is used by Visualise Info Ltd (a
-              company registered in England with number 11723865, and references to “<strong>us</strong>” and
-              “<strong>we</strong>” are to that company).<br> PII is information that can be used on its own or with
-              other information to identify, contact, or locate a single person, or to identify an individual in
-              context.<br>Please read our privacy policy carefully to get a clear understanding of how we may collect,
-              use, protect or otherwise handle your PII in accordance with our website.</p>
-            <h5 class="accent-text"> Do we use 'Cookies'?</h5>
-            <p class="small">At Visualise Info, we respect your privacy to the utmost degree. As part of our commitment:
-            </p>
-            <p class="small"><strong>We do not use Session or First-party cookies.</strong><br> Cookies are small files
-              that a site or its service provider transfers to your computer's hard drive through your Web browser (if
-              you allow) that enables the site's or service provider's systems to recognize your browser and capture and
-              remember certain information. Given our commitment to your privacy, we have chosen not to use Session or
-              first party cookies at all on our website.</p>
-            <p class="small">However, some of the products we provide may use cookies to enhance the user experience or
-              provide additional services. We may also use your browser's own cache to store and retrieve user
-              experience data (such as remembering details for future logons), such use can usually be controlled
-              through your device (subject to the way your browser is installed, administration privileges granted to
-              users and your ability to access your own device).</p>
-            <p class="small"><strong>We do not track or store personal information.</strong><br> We do not collect
-              personal information about your visit to our website. Any data collected is anonymized and used purely for
-              analytical purposes to help improve the user experience.</p>
-            <h5 class="accent-text"> Collection of Personal Information</h5>
-            <p class="small">While we do not collect personal information through tracking or cookies, we may gather
-              personal data that you provide to us when you fill out a contact form, contact us directly, or engage in
-              transactions or other activities where personal information is required for processing</p>
-            <h5 class="accent-text"> Use of Your Personal Information</h5>
-            <p class="small">The personal information we collect is used solely for the purpose it was provided and
-              related purposes as permitted by law, such as:</p>
-            <ul class="small">
-              <li>Responding to your inquiries</li>
-              <li>Processing transactions</li>
-              <li>Providing you with information about our products and services</li>
-              <li>Sending periodic emails regarding your order or other products and services we have previously
-                discussed</li>
-            </ul>
-            <h5 class="accent-text"> Sharing of Your Personal Information</h5>
-            <p class="small">We do not sell, trade, or otherwise transfer to outside parties your personal information.
-              This does not include website hosting partners and other parties who assist us in operating our website,
-              conducting our business, or serving our users, so long as those parties agree to keep this information
-              confidential. We may also release information when its release is appropriate to comply with the law,
-              enforce our site policies, or protect ours or others' rights, property, or safety.</p>
-            <h5 class="accent-text"> Security of Your Personal Information</h5>
-            <p class="small">We take the security of your personal information very seriously. We have implemented
-              security measures to protect the personal information we collect from unauthorized access, use, and
-              disclosure. We also ensure that any third parties with whom we share personal information have appropriate
-              security measures in place.</p>
-            <h5 class="accent-text"> Your Rights</h5>
-            <p class="small">If you are a European resident, you have the right to access personal information we hold
-              about you and to ask that your personal information be corrected, updated, or deleted. If you would like
-              to exercise this right, please contact us through the contact email below.</p>
-            <h5 class="accent-text"> Changes to this Privacy Policy</h5>
-            <p class="small">We will occasionally update this Privacy Policy to reflect company and customer feedback.
-              We encourage you to periodically review this Policy to be informed of how we are protecting your
-              information.</p>
-            <h5 class="accent-text"> Contacting Us</h5>
-            <p class="small">If you wish to ask us about this privacy policy please contact us using the information
-              below</p>
-            <p class="small"><strong>Visualise Info Ltd.</strong><br> Registered in England, Company Number: 11723865.
-            </p>
+            <p class="lead">Please read our privacy policy carefully to get a clear understanding of how we may
+              collect, use, protect or otherwise handle your PII in accordance with our website.</p>
+            <div class="privacy-introduction__copy">
+              <p>This privacy policy has been compiled to better serve those who are concerned with how their personally
+                identifiable information (“<strong>PII</strong>”) is used by Visualise Info Ltd (a company registered in
+                England with number 11723865, and references to “<strong>us</strong>” and “<strong>we</strong>” are to
+                that company).</p>
+              <p>PII is information that can be used on its own or with other information to identify, contact, or
+                locate
+                a single person, or to identify an individual in context.</p>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-    </section><!-- /Video Library Section -->
+    <section id="privacy-policy" class="privacy-content trust-content section" aria-label="Website Privacy Policy">
+      <div class="container trust-layout">
+        <aside class="trust-toc" aria-label="On this page">
+          <p>On this page</p>
+          <nav>
+            <a href="#website-technologies"><span>01</span> Cookies &amp; website usage</a>
+            <a href="#collection"><span>02</span> Information collection</a>
+            <a href="#use"><span>03</span> How information is used</a>
+            <a href="#sharing"><span>04</span> Information sharing</a>
+            <a href="#security"><span>05</span> Information security</a>
+            <a href="#rights"><span>06</span> Your rights</a>
+            <a href="#changes"><span>07</span> Policy changes</a>
+            <a href="#contacting-us"><span>08</span> Contacting us</a>
+          </nav>
+        </aside>
 
+        <div class="trust-panels">
+          <section id="website-technologies" class="trust-panel trust-panel--featured privacy-policy-panel"
+            aria-labelledby="website-technologies-title">
+            <header class="trust-panel__header">
+              <span class="trust-panel__icon"><i class="bi bi-cookie" aria-hidden="true"></i></span>
+              <div>
+                <span class="trust-panel__number">01</span>
+                <h2 id="website-technologies-title">Cookies and website usage technologies</h2>
+              </div>
+            </header>
+            <div class="privacy-policy-copy">
+              <p><strong>Optional analytics require your choice.</strong><br> We use optional analytics and website
+                usage technologies to understand how visitors use the website and to improve it. These technologies
+                are not loaded unless you select "Accept analytics". If accepted, they may use first-party cookies and
+                browser local or session storage. Usage information may include page URLs and navigation paths,
+                pointer movement, clicks, scrolling, visual representations of how pages are displayed and used,
+                browser, device and viewport details, and IP address.</p>
+              <p><strong>Remembering your choice.</strong><br> We use browser local storage to remember whether you
+                accepted or rejected optional analytics. This preference is used to apply your choice and does not
+                itself activate analytics. You can review or change your choice using the "Privacy choices" control
+                available on each page.</p>
+              <p><strong>Contact form technologies.</strong><br> Third-party form-delivery and anti-spam technologies
+                are loaded on the page containing the enquiry form to operate and protect that form. When you submit an
+                enquiry, these services process the information you provide. They may use cookies or similar
+                technologies required to provide and protect the form.</p>
+            </div>
+          </section>
+
+          <section id="collection" class="trust-panel privacy-policy-panel" aria-labelledby="collection-title">
+            <header class="trust-panel__header">
+              <span class="trust-panel__icon"><i class="bi bi-inbox" aria-hidden="true"></i></span>
+              <div>
+                <span class="trust-panel__number">02</span>
+                <h2 id="collection-title">Collection of Personal Information</h2>
+              </div>
+            </header>
+            <div class="privacy-policy-copy">
+              <p>We may collect personal data that you provide when you submit the website enquiry form, contact us
+                directly, or engage in transactions or other activities where personal information is required for
+                processing. If you accept optional analytics, website usage and technical information may also be
+                processed for the analytics purposes described above.</p>
+            </div>
+          </section>
+
+          <section id="use" class="trust-panel privacy-policy-panel" aria-labelledby="use-title">
+            <header class="trust-panel__header">
+              <span class="trust-panel__icon"><i class="bi bi-list-check" aria-hidden="true"></i></span>
+              <div>
+                <span class="trust-panel__number">03</span>
+                <h2 id="use-title">Use of Your Personal Information</h2>
+              </div>
+            </header>
+            <div class="privacy-policy-copy">
+              <p>The personal information we collect is used solely for the purpose it was provided and related
+                purposes as permitted by law, such as:</p>
+              <ul class="privacy-policy-list">
+                <li>Responding to your inquiries</li>
+                <li>Processing transactions</li>
+                <li>Providing you with information about our products and services</li>
+                <li>Sending periodic emails regarding your order or other products and services we have previously
+                  discussed</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="sharing" class="trust-panel privacy-policy-panel" aria-labelledby="sharing-title">
+            <header class="trust-panel__header">
+              <span class="trust-panel__icon"><i class="bi bi-share" aria-hidden="true"></i></span>
+              <div>
+                <span class="trust-panel__number">04</span>
+                <h2 id="sharing-title">Sharing of Your Personal Information</h2>
+              </div>
+            </header>
+            <div class="privacy-policy-copy">
+              <p>We do not sell, trade, or otherwise transfer to outside parties your personal information. This does
+                not include website hosting partners and other parties who assist us in operating our website,
+                conducting our business, or serving our users, so long as those parties agree to keep this information
+                confidential. We may also release information when its release is appropriate to comply with the law,
+                enforce our site policies, or protect ours or others' rights, property, or safety.</p>
+            </div>
+          </section>
+
+          <section id="security" class="trust-panel privacy-policy-panel" aria-labelledby="security-title">
+            <header class="trust-panel__header">
+              <span class="trust-panel__icon"><i class="bi bi-lock" aria-hidden="true"></i></span>
+              <div>
+                <span class="trust-panel__number">05</span>
+                <h2 id="security-title">Security of Your Personal Information</h2>
+              </div>
+            </header>
+            <div class="privacy-policy-copy">
+              <p>We take the security of your personal information very seriously. We have implemented security
+                measures to protect the personal information we collect from unauthorized access, use, and disclosure.
+                We also ensure that any third parties with whom we share personal information have appropriate security
+                measures in place.</p>
+            </div>
+          </section>
+
+          <section id="rights" class="trust-panel privacy-policy-panel" aria-labelledby="rights-title">
+            <header class="trust-panel__header">
+              <span class="trust-panel__icon"><i class="bi bi-person-check" aria-hidden="true"></i></span>
+              <div>
+                <span class="trust-panel__number">06</span>
+                <h2 id="rights-title">Your Rights</h2>
+              </div>
+            </header>
+            <div class="privacy-policy-copy">
+              <p>If you are a European resident, you have the right to access personal information we hold about you
+                and to ask that your personal information be corrected, updated, or deleted. If you would like to
+                exercise this right, please contact us through the contact email below.</p>
+            </div>
+          </section>
+
+          <section id="changes" class="trust-panel privacy-policy-panel" aria-labelledby="changes-title">
+            <header class="trust-panel__header">
+              <span class="trust-panel__icon"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></span>
+              <div>
+                <span class="trust-panel__number">07</span>
+                <h2 id="changes-title">Changes to this Privacy Policy</h2>
+              </div>
+            </header>
+            <div class="privacy-policy-copy">
+              <p>We will occasionally update this Privacy Policy to reflect company and customer feedback. We
+                encourage you to periodically review this Policy to be informed of how we are protecting your
+                information.</p>
+            </div>
+          </section>
+
+          <section id="contacting-us" class="trust-panel privacy-policy-panel" aria-labelledby="contacting-us-title">
+            <header class="trust-panel__header">
+              <span class="trust-panel__icon"><i class="bi bi-envelope" aria-hidden="true"></i></span>
+              <div>
+                <span class="trust-panel__number">08</span>
+                <h2 id="contacting-us-title">Contacting Us</h2>
+              </div>
+            </header>
+            <div class="privacy-policy-copy">
+              <p>If you wish to ask us about this privacy policy please contact us using the information below</p>
+              <a href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a>
+              <p><strong>Visualise Info Ltd.</strong><br> Registered in England, Company Number: 11723865.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer id="footer" class="footer">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <img class='companyLogo' src="assets/img/logo.png" alt="">
+  <footer id="footer" class="site-footer">
+    <div class="container site-footer__grid">
+      <section>
+        <a href="index.html" class="site-footer__brand" aria-label="Visualise Info home">
+          <img class="site-brand__logo" src="assets/img/logo.png" alt="Visualise Info">
+        </a>
+        <a class="site-footer__address" href="https://www.google.com/maps/place/12+Creekside,+London+SE8+3DX"
+          target="_blank" rel="noopener noreferrer">Fuel Tank, 8-12 Creekside<br>London, SE8 3DX</a>
+        <p><a class="site-footer__contact" href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a></p>
+      </section>
+      <nav aria-labelledby="footer-product-heading">
+        <h2 id="footer-product-heading">Product</h2>
+        <ul class="site-footer__links">
+          <li><a href="helios/">Helios</a></li>
+          <li><a href="graphql-for-ibm-maximo/">GraphQL for IBM Maximo</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-links-heading">
+        <h2 id="footer-links-heading">Useful Links</h2>
+        <ul class="site-footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="trust-centre/">Trust Centre</a></li>
+          <li><a href="privacy-policy.html" aria-current="page">Privacy policy</a></li>
+        </ul>
+        <div class="site-footer__social" aria-label="Social links">
+          <a href="https://uk.linkedin.com/company/visualise-info-ltd" aria-label="Visualise Info on LinkedIn"><i
+              class="bi bi-linkedin" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/visualiseinfo/" aria-label="Visualise Info on Instagram"><i
+              class="bi bi-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@VisualiseInfo" aria-label="Visualise Info on YouTube"><i
+              class="bi bi-youtube" aria-hidden="true"></i></a>
+        </div>
+      </nav>
+      <section aria-labelledby="footer-certifications-heading">
+        <h2 id="footer-certifications-heading">Assurance &amp; Registration</h2>
+        <div class="site-footer__certifications">
+          <iframe
+            src="https://registry.blockmarktech.com/certificates/63b9d9dc-78cd-4919-8bb4-9bb0096cec7c/widget/?tooltip_position=top_left&theme=transparent&hover=true"
+            title="Visualise Info Cyber Essentials Plus certificate"></iframe>
+          <a href="https://ico.org.uk/ESDWebPages/Entry/ZB727534" aria-label="Visualise Info ICO registration">
+            <img class="rounded" src="assets/img/ico.org.uk.png" alt="ICO registered">
           </a>
-          <div class="footer-contact">
-            <a class="nav-link" href="https://www.google.com/maps/place/12+Creekside,+London+SE8+3DX" target="_blank">
-              <p class="footer-text">Fuel Tank, 8-12 Creekside<br />London, SE8 3DX</p>
-            </a>
-            <p class="">
-              <a class="footer-text" href="mailto:contact@visualiseinfo.com">contact@visualiseinfo.com</a>
-            </p>
-          </div>
         </div>
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <!-- <li><a href="resources.html">Resources</a></li> -->
-            <li><a href="docs/eula/index.html">Terms of service</a></li>
-            <li><a href="privacy-policy.html">Privacy policy</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Social Links</h4>
-          <div class="social-links d-flex">
-            <a href="https://uk.linkedin.com/company/visualise-info-ltd"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.instagram.com/visualiseinfo/"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.youtube.com/@VisualiseInfo"><i class="bi bi-youtube"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-3 col-6 footer-links">
-          <h4>Certifications</h4>
-          <div class="d-flex">
-            <iframe
-              src="https://registry.blockmarktech.com/certificates/63b9d9dc-78cd-4919-8bb4-9bb0096cec7c/widget/?tooltip_position=top_left&theme=transparent&hover=true"
-              style="border:none;height:80px;width:80px;"></iframe>
-            <a href="https://ico.org.uk/ESDWebPages/Entry/ZB727534"><img class="rounded" src="assets/img/ico.org.uk.png"
-                style="border:none;height:80px;width:80px;"></a>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
-
-    <div class="container copyright text-center mt-4">
+    <div class="container site-footer__copyright">
       <p>© <span>Copyright</span><span class="px-1 fw-semibold sitename">Visualise <span
             class='accent-text'>Info</span></span><span>ltd. All Rights Reserved</span></p>
-      <div class="credits text-small text-muted opacity-25">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a class="text-reset" href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <button type="button" class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"
+      aria-hidden="true"></i></button>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site.js?v=20260902"></script>
 
 </body>
 
