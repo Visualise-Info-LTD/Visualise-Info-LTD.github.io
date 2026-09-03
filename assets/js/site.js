@@ -4,8 +4,14 @@
   const body = document.body;
   const header = document.querySelector(".site-header");
   const mobileToggle = document.querySelector("[data-nav-toggle]");
-  const submenuToggles = document.querySelectorAll("[data-submenu-toggle]");
-  const backToTop = document.querySelector(".back-to-top");
+	const submenuToggles = document.querySelectorAll("[data-submenu-toggle]");
+	const backToTop = document.querySelector(".back-to-top");
+
+	document.querySelectorAll("[data-current-year]").forEach((year) => {
+		const currentYear = String(new Date().getFullYear());
+		year.textContent = currentYear;
+		year.setAttribute("datetime", currentYear);
+	});
 
   function setHeaderState() {
     header?.classList.toggle("is-scrolled", window.scrollY > 80);
