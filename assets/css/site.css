@@ -2404,7 +2404,7 @@ main > .section:not(.section--tinted):has(+ .section--tinted) {
   gap: 0.45rem;
   align-items: center;
   padding: 0.7rem;
-  color: var(--vi-ink);
+  color: #243f59;
   background: #ffffff;
   border-radius: 12px;
   font-family: var(--nav-font);
