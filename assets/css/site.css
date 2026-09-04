@@ -420,6 +420,10 @@ main > .section:not(.section--tinted):has(+ .section--tinted) {
     transform 180ms ease;
 }
 
+.site-navigation__submenu li + li {
+  margin-top: 0.2rem;
+}
+
 .site-navigation__submenu a {
   display: block;
   padding: 0.72rem 0.8rem;
