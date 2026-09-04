@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -42,6 +42,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"
       rel="stylesheet"
     />
+    <script src="/assets/js/theme.js?v=20260904"></script>
 
     <link
       href="/assets/vendor/bootstrap/css/bootstrap.min.css"
@@ -51,7 +52,7 @@
       href="/assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <link href="/assets/css/site.css?v=20260902" rel="stylesheet" />
+    <link href="/assets/css/site.css?v=20260904" rel="stylesheet" />
 
     <script src="/assets/js/analytics-consent.js" defer></script>
   </head>
@@ -122,6 +123,18 @@
                 <li><a href="/index.html#about">About us</a></li>
               </ul>
             </li>
+            <li class="site-navigation__theme-item">
+              <button
+                class="site-navigation__link site-navigation__theme-toggle"
+                type="button"
+                aria-label="Switch to dark mode"
+                title="Switch to dark mode"
+                data-theme-toggle
+              >
+                <span data-theme-toggle-label>Dark mode</span>
+                <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+              </button>
+            </li>
           </ul>
           <button
             class="site-navigation__mobile-toggle bi bi-list"
@@ -133,6 +146,15 @@
           ></button>
         </nav>
         <a class="site-header__cta" href="/index.html#contact">Contact</a>
+        <button
+          class="site-theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+          title="Switch to dark mode"
+          data-theme-toggle
+        >
+          <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+        </button>
       </div>
     </header>
 
